@@ -54,7 +54,7 @@ print("\n")
 
 diaz = "Darli es la mejor maestra del planeta ❤❤🙌👩‍🏫👩‍🏫👨‍🎓\n"
 
-print(diaz.capitalize()) # Pone la primera letra mayuscula.
+print(diaz.capitalize()) # Pone la primera letra mayuscula...
 print(diaz.count("a")) # Cuenta las palabras que le indiques
 print(diaz.isnumeric()) # Estas preguntando si la variable diaz es numerica
 print(diaz.upper()) # Lo pone todo en mayuscula
