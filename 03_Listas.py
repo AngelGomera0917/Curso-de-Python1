@@ -73,10 +73,10 @@ print(diaz.pop(2)) # De esta forma eliminas el valor de la posicion deseada y lo
 print(diaz)
 
 gomera = diaz.pop(3) # De esta forma eliminas el valor de la posicion deseada y lo puedes visualizar.
-print(gomera) # En otras palabras el elemonto se elimina, pero se retorna. Asi puedo saber el elemento que estoy eliminando
+print(gomera) # En otras palabras el elemento se elimina, pero se retorna. Asi puedo saber el elemento que estoy eliminando
 print(diaz)
 
-del diaz[1] # Este elimina lo que le indiques.
+del diaz[1] # Este elimina lo que le indiques, por indice.
 print(diaz)
 
 romero = diaz.copy()
@@ -98,13 +98,13 @@ print(romero)
 
 ca = [2, 3, 6, 7,10, 9, 4]
 
-ca.sort()
+ca.sort() # Puedo colocar criterios para ordenar de mayor a menor.
 print(ca)
 
 
 #Cambio de tipo a la variable
 
-mariela = "\n Hola Darli" # Antes esta variable era una lista, ahora es un Strings
+mariela = "\n Hola Darli " # Antes esta variable era una lista, ahora es un Strings
 print(mariela)
 print(type(mariela))
 
