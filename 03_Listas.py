@@ -1,4 +1,5 @@
-#Listas
+#Listas.
+
 print("\n")
 
 darli = list()
@@ -57,7 +58,7 @@ print("\n")
 mariela.append("Hermosa") # Agrega lo que indiques en la ultima parte
 print(mariela)
 
-mariela.insert(2, "La mejor maestra es Darli") #Inserta lo que indiques y en que posicion
+mariela.insert(2, "La mejor maestra es Darli") # Inserta lo que indiques y en que posicion
 print(mariela)
 
 mariela.remove("Hermosa") # Elimina por completo lo que le indiques, pero solo si conoces el valor a eliminar.  
@@ -102,7 +103,7 @@ ca.sort() # Puedo colocar criterios para ordenar de mayor a menor.
 print(ca)
 
 
-#Cambio de tipo a la variable
+# Cambio de tipo a la variable
 
 mariela = "\n Hola Darli " # Antes esta variable era una lista, ahora es un Strings
 print(mariela)
