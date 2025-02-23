@@ -23,11 +23,11 @@ print("Mi nombre es %s %s, y tengo %d años de edad."%(name,apellido,edad))
 print(f"Mi nombre es {name} {apellido}, y tengo {edad} años de edad.")
 print(f"{4+4}")
 
-#Desempaqueado de carateres 
+#Desempaqueado de carateres
 print("\n")
 
 angel = "Darli"
-a, b, c, d, e = angel
+a, b, c, d, e = angel # Con esto desempaquetamos los caracteres de la variable angel.
 
 print(a)
 print(c)
@@ -35,7 +35,7 @@ print(c)
 #Extracion 
 print("\n")
 
-romero = angel[2:]
+romero = angel[2:] 
 print(romero)
 todo = angel[0:]
 print(todo)
@@ -48,6 +48,7 @@ print("\n")
 contrario = angel[::-1] # Con este invertimos todo.
 print(contrario)
 
+#Desempaqueado de carateres
 
 #FUNCIONES
 print("\n")
@@ -64,8 +65,8 @@ print(diaz.lower()) # Lo pone todo en minuscula
 print(diaz.islower()) # Estas preguntando si la variable diaz esta todo en minuscula
 print(diaz.isdecimal()) # Estas preguntando si la variable diaz es un decimal
 print(diaz.split("e", 3)) # Cuando necesitas dividir una cadena en subcadenas, puedes utilizar el método split().
-print(diaz.title()) # Con este podemos poner cada inicia de una palabra en mayuscula.
-
+print(diaz.title()) # Con este podemos poner cada inicial de una palabra en mayuscula.
+print(diaz.startswith("D")) # Con este podemos preguntar si la variable diaz empieza con la letra que le indiquemos.
 print("\n")
 colores = "azul, rojo, amarillo, naranja"
 print(colores.split(", ", 2)) 
@@ -78,6 +79,15 @@ mariela = diaz.find("maestra") # Con el FIND podemos encontrar la posision en la
 print(mariela)
 
 print("\n")
+
+extraer = diaz[15:22] # Con esto podemos extraer una palabra de la cadena.
+print(extraer)
+
+print("\n")
+
+remplazar =  colores.replace("naranja", "verde") # Con el REPLACE podemos reemplazar una palabra por otra.
+
+print(remplazar)
 
 
 

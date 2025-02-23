@@ -19,7 +19,7 @@ print("\n")
 diaz = [7, 8, 9, 10, 10, "My Home", "My computer"]
 print(diaz, type(diaz))
 
-#COMO ACCEDER A ELEMENTOS INDEPENDIENTES DE LAS LISTAS.
+# COMO ACCEDER A ELEMENTOS INDEPENDIENTES DE LAS LISTAS.
 print("\n")
 
 print(diaz[0])
@@ -80,7 +80,7 @@ print(diaz)
 del diaz[1] # Este elimina lo que le indiques, por indice.
 print(diaz)
 
-romero = diaz.copy()
+romero = diaz.copy() # Copia la lista.
 
 
 diaz.clear() # Borra todo por completo.
@@ -91,10 +91,10 @@ romero.append(10)
 print(romero.count("My computer"))
 print(romero)
 
-romero.reverse()
+romero.reverse() # Invierte el orden de la lista.
 print(romero)
 
-romero.remove(10)
+romero.remove(10) # Elimina el valor que le indiques por indice.
 print(romero)
 
 ca = [2, 3, 6, 7,10, 9, 4]

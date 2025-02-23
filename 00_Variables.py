@@ -40,5 +40,6 @@ print(age)
 address: str = "Mi dirección"
 address = True
 address = 5
-address = 1.2
+address: float = 1.2
+address: complex = 4 + 7j
 print(type(address))
