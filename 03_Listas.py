@@ -97,6 +97,8 @@ print(romero)
 romero.remove(10) # Elimina el valor que le indiques por indice.
 print(romero)
 
+
+
 ca = [2, 3, 6, 7,10, 9, 4]
 
 ca.sort() # Puedo colocar criterios para ordenar de mayor a menor.
