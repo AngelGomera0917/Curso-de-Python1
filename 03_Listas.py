@@ -48,6 +48,8 @@ print(name)
 
 print("\n")
 
+
+
 print(darli + diaz + mariela)
 
 print("\n")
@@ -101,7 +103,7 @@ print(romero)
 
 ca = [2, 3, 6, 7,10, 9, 4]
 
-ca.sort() # Puedo colocar criterios para ordenar de mayor a menor.
+ca.sort() # Puedo colocar criterios para ordenar de menor a mayor.
 print(ca)
 
 
@@ -112,4 +114,9 @@ print(mariela)
 print(type(mariela))
 
 
+
+nu = list([6, 2, 10, 8, 9, 1, 7, 4, 5, 3])
+nu.sort(reverse=True) # Ordena de mayor a menor
+
+print(nu)
 
