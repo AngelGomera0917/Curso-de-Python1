@@ -185,4 +185,44 @@ for i in my_dict: # Itero sobre la lista my_dict.
 
 print("\n")
 
+for i in range(10): # Con RANGE le indicamos que imprima en un rango hasta 10
+    print(i)
+    
+print("\n")
 
+for i in range(5,20): # Aqui contamos desde 5 hasta 20
+    print(i,"\n")
+    
+print("\n")
+
+for i in range(5,20,2): # Aqui contamos desde 5 hasta 20 con saltos de 2
+    print(i)
+    
+print("\n")
+
+# Vamos a crear la tabla numerica del 3, del 1 al 10.
+
+for i in range(1, 11):
+    resultado = 3 * i
+    print(f"{3} * {i} = {resultado}\n")
+    
+
+# Tabla de multiplicar donde pasaremos el numero de multiplicar por teclado
+
+numero = int(input("Ingrese un numero: "))
+
+for i in range(1, 11):
+    resultado = numero * i
+    print(f"{numero} * {i} = {resultado}\n")
+    
+# Otra forma de hacer esta misma tabla seria
+
+def tabla_multiplicar(tabla,limite):
+    
+    for i in range(1,limite):
+        result = tabla * i
+        print(f" {tabla} * {i} = {result}")
+        
+number = int(input(" Ingrese que tabla desea verificar: "))
+
+tabla_multiplicar(number,11)
