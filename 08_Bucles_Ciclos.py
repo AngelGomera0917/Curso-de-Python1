@@ -180,7 +180,9 @@ for i in my_dict: # Itero sobre la lista my_dict.
     
     if i == "Correo":
         continue
-    print("\n",i)
+    # print("\n",i)
     print("Valido") # Salto a la siguiente iteracion del bucle. Esto es para saltar a la siguiente iteracion del bucle.
 
 print("\n")
+
+
