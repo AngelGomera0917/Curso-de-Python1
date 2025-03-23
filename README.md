@@ -1,10 +1,10 @@
-📚 Curso de Python: Básico, Intermedio y Avanzado.
+# 📚 Curso de Python: Básico, Intermedio y Avanzado.
 
-🚀 Descripción
+## 🚀 Descripción
 
-  Este repositorio contiene un curso completo de Python, dividido en tres niveles: Básico, Intermedio y Avanzado. Ideal para quienes quieren aprender desde cero o mejorar sus habilidades en Python.
+- Este repositorio contiene un curso completo de Python, dividido en tres niveles: Básico, Intermedio y Avanzado. Ideal para quienes quieren aprender desde cero o mejorar sus habilidades en Python.
 
-📂 Contenidos
+## 📂 Contenidos
 
       🔹 Básico: Variables, estructuras de control, funciones, listas, diccionarios, etc.
   
@@ -12,7 +12,7 @@
   
       🔹 Avanzado: Programación funcional, concurrencia, bases de datos, API, testing.
 
-🛠️ Requisitos
+## 🛠️ Requisitos
 
       🔹 Python 3.x instalado
   
@@ -20,38 +20,40 @@
   
       🔹 Librerías necesarias (se listan en requirements.txt)
 
-🚀 Instalación
+## 🚀 Instalación
 
-1- Clona este repositorio:
+  1. Clona este repositorio:
 
-      🔹 git clone https://github.com/tu-usuario/curso-python.git
+         🔹 git clone https://github.com/tu-usuario/curso-python.git
   
-2- Accede al directorio:
+2. Accede al directorio:
 
-      🔹 cd curso-python
+        🔹 cd curso-python
   
-3- Crea un entorno virtual y actívalo:
+3. Crea un entorno virtual y actívalo:
 
-      🔹 python -m venv venv
+        🔹 python -m venv venv
       
-      🔹 source venv/bin/activate  # En Windows: venv\Scripts\activate
+        🔹 source venv/bin/activate
+   
+        🔹 En Windows: venv\Scripts\activate
   
-4- Instala las dependencias:
+5. Instala las dependencias:
 
-      🔹 pip install -r requirements.txt
+        🔹 pip install -r requirements.txt
   
-📖 Uso
+## 📖 Uso
 
-Cada nivel del curso tiene su propia carpeta. Puedes ejecutarlos con:
+- Cada nivel del curso tiene su propia carpeta. Puedes ejecutarlos con:
 
       🔹 python nivel_basico/tema1.py
   
-o explorar los notebooks en Jupyter.
+- o explorar los notebooks en Jupyter.
 
-🤝 Contribuciones
+## 🤝 Contribuciones
 
       🔹 ¡Las contribuciones son bienvenidas! Si quieres mejorar este curso, abre un issue o un pull request.
 
-📜 Licencia
+## 📜 Licencia
 
       🔹 Este proyecto está bajo la licencia MIT.
