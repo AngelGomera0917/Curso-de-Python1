@@ -41,6 +41,7 @@
       🔹 pip install -r requirements.txt
   
 📖 Uso
+
 Cada nivel del curso tiene su propia carpeta. Puedes ejecutarlos con:
 
       🔹 python nivel_basico/tema1.py
