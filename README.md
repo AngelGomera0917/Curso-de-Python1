@@ -6,8 +6,8 @@
 
 ## 🌍 Enlace GitHub
 
-<p>   
-    <a href="https://github.com/AngelGomera0917/Curso-de-Python1" target="_blank">  🔹 Enlace del curso en GitHub </a>
+- <p>   
+    <a href="https://github.com/AngelGomera0917/Curso-de-Python1" target="_blank">  Enlace del curso en GitHub </a>
 </p>
 
 ## 📂 Contenidos
