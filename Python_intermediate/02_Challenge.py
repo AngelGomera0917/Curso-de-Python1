@@ -46,7 +46,7 @@ def anagrama (palabra1, palabra2): # Defino la funcion anagrama que recibe dos p
     else:
         return True
     
-print(anagrama("roma", "Amor"))
+print(anagrama("roma", "Amor")) # Llamo a la funcion anagrama y le paso las palabras "roma" y "Amor".
 
 
 
