@@ -40,13 +40,15 @@ las letras de otra palabra inicial.
 - NO hace falta comprobar que ambas palabras existan.
 - Dos palabras exactamente iguales no son anagrama. """
 
-def anagrama (palabra1, palabra2):
+def anagrama (palabra1, palabra2): # Defino la funcion anagrama que recibe dos palabras.
     if palabra1.lower() == palabra2.lower():
         return False
     else:
         return True
     
 print(anagrama("roma", "Amor"))
+
+
 
 
 
