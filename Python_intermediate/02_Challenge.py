@@ -46,7 +46,7 @@ def anagrama (palabra1, palabra2):
     else:
         return True
     
-print(anagrama("roma", "A   mor"))
+print(anagrama("roma", "Amor"))
 
 
 
