@@ -105,7 +105,7 @@ print("Nueva Fecha: ", change_date) # Muestro la fecha actualizada.
 
 print("\n")
 
-# Ahora vamos a actulizar las fechas con el metodo timedelta y mas...
+# Ahora vamos a actualizar las fechas con el metodo timedelta y mas...
 
 fecha_actualizada = date(fecha.year + 2, fecha.month + 3, fecha.day + 1) # Creo una fecha actualizada.
 
@@ -115,7 +115,7 @@ print("\n")
 
 from datetime import timedelta # Importo la libreria timedelta para trabajar con los dias.
 
-fecha_timedelta = fecha_actualizada + timedelta(days=5) # Con el metodo timedelta puedo sumar o restar dias a una fecha.
+fecha_timedelta = fecha_actualizada + timedelta(days= 5) # Con el metodo timedelta puedo sumar o restar dias a una fecha.
 
 print("Nueva Fecha con timedelta: ", fecha_timedelta) # Muestro la fecha actualizada con timedelta.
 
