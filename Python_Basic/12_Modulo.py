@@ -1,7 +1,7 @@
 
 """ Modulos. """ # Son librerias que tiene creada el propio sistema o lenguaje.
 
-# Cuando nosotros tenemos algun codigo externo a nuestro fichero o proyecto y queremos utilizarlo, aqui entre el concepto de modulos. 
+# Cuando nosotros tenemos algun codigo externo a nuestro fichero o proyecto y queremos utilizarlo, aqui entra el concepto de modulos. 
 
 # Un módulo en Python es un archivo que contiene definiciones de funciones, variables y clases, que puedes importar y usar en otros programas. Los módulos permiten organizar y reutilizar el código de manera más eficiente.
 
