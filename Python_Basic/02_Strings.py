@@ -72,14 +72,14 @@ colores = "azul, rojo, amarillo, naranja"
 print(colores.split(", ", 2)) 
 print("\n")
 
-#BUSQUEDA
+# BUSQUEDA
 print("\n")
 
 mariela = diaz.find("maestra") # Con el FIND podemos encontrar la posision en la que se encuentra.
 print(mariela)
 
 print("\n")
-
+# Extraccion
 extraer = diaz[15:22] # Con esto podemos extraer una palabra de la cadena.
 print(extraer)
 
