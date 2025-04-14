@@ -6,10 +6,10 @@ print(3 + 4) # suma
 print(3 - 4) 
 print(3 * 4)
 print(3 / 4)
-print(10 % 3)
-print(10 // 3)
+print(10 % 3) # Modulo o Resto
+print(10 // 3) # Division entera
 print(2 ** 3) # Exponente
-print(2 ** 3 + 3 - 7 / 1 // 4)
+print(2 ** 3 + 3 - 7 / 1 // 4) # Operaciones mixtas
 
 print("\n")
 
