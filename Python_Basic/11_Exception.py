@@ -51,7 +51,7 @@ try:
     resultado = valor1 - valor2
     print(f"\nEl resultado de la resta es: {round(resultado,2)}")
     
-except TypeError: # TypeError, es un tipo de error, aqui le estamos especificando que es exception solo se lanzara si el error es de tipo TypeError...
+except TypeError: # TypeError, es un tipo de error, aqui le estamos especificando que esta exception solo se lanzara si el error es de tipo TypeError...
     print("\nHubo un error en la resta. Los valores deben ser numéricos todos.")
     
 print("\n")
