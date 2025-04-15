@@ -6,18 +6,27 @@ print("\n")
 my_tupla = tuple()
 
 my_tupla = (1,7, "Gomera" ,5, "Angel", 9, 6)
+
 print(my_tupla)
+
 print(type(my_tupla))
 
 print("\n")
 
 print(my_tupla.index(7)) # Busca el valor 7 en la tupla y devuelve su posición.
+
 print(my_tupla.count(5)) # Cuenta cuantas veces se repite el valor 5 en la tupla.
+
 print(my_tupla[2:5]) # Imprime los valores de la posición 2 a la 5.
+
 print(my_tupla[2:]) # Imprime los valores de la posición 2 hasta el final.
+
 print(my_tupla[::-1]) # Invierte la tupla.
+
 print(my_tupla[::2]) # Imprime los valores de la tupla de 2 en 2.
+
 print(my_tupla[1::2]) # Imprime los valores de la tupla de 2 en 2 desde la posición 1.
+
 print(my_tupla[:-1]) # Imprime los valores de la tupla desde el principio hasta el penúltimo.
 
 print("\n")
