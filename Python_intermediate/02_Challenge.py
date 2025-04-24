@@ -46,11 +46,15 @@ las letras de otra palabra inicial.
 def anagrama (palabra1, palabra2): # Defino la funcion anagrama que recibe dos palabras.
     
     if palabra1.lower() == palabra2.lower():
-        return False
+        return " Estas palabras son iguales. "
     
     # Le pongo el metodo sorted() para que me ordene las letras de las palabras y las compare.
     # Le pongo el metodo lower() para que me convierta las letras a minusculas y las compare.
-    return sorted(palabra1.lower()) == sorted(palabra2.lower()) # Ordeno las letras de las palabras y comparo si son iguales.
+    elif sorted(palabra1.lower()) == sorted(palabra2.lower()): # Ordeno las letras de las palabras y comparo si son iguales.
+        return " Estas palabras son anagramas. "
+    
+    else:
+        return " Estas palabras no son anagramas. "
     
 print(anagrama("roma", "Amor")) # Llamo a la funcion anagrama y le paso las palabras "roma" y "Amor".
 
