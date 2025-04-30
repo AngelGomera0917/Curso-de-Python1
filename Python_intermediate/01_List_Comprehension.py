@@ -52,7 +52,7 @@ def sum_five(num): # Creo una funcion que suma 5 a un numero.
 new_list = [sum_five(i) for i in my_list]  # Sumo 5 a cada elemento de la lista my_list.
 print(new_list)
 
-print("\n")
+
 
 
 
