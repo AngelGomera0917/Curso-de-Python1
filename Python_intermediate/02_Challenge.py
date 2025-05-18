@@ -130,3 +130,64 @@ FIBONACCI() # Llamo a la funcion fibonacci().
 
 print("\n")
 
+
+                                    # Un Numero Primo
+
+# Un Numero Primo es aquel que solo es divisible por 1 y por si mismo.
+
+# Por ejemplo: 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47...
+
+"""
+ * Escribe un programa que se encargue de comprobar si un número es o no primo.
+ * Hecho esto, imprime los números primos entre 1 y 100.
+"""
+
+def is_prime ():
+    for index in range(1,101): 
+        if index > 1:  # Si el número es mayor a 1
+            for i in range(2, index):  # Prueba todos los números desde 2 hasta uno antes de index
+                if index % i == 0:  # Si encuentra algún divisor exacto, no es primo
+                    print(index, " Is not Prime... ")
+                    break  # Sale del bucle porque encontró un divisor, y vuelve al bucle externo
+            else:
+                # Si no encontró ningún divisor, significa que sí es primo
+                print(index, " Is Prime... ")
+                
+is_prime()  # Llamas a la función para ejecutarla
+
+print("\n")
+
+
+            # Otra forma de hacerlo es con una funcion que recibe un numero y retorna True o False.
+def prime(number):
+    
+    if number < 2: # Si el numero es menor a 2, entonces no es primo.
+        return False # Los numeros menores a 2 no son primos.
+    
+    for index in range(2, number): # Hago un bucle for que va desde 2 hasta el numero - 1.
+        if number % index == 0: # Si el residuo de la division entre el numero y el index es 0, entonces no es primo.
+            return False # Retorno False porque el numero no es primo.
+
+    return True # Retorno True porque el numero es primo.
+
+print(prime(4)) # Llamo a la funcion prime y le paso el numero deseado.
+
+print("\n")
+
+
+"""
+                                Invirtiendo Cadenas de Texto
+
+ * Crea un programa que invierta el orden de una cadena de texto
+ * sin usar funciones propias del lenguaje que lo hagan de forma automática.
+ * - Si le pasamos "Hola mundo" nos retornaría "odnum aloH"
+"""
+
+def reverse(texto):
+    
+    return texto[::-1]# Retorno el texto al reves.
+    
+print(reverse("Hola mundo")) # Llamo a la funcion word y le paso el texto deseado.
+
+
+print("\n")
