@@ -70,7 +70,7 @@ print("\n")
 
 
 def verificar (numero):
-    if numero > 0:
+    if numero >= 0:
         
         return numero # Devuelve el número positivo
 
@@ -81,15 +81,15 @@ print("Número positivo:", resultado) # 6
 
 print("\n")
 
-# def verificar (numero):
-#     if numero < 0:
-        
-#         return  # Sale de la función sin hacer nada
+def verificar (numero):
+    if numero < 0:   
+        return # No devuelve nada si el número es negativo
     
-#     else:
-#         print("Número positivo:", numero)
+    else:
+        print("Número positivo:", numero)
+        return numero # Devuelve el número positivo
     
-# verificar(-5)  # No imprimirá nada
+print(verificar(-4)) # No imprimirá nada
 
 
 print("\n")
@@ -98,7 +98,7 @@ def resta(a, b):
     
     return a - b  # Devuelve la suma
 
-resultado = resta(8, 3)
+resultado = resta(13, 3)
 
 print(resultado)  # 5
 
