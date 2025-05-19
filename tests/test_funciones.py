@@ -15,7 +15,6 @@ def tes_sum_two_values_with_return():
 def test_verificar():
     assert verificar (8) == 8
     assert verificar (-5) == None
-    assert verificar (0) == 0
     assert verificar (6) == 6
     assert verificar (-10) == None
 

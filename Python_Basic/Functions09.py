@@ -81,15 +81,15 @@ print("Número positivo:", resultado) # 6
 
 print("\n")
 
-def verificar (numero):
-    if numero < 0:
+# def verificar (numero):
+#     if numero < 0:
         
-        return  # Sale de la función sin hacer nada
+#         return  # Sale de la función sin hacer nada
     
-    else:
-        print("Número positivo:", numero)
+#     else:
+#         print("Número positivo:", numero)
     
-verificar(5)  # No imprimirá nada
+# verificar(-5)  # No imprimirá nada
 
 
 print("\n")
