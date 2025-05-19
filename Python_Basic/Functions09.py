@@ -32,7 +32,7 @@ result = sum_two_values_with_return(5, 11) # Llamo a la funcion con los valores 
 
 print(result) # Imprimo el resultado
 
-print("\n")
+print("\n") # Esto es un print para separar los resultados
 
 
 def Print_name (name, surname):
@@ -94,13 +94,13 @@ verificar(5)  # No imprimirá nada
 
 print("\n")
 
-def suma(a, b):
+def resta(a, b):
     
-    return a + b  # Devuelve la suma
+    return a - b  # Devuelve la suma
 
-resultado = suma(3, 4)
+resultado = resta(8, 3)
 
-print(resultado)  # 7
+print(resultado)  # 5
 
 print("\n")
 
