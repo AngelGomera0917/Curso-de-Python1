@@ -120,3 +120,15 @@ nu.sort(reverse=True) # Ordena de mayor a menor
 
 print(nu)
 
+print("\n")
+
+# Listas dentro de listas.
+Matrix = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+]
+
+print(Matrix[0][0]) # Accede a la posicion 0,0
+
+
