@@ -46,12 +46,18 @@ print(type(my_tupla))
 
 print("\n")
 
-# print(my_tupla.sort()) No se puede ordenar una tupla. (Error)
+# print(my_tupla.sort()) No se puede ordenar una tupla con sort. (Error)
 
+print("\n")
 
+tupla_ordenada = 2,4,6,7,1,9,11
+print(sorted(tupla_ordenada)) # Pero con la funcion sorted si se puede...
+
+print("\n")
 
 # del my_tupla     # Elimina la variable con todo y contenido, por completo.
 # print(my_tupla)    # No se puede imprimir una variable que ya fue eliminada. (Error)
 
 print(my_tupla)
 
+print("\n")
