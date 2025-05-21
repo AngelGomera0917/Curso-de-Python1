@@ -61,3 +61,13 @@ print("\n")
 print(my_tupla)
 
 print("\n")
+
+# Funcion ZIP en las tuplas
+
+integrantes = ["Darli", "Anyeli", "Dayi", "Alexander", "Delfi"]
+courses = ("Lenguas Modernas", "Educacion", "Contable", "Ciberseguridad", "Freelancer")
+edad = 22,25,23,20,28,
+
+union = zip(integrantes,courses,edad)
+
+print(list(union))
