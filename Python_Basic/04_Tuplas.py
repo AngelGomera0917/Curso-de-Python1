@@ -46,12 +46,38 @@ print(type(my_tupla))
 
 print("\n")
 
-# print(my_tupla.sort()) No se puede ordenar una tupla. (Error)
+# print(my_tupla.sort()) No se puede ordenar una tupla con sort. (Error)
 
+print("\n")
 
+tupla_ordenada = 2,4,6,7,1,9,11
+print(sorted(tupla_ordenada)) # Pero con la funcion sorted si se puede...
+
+print("\n")
 
 # del my_tupla     # Elimina la variable con todo y contenido, por completo.
 # print(my_tupla)    # No se puede imprimir una variable que ya fue eliminada. (Error)
 
 print(my_tupla)
 
+print("\n")
+
+# Funcion ZIP en las tuplas
+
+integrantes = ["Darli", "Anyeli", "Dayi", "Alexander", "Delfi"]
+courses = ("Lenguas Modernas", "Educacion", "Contable", "Ciberseguridad", "Freelancer")
+edad = 22,25,23,20,28,
+
+union = zip(integrantes,courses,edad)
+
+print(list(union))
+
+print("\n")
+
+# Desempaquetado DE TUPLE
+
+Mascotas = "Gato", "Perro", "Tortuga", "Conejo", "Periquitos"
+
+negro, gris, *verde, azules = Mascotas # Python interpreta directamente que uni dos valores con el *
+
+print(negro, gris, verde, azules)
