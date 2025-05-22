@@ -83,4 +83,8 @@ print(my_new_sets)
 
 print("\n")
 
+sorted_programming_languages = {"Python", "Java", "C++", "C#", "JavaScript", "PHP", "Ruby", "Swift", "Go", "Kotlin"}
+print(sorted(sorted_programming_languages)) # Con sorted ordenamos los valores de un set, pero no lo modifica, solo lo ordena para mostrarlo.
+print(sorted_programming_languages) # En este caso no se modifica el set, porque no lo guardamos en una variable, solo lo ordenamos para mostrarlo.
 
+print("\n")
