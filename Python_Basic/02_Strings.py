@@ -89,8 +89,22 @@ remplazar =  colores.replace("naranja", "verde") # Con el REPLACE podemos reempl
 
 print(remplazar)
 
+                                            # Metodo JOIN and Split
+print("\n")
 
+# Split este me genera una lista de cadenas a partir de un String.
+# Join este me genera un String a partir de una lista de cadenas.
 
+my_split = "Hyunda, Toyota, Nissan, Honda and Civic, Ford, Chevrolet, Mercedes, BMW, Audi"
 
+print(my_split.split(", ")) # Con esto divido la cadena en una lista de cadenas. Mi identificador para separarlo es la coma y el espacio (, ).
 
+print("\n")
 
+my_join = ["nissan", "honda", "civic", "ford", "chevrolet", "mercedes", "bmw", "audi"] # Con esto genero una lista de cadenas.
+
+new_join = ", ".join(my_join) # Con esto genero una cadena a partir de la lista de cadenas. Mi identificador para unirlo es la coma y el espacio (, ).
+
+print(new_join) # Imprimo la cadena generada a partir de la lista de cadenas.
+
+print("\n")
