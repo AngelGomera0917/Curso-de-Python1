@@ -44,3 +44,24 @@ else: # Si ninguna de las condiciones anteriores se cumple, se ejecuta este bloq
 print("\n")
 
 print("\n \t Fin del programa.\n")
+
+print("\n")
+
+# Metodo match
+
+Colors = "Azul"
+
+match Colors:
+    case "Blanco":
+        print(" Mi color favorito es el Blanco")
+    
+    case "Azul":
+        print(" Mi color favorito es el Azul")
+    
+    case "Verde":
+        print(" Mi color favorito es el Verde")
+
+    case "Rojo":
+        print(" Mi color favorito es el Rojo")
+
+print("\n")
