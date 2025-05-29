@@ -48,6 +48,10 @@ print("\n")
 
 # print(my_tupla.sort()) No se puede ordenar una tupla con sort. (Error)
 
+# metodo sorted = Este metodo se utiliza para crear una nueva lista ordenada a partir de una iterable, como una tupla o una lista.
+
+# metodo sort = Este metodo se utiliza para ordenar una lista en su lugar, es decir, modifica la lista original y no devuelve nada. pero no se puede usar en tuplas.
+
 print("\n")
 
 tupla_ordenada = 2,4,6,7,1,9,11
