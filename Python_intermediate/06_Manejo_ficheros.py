@@ -59,12 +59,15 @@ my_json = {
     "colores_favoritos": ["Black", "Blue", "Red"]
 }
 
-json_file = open("fichero.json", "w")  # Abre un fichero JSON en modo escritura
+with open("fichero.json", "w") as json_file:  # Abre el fichero JSON en modo escritura
+    # El uso de 'with' asegura que el fichero se cierre automáticamente al finalizar el bloque.
+    # Esto es una buena práctica para evitar fugas de recursos, y no usamos close().
+    
+    # Escribe el diccionario en el fichero JSON
 
-json.dump(my_json, json_file, indent = 4) # Dump es para escribir el diccionario en el fichero JSON
-# indent = 4 es para que el JSON se vea más bonito, con una sangría de 4 espacios.
+    json.dump(my_json, json_file, indent = 4) # Dump es para escribir el diccionario en el fichero JSON
+    # indent = 4 es para que el JSON se vea más bonito, con una sangría de 4 espacios.
 
-json_file.close()
 
 
 
