@@ -1,0 +1,21 @@
+{
+    "nombre": "Angel",
+    "edad": 25,
+    "Casa": {
+        "Piso": 1,
+        "Apartamento": 201,
+        "Direcci\u00f3n": "Calle 123, Numero 456"
+    },
+    "Correo": "antoniogomera12@gmail.com",
+    "lenguajes_preferidos": [
+        "Python",
+        "JavaScript",
+        "C#",
+        "Kotlin"
+    ],
+    "colores_favoritos": [
+        "Black",
+        "Blue",
+        "Red"
+    ]
+}
