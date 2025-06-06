@@ -1,6 +1,6 @@
 {
     "nombre": "Angel",
-    "edad": 25,
+    "edad": 35,
     "Casa": {
         "Piso": 1,
         "Apartamento": 201,
@@ -16,6 +16,7 @@
     "colores_favoritos": [
         "Black",
         "Blue",
-        "Red"
+        "Red",
+        "Pink"
     ]
 }
