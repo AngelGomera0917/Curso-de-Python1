@@ -59,7 +59,11 @@ my_json = {
     "colores_favoritos": ["Black", "Blue", "Red"]
 }
 
-with open("fichero.json", "w") as json_file:  # Abre el fichero JSON en modo escritura
+my_json["edad"] = 35 # Con esto actualizo el valor de la clave edad
+my_json["colores_favoritos"].append("Pink") # Aqui agrego un dato mas a la lista de colores_favoritos
+
+
+with open("fichero.json", "w+") as json_file:  # Abre el fichero JSON en modo escritura
     # El uso de 'with' asegura que el fichero se cierre automáticamente al finalizar el bloque.
     # Esto es una buena práctica para evitar fugas de recursos, y no usamos close().
     
@@ -67,6 +71,10 @@ with open("fichero.json", "w") as json_file:  # Abre el fichero JSON en modo esc
 
     json.dump(my_json, json_file, indent = 4) # Dump es para escribir el diccionario en el fichero JSON
     # indent = 4 es para que el JSON se vea más bonito, con una sangría de 4 espacios.
+    
+    
+    # print(json.load(json_file))
+    
 
 
 
