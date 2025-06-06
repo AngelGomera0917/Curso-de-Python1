@@ -77,12 +77,10 @@ with open("fichero.json", "w+") as json_file:  # Abre el fichero JSON en modo es
 # Leer el fichero JSON  
 json_file_loader = open("fichero.json", "r")
 json_content = json.load(json_file_loader) # Carga el contenido del fichero JSON en una variable
-    # load se utiliza para leer el contenido de un fichero JSON y convertirlo en un objeto de Python.
+# load se utiliza para leer el contenido de un fichero JSON y convertirlo en un objeto de Python.
 print(json_content)  # Imprime el contenido del fichero JSON
-    
-    
-    # print(json.load(json_file)) 
-    
+
+json_file_loader.close()  # Cierra el fichero JSON
 
 
 
