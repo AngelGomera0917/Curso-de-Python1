@@ -26,7 +26,6 @@ buffer = open("fichero.txt", "r+")
 bu = buffer.readline() # Lee la primera línea del fichero
 print(bu)
 print(buffer.read())  # Imprime el resto del contenido del fichero
-buffer.close() # Cierra el buffer
 
 print("\n")  # Imprime una línea en blanco para separar la salida
 
@@ -39,6 +38,8 @@ buffer.seek(0) # Mueve el cursor al inicio del fichero
 
 for contenido_lineas in buffer.readlines():  # La lista que me pasa el readlines(), la vuelvo iterable con el bucle for
     print(contenido_lineas)  # Imprime cada línea del fichero
+
+buffer.close() # Cierra el buffer
 
 print("\n")  # Imprime una línea en blanco para separar la salida
 
