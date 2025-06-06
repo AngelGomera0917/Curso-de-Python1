@@ -72,8 +72,16 @@ with open("fichero.json", "w+") as json_file:  # Abre el fichero JSON en modo es
     json.dump(my_json, json_file, indent = 4) # Dump es para escribir el diccionario en el fichero JSON
     # indent = 4 es para que el JSON se vea más bonito, con una sangría de 4 espacios.
     
+# json_file.close() Aqui omito el close() porque ya lo hace el with automaticamente
+
+# Leer el fichero JSON  
+leer = open("fichero.json", "r")
+nu = json.load(leer) # Carga el contenido del fichero JSON en una variable
+    # load se utiliza para leer el contenido de un fichero JSON y convertirlo en un objeto de Python.
+print(nu)  # Imprime el contenido del fichero JSON
     
-    # print(json.load(json_file))
+    
+    # print(json.load(json_file)) 
     
 
 
