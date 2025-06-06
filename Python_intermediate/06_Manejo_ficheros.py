@@ -100,5 +100,32 @@ print(type(json_content))  # Imprime el tipo de dato del contenido del JSON (deb
 
 print("\n")
 
+# file .csv
+import csv  # Importa el módulo csv para trabajar con archivos CSV
 
+# Crear una lista de diccionarios como ejemplo
 
+with open("fichero.csv", "w") as csv_file: # Abre el fichero CSV en modo escritura
+    csv_writer = csv.writer(csv_file)  # Crea un objeto writer para escribir en el fichero CSV
+    
+    csv_writer.writerow(["Nombre", "Apellido","Edad", "Matricula"])  # Escribe la cabecera del CSV
+    csv_writer.writerow(["Angel", "Gomera", 25, "123456"])  # Escribe una fila de datos
+    csv_writer.writerow(["Darli", "Diaz", 24, "789012"])  # Escribe otra fila de datos
+    csv_writer.writerow(["Juan", "Perez", 30, "654321"])  # Escribe otra fila de datos
+    csv_writer.writerow(["Pedro", "Gomez", 35, "345678"])  # Escribe otra fila de datos
+    
+# Leer el fichero CSV
+with open("fichero.csv", "r") as csv_file_loader:  # Abre el fichero CSV en modo lectura
+    csv_reader = csv.reader(csv_file_loader)  # Crea un objeto reader para leer el fichero CSV
+    
+    for row in csv_reader:  # Itera sobre cada fila del CSV
+        print(row)  # Imprime cada fila del CSV como una lista
+        
+print("\n")  # Imprime una línea en blanco para separar la salida
+
+# El módulo csv es útil para trabajar con archivos CSV, que son comunes para almacenar datos tabulares.
+    
+    
+    
+    
+    
