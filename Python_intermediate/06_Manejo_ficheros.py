@@ -53,7 +53,7 @@ my_json = {
     "Casa": {
         "Piso": 1,
         "Apartamento": 201,
-        "Dirección": "Calle 123, Numero 456"},
+        "Direccion": "Calle 123, Numero 456"},
     "Correo": "antoniogomera12@gmail.com",
     "lenguajes_preferidos": ["Python", "JavaScript", "C#", "Kotlin"],
     "colores_favoritos": ["Black", "Blue", "Red"]
