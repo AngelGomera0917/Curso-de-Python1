@@ -55,19 +55,21 @@ import json  # Importa el módulo json para trabajar con archivos JSON
 
 # Crear un diccionario de ejemplo
 my_json = {
-    "nombre": "Angel",
-    "edad": 25,
+    "Nombre": "Angel ",
+    "Apellido": "Gomera",
+    "Edad": 25,
     "Casa": {
         "Piso": 1,
         "Apartamento": 201,
         "Direccion": "Calle 123, Numero 456"},
     "Correo": "antoniogomera12@gmail.com",
-    "lenguajes_preferidos": ["Python", "JavaScript", "C#", "Kotlin"],
-    "colores_favoritos": ["Black", "Blue", "Red"]
+    "Lenguajes_preferidos": ["Python", "JavaScript", "C#", "Kotlin"],
+    "Colores_favoritos": ["Black", "Blue", "Red"]
 }
 
-my_json["edad"] = 35 # Con esto actualizo el valor de la clave edad
-my_json["colores_favoritos"].append("Pink") # Aqui agrego un dato mas a la lista de colores_favoritos
+my_json["Edad"] = 23 # Con esto actualizo el valor de la clave edad
+my_json["Colores_favoritos"].append("Pink") # Aqui agrego un dato mas a la lista de colores_favoritos
+my_json["Novia"] = "Darli Diaz" # Agrego una nueva clave y valor al diccionario
 
 
 with open("fichero.json", "w+") as json_file:  # Abre el fichero JSON en modo escritura
@@ -93,7 +95,7 @@ with open("fichero.json", "r") as json_file_loader:
 print("\n")  # Imprime una línea en blanco para separar la salida
 
 print(json_content,"\n")  # Imprime el contenido del fichero JSON
-print(json_content["nombre"],"\n")  # Imprime el valor de la clave "nombre" del JSON
+print(json_content["Nombre"],"\n")  # Imprime el valor de la clave "nombre" del JSON
 print(type(json_content))  # Imprime el tipo de dato del contenido del JSON (debería ser un diccionario)}
 
 # El uso de 'with' es una buena práctica para manejar archivos, ya que garantiza que el archivo se cierre correctamente, incluso si ocurre un error durante la operación.
@@ -117,6 +119,7 @@ with open("fichero.csv", "w") as csv_file: # Abre el fichero CSV en modo escritu
 # Leer el fichero CSV
 with open("fichero.csv", "r") as csv_file_loader:  # Abre el fichero CSV en modo lectura
     csv_reader = csv.reader(csv_file_loader)  # Crea un objeto reader para leer el fichero CSV
+
     
     for row in csv_reader:  # Itera sobre cada fila del CSV
         print(row)  # Imprime cada fila del CSV como una lista
