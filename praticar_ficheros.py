@@ -21,9 +21,12 @@ with open ("venta.csv", "r") as file_reader:
         cantidad = int(venta[2])
         total = precio * cantidad
         print(producto, ":", total)
-        
-    
+ 
     print("\n")
-    for index in leer:
-        print(", ".join(index))
+
+
+with open ("tareas.txt", "r+") as file_read:
+    file_read.seek(16)
+    print(file_read.read())
+
         
