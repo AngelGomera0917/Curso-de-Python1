@@ -128,6 +128,10 @@ with open("fichero.csv", "r") as csv_file_loader:  # Abre el fichero CSV en modo
 print("\n")  # Imprime una línea en blanco para separar la salida
 
 # El módulo csv es útil para trabajar con archivos CSV, que son comunes para almacenar datos tabulares.
+
+
+# Este Fichero es un ejemplo de como manejar ficheros en Python, y como se pueden usar diferentes tipos de ficheros para almacenar datos. El csv lo puedo0 abrir con Excel, y el json lo puedo abrir con cualquier editor de texto, y se ve mas bonito que un txt.
+# Tambien se pueden usar otros tipos de ficheros como XML, YAML, etc. Pero en este caso solo se muestran los mas comunes.
     
     
     
