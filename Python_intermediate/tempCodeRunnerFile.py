@@ -1,1 +1,1 @@
-print(json.load(json_file))
+o

@@ -1,5 +1,6 @@
-Nombre,Apellido,Edad,Matricula
-Angel,Gomera,25,123456
-Darli,Diaz,24,789012
-Juan,Perez,30,654321
-Pedro,Gomez,35,345678
+Nombre,Apellido,Edad,Pareja,Matricula
+Angel,Gomera,25,True,123456
+Darli,Diaz,24,True,789012
+Juan,Perez,29,False,654321
+Pedro,Gomez,43,False,345678
+Maria,Lopez,36,True,901234

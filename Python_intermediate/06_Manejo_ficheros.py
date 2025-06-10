@@ -54,19 +54,21 @@ import json  # Importa el módulo json para trabajar con archivos JSON
 
 # Crear un diccionario de ejemplo
 my_json = {
-    "nombre": "Angel",
-    "edad": 25,
+    "Nombre": "Angel ",
+    "Apellido": "Gomera",
+    "Edad": 25,
     "Casa": {
         "Piso": 1,
         "Apartamento": 201,
         "Direccion": "Calle 123, Numero 456"},
     "Correo": "antoniogomera12@gmail.com",
-    "lenguajes_preferidos": ["Python", "JavaScript", "C#", "Kotlin"],
-    "colores_favoritos": ["Black", "Blue", "Red"]
+    "Lenguajes_preferidos": ["Python", "JavaScript", "C#", "Kotlin"],
+    "Colores_favoritos": ["Black", "Blue", "Red"]
 }
 
-my_json["edad"] = 35 # Con esto actualizo el valor de la clave edad
-my_json["colores_favoritos"].append("Pink") # Aqui agrego un dato mas a la lista de colores_favoritos
+my_json["Edad"] = 23 # Con esto actualizo el valor de la clave edad
+my_json["Colores_favoritos"].append("Pink") # Aqui agrego un dato mas a la lista de colores_favoritos
+my_json["Novia"] = "Darli Diaz" # Agrego una nueva clave y valor al diccionario
 
 
 with open("fichero.json", "w+") as json_file:  # Abre el fichero JSON en modo escritura
@@ -92,7 +94,7 @@ with open("fichero.json", "r") as json_file_loader:
 print("\n")  # Imprime una línea en blanco para separar la salida
 
 print(json_content,"\n")  # Imprime el contenido del fichero JSON
-print(json_content["nombre"],"\n")  # Imprime el valor de la clave "nombre" del JSON
+print(json_content["Nombre"],"\n")  # Imprime el valor de la clave "nombre" del JSON
 print(type(json_content))  # Imprime el tipo de dato del contenido del JSON (debería ser un diccionario)}
 
 # El uso de 'with' es una buena práctica para manejar archivos, ya que garantiza que el archivo se cierre correctamente, incluso si ocurre un error durante la operación.
@@ -107,15 +109,17 @@ import csv  # Importa el módulo csv para trabajar con archivos CSV
 with open("fichero.csv", "w") as csv_file: # Abre el fichero CSV en modo escritura
     csv_writer = csv.writer(csv_file)  # Crea un objeto writer para escribir en el fichero CSV
     
-    csv_writer.writerow(["Nombre", "Apellido","Edad", "Matricula"])  # Escribe la cabecera del CSV
-    csv_writer.writerow(["Angel", "Gomera", 25, "123456"])  # Escribe una fila de datos
-    csv_writer.writerow(["Darli", "Diaz", 24, "789012"])  # Escribe otra fila de datos
-    csv_writer.writerow(["Juan", "Perez", 30, "654321"])  # Escribe otra fila de datos
-    csv_writer.writerow(["Pedro", "Gomez", 35, "345678"])  # Escribe otra fila de datos
+    csv_writer.writerow(["Nombre", "Apellido","Edad", "Pareja", "Matricula"])  # Escribe la cabecera del CSV
+    csv_writer.writerow(["Angel", "Gomera", 25, True, "123456"])  # Escribe una fila de datos
+    csv_writer.writerow(["Darli", "Diaz", 24, True, "789012"])  # Escribe otra fila de datos
+    csv_writer.writerow(["Juan", "Perez", 29, False, "654321"])  # Escribe otra fila de datos
+    csv_writer.writerow(["Pedro", "Gomez", 43, False, "345678"])  # Escribe otra fila de datos
+    csv_writer.writerow(["Maria", "Lopez", 36, True, "901234"])  # Escribe otra fila de datos
     
 # Leer el fichero CSV
 with open("fichero.csv", "r") as csv_file_loader:  # Abre el fichero CSV en modo lectura
     csv_reader = csv.reader(csv_file_loader)  # Crea un objeto reader para leer el fichero CSV
+
     
     for row in csv_reader:  # Itera sobre cada fila del CSV
         print(row)  # Imprime cada fila del CSV como una lista
@@ -123,6 +127,10 @@ with open("fichero.csv", "r") as csv_file_loader:  # Abre el fichero CSV en modo
 print("\n")  # Imprime una línea en blanco para separar la salida
 
 # El módulo csv es útil para trabajar con archivos CSV, que son comunes para almacenar datos tabulares.
+
+
+# Este Fichero es un ejemplo de como manejar ficheros en Python, y como se pueden usar diferentes tipos de ficheros para almacenar datos. El csv lo puedo0 abrir con Excel, y el json lo puedo abrir con cualquier editor de texto, y se ve mas bonito que un txt.
+# Tambien se pueden usar otros tipos de ficheros como XML, YAML, etc. Pero en este caso solo se muestran los mas comunes.
     
     
     
