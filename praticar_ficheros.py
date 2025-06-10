@@ -1,33 +1,29 @@
 
-# Praticar Ficheros .txt
-
+# Praticar Ficheros .json
 import csv
 
-computer = {
-    "producto_1": {
-        "Nombre": "Teclado",
-        "Precio": 1235},  
+
+with open ("venta.csv", "w") as file_csv:
+    escribir = csv.writer(file_csv)
+    escribir.writerow(["Producto", "Precio", "Cantidad"])
+    escribir.writerow(["Teclado", 1235, 5])
+    escribir.writerow(["Mouse", 980, 7])
+    escribir.writerow(["Monitor", 7640, 2])
+
+with open ("venta.csv", "r") as file_reader: 
+    leer = csv.reader(file_reader)
     
-    "producto_2": {
-        "Nombre": "Mouse",
-        "Precio": 900},   
+    next(leer)
+    print("\nTotal Vendido por producto\n")
+    for venta in leer:
+        producto = venta[0]
+        precio = int(venta[1])
+        cantidad = int(venta[2])
+        total = precio * cantidad
+        print(producto, ":", total)
+        
     
-}
-
-computer["producto_3"] = {
-    "Nombre": "Monitor",
-    "Precio": 12800 }
-
-with open("nota.csv", "w") as file_csv:
-    guardar_csv = csv.writer(file_csv)
-    
-    guardar_csv.writerow(["Producto", "Precio", "Cantidad"])
-    guardar_csv.writerow(["Teclado", 1235, 2])
-    guardar_csv.writerow(["Mouse", 980, 1])
-    guardar_csv.writerow(["Monitor", 14850, 2])
-
-with open("nota.csv", "r") as reader_csv:
-    imprimir_csv = csv.reader(reader_csv)
-
-    for index in reader_csv:
-        print(index)
+    print("\n")
+    for index in leer:
+        print(", ".join(index))
+        
