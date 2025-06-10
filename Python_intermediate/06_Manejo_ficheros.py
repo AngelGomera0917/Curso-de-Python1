@@ -110,11 +110,12 @@ import csv  # Importa el módulo csv para trabajar con archivos CSV
 with open("fichero.csv", "w") as csv_file: # Abre el fichero CSV en modo escritura
     csv_writer = csv.writer(csv_file)  # Crea un objeto writer para escribir en el fichero CSV
     
-    csv_writer.writerow(["Nombre", "Apellido","Edad", "Matricula"])  # Escribe la cabecera del CSV
-    csv_writer.writerow(["Angel", "Gomera", 25, "123456"])  # Escribe una fila de datos
-    csv_writer.writerow(["Darli", "Diaz", 24, "789012"])  # Escribe otra fila de datos
-    csv_writer.writerow(["Juan", "Perez", 30, "654321"])  # Escribe otra fila de datos
-    csv_writer.writerow(["Pedro", "Gomez", 35, "345678"])  # Escribe otra fila de datos
+    csv_writer.writerow(["Nombre", "Apellido","Edad", "Pareja", "Matricula"])  # Escribe la cabecera del CSV
+    csv_writer.writerow(["Angel", "Gomera", 25, True, "123456"])  # Escribe una fila de datos
+    csv_writer.writerow(["Darli", "Diaz", 24, True, "789012"])  # Escribe otra fila de datos
+    csv_writer.writerow(["Juan", "Perez", 29, False, "654321"])  # Escribe otra fila de datos
+    csv_writer.writerow(["Pedro", "Gomez", 43, False, "345678"])  # Escribe otra fila de datos
+    csv_writer.writerow(["Maria", "Lopez", 36, True, "901234"])  # Escribe otra fila de datos
     
 # Leer el fichero CSV
 with open("fichero.csv", "r") as csv_file_loader:  # Abre el fichero CSV en modo lectura
