@@ -13,21 +13,24 @@ with open ("practicar/venta.csv", "w") as file_csv:
 with open ("practicar/venta.csv", "r") as file_reader: 
     leer = csv.reader(file_reader)
     
-    next(leer)
+    next(leer) # El Next Omite la cabecera y lee el resto. La cabecera es la primera fila.
     print("\nTotal Vendido por producto\n")
+    precio_general = 0
     for venta in leer:
         producto = venta[0]
         precio = int(venta[1])
         cantidad = int(venta[2])
         total = precio * cantidad
+        precio_general += total
         print(producto, ":", total)
- 
+        
+    print("\nPrecio General de venta: ", precio_general)
     print("\n")
-
 
 with open ("practicar/tareas.txt", "r+") as file_read:
     file_read.seek(16)
     print(file_read.read()) # 
     
+print("\n")
 
         
