@@ -114,8 +114,6 @@ with open('practicar/tareas.txt', 'r') as file_read:
 
 print("\n")
 
-
-
 # print(" Ficheros Excel...\n")
 # import pandas as pd 
 # # Crear un DataFrame de ejemplo
