@@ -1,5 +1,3 @@
 Lavar los platos
-Sacar la basura
-Preparar la comida
-sacar al perro
-sd
+Llevar el perro al parque
+Hacer la cama
