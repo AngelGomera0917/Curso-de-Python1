@@ -78,6 +78,45 @@ with open ("practicar/venta_productos.json", "r") as reade_file:
 
 print("\n")
 
+print(" Ficheros txt...\n")
+
 with open ("practicar/tareas.txt", "r+") as file_read:
-    file_read.seek(16)
-    print(file_read.read())
+    tareas = file_read.readlines()  # Lee todas las líneas del archivo y las almacena en una lista llamada tareas.
+    
+    if not tareas:  # Verifica si la lista de tareas está vacía.
+        print("No hay tareas pendientes.")
+    else:
+        print("Tareas pendientes:")
+        for tarea in tareas:
+            print("- " + tarea.strip())  # Imprime cada tarea, eliminando espacios en blanco al principio y al final.
+    
+    nueva_tarea = input("\nIngrese una nueva tarea: ")
+    file_read.write(nueva_tarea + "\n")  # Escribe la nueva tarea al final del archivo.
+    print("Tarea agregada.")
+    file_read.seek(0)  # Mueve el cursor al principio del archivo para volver a leerlo.
+    tareas = file_read.readlines()  # Lee nuevamente todas las líneas del archivo.
+    print("\nLista actualizada de tareas:")
+    for tarea in tareas:
+        print("- " + tarea.strip())  # Imprime la lista actualizada de tareas.
+print("\n")
+
+
+
+
+print(" Ficheros Excel...\n")
+import pandas as pd 
+# Crear un DataFrame de ejemplo
+data = {
+    'Producto': ['Teclado', 'Mouse', 'Monitor'],
+    'Precio': [1200, 880, 13690],
+    'Unidad': [3, 5, 1]
+}
+df = pd.DataFrame(data)
+# Guardar el DataFrame en un archivo Excel
+df.to_excel('practicar/venta_productos.xlsx', index=False)  # Guarda el DataFrame en un archivo Excel llamado "venta_productos.xlsx". El parámetro index=False se usa para no incluir el índice del DataFrame en el archivo Excel.
+# Leer el archivo Excel
+df_excel = pd.read_excel('practicar/venta_productos.xlsx')  # Lee el archivo Excel y lo carga en un DataFrame.
+print("Contenido del archivo Excel:")
+print(df_excel)  # Imprime el contenido del DataFrame que se cargó desde el archivo Excel.
+print("\n")
+print(" Ficheros XML...\n")
