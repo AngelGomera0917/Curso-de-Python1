@@ -33,4 +33,46 @@ with open ("practicar/tareas.txt", "r+") as file_read:
     
 print("\n")
 
+print(" Ficheros Json...\n")
+
+import json
+
+computer = {
+    "Producto_1": {
+        "Nombre" : "Teclado",
+        "Precio" : 1200,
+        "Unidad" : 3
+    },
+    
+    "Producto_2": {
+        "Nombre" : "Mouse",
+        "Precio" : 880,
+        "Unidad" : 5
+    }
+    
+}
+
+computer["Producto_3"] = {
+        "Nombre" : "Monitor",
+        "Precio" : 13690,
+        "Unidad" : 1
+    },
+
+with open ("practicar/venta_productos.json", "w") as file_json:
+    json.dump(computer,file_json, indent = 4)
+
+with open ("practicar/venta_productos.json", "r") as reade_file:
+        leer_json = json.load(reade_file)
         
+        for clave in leer_json:
+            print(clave, ":", leer_json[clave]) # Imprime cada clave y su valor en el diccionario JSON
+            
+        print("\n")
+        for clave in leer_json.items():
+            print(clave)
+            
+        print("\n")
+        for clave, valor in leer_json["Producto_1"].items():
+            print(clave, ":", valor)
+
+print("\n")
