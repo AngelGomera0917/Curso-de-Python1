@@ -9,11 +9,14 @@
         "Precio": 880,
         "Unidad": 5
     },
-    "Producto_3": [
-        {
-            "Nombre": "Monitor",
-            "Precio": 13690,
-            "Unidad": 1
-        }
-    ]
+    "Producto_3": {
+        "Nombre": "Monitor",
+        "Precio": 13690,
+        "Unidad": 1
+    },
+    "Producto_4": {
+        "Nombre": "CPU",
+        "Precio": 25000,
+        "Unidad": 1
+    }
 }
