@@ -80,43 +80,56 @@ print("\n")
 
 print(" Ficheros txt...\n")
 
-with open ("practicar/tareas.txt", "r+") as file_read:
-    tareas = file_read.readlines()  # Lee todas las líneas del archivo y las almacena en una lista llamada tareas.
+print("\nTareas pendientes:\n")
+
+# Abrimos el archivo y escribimos el contenido inicial (esto solo la primera vez)
+with open('practicar/tareas.txt', 'w') as file_read:
+    file_read.write("Lavar los platos\n")
+    file_read.write("Sacar la basura\n")
+    file_read.write("Hacer la cama\n")
+
+# Abrimos en modo 'r+'
+with open('practicar/tareas.txt', 'r+') as file_read:
+    # Leer todas las líneas en una lista
+    lineas = file_read.readlines()
+
+    # Modificamos la segunda línea (índice 1)
+    lineas[1] = "Llevar el perro al parque\n"
+
+    # Volvemos al inicio del archivo para reescribir
+    file_read.seek(0)
     
-    if not tareas:  # Verifica si la lista de tareas está vacía.
-        print("No hay tareas pendientes.")
-    else:
-        print("Tareas pendientes:")
-        for tarea in tareas:
-            print("- " + tarea.strip())  # Imprime cada tarea, eliminando espacios en blanco al principio y al final.
+    # Escribimos todas las líneas (incluyendo la modificada)
+    file_read.writelines(lineas)
     
-    nueva_tarea = input("\nIngrese una nueva tarea: ")
-    file_read.write(nueva_tarea + "\n")  # Escribe la nueva tarea al final del archivo.
-    print("Tarea agregada.")
-    file_read.seek(0)  # Mueve el cursor al principio del archivo para volver a leerlo.
-    tareas = file_read.readlines()  # Lee nuevamente todas las líneas del archivo.
-    print("\nLista actualizada de tareas:")
-    for tarea in tareas:
-        print("- " + tarea.strip())  # Imprime la lista actualizada de tareas.
+    # Si quieres truncar el archivo en caso de que el nuevo contenido sea más corto:
+    file_read.truncate()
+
+# Verificamos el contenido final
+with open('practicar/tareas.txt', 'r') as file_read:
+    contenido = file_read.read()
+    print("\nContenido final del archivo:\n")
+    print(contenido)
+
+
 print("\n")
 
 
 
-
-print(" Ficheros Excel...\n")
-import pandas as pd 
-# Crear un DataFrame de ejemplo
-data = {
-    'Producto': ['Teclado', 'Mouse', 'Monitor'],
-    'Precio': [1200, 880, 13690],
-    'Unidad': [3, 5, 1]
-}
-df = pd.DataFrame(data)
-# Guardar el DataFrame en un archivo Excel
-df.to_excel('practicar/venta_productos.xlsx', index=False)  # Guarda el DataFrame en un archivo Excel llamado "venta_productos.xlsx". El parámetro index=False se usa para no incluir el índice del DataFrame en el archivo Excel.
-# Leer el archivo Excel
-df_excel = pd.read_excel('practicar/venta_productos.xlsx')  # Lee el archivo Excel y lo carga en un DataFrame.
-print("Contenido del archivo Excel:")
-print(df_excel)  # Imprime el contenido del DataFrame que se cargó desde el archivo Excel.
-print("\n")
-print(" Ficheros XML...\n")
+# print(" Ficheros Excel...\n")
+# import pandas as pd 
+# # Crear un DataFrame de ejemplo
+# data = {
+#     'Producto': ['Teclado', 'Mouse', 'Monitor'],
+#     'Precio': [1200, 880, 13690],
+#     'Unidad': [3, 5, 1]
+# }
+# df = pd.DataFrame(data) 
+# # Guardar el DataFrame en un archivo Excel
+# df.to_excel('practicar/venta_productos.xlsx', index=False)  # Guarda el DataFrame en un archivo Excel llamado "venta_productos.xlsx". El parámetro index=False se usa para no incluir el índice del DataFrame en el archivo Excel.
+# # Leer el archivo Excel
+# df_excel = pd.read_excel('practicar/venta_productos.xlsx')  # Lee el archivo Excel y lo carga en un DataFrame.
+# print("Contenido del archivo Excel:")
+# print(df_excel)  # Imprime el contenido del DataFrame que se cargó desde el archivo Excel.
+# print("\n")
+# print(" Ficheros XML...\n")
