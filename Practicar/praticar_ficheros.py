@@ -85,7 +85,7 @@ print("\nTareas pendientes:\n")
 with open('practicar/tareas.txt', 'w') as file_read:
     file_read.write("Lavar los platos\n")
     file_read.write("Sacar la basura\n")
-    file_read.write("Hacer la cama\n")
+    file_read.write("Preparar la comida\n")
 
 # Abrimos en modo 'r+'
 with open('practicar/tareas.txt', 'r+') as file_read:
@@ -112,6 +112,22 @@ with open('practicar/tareas.txt', 'r') as file_read:
 
 
 print("\n")
+
+print("Ejercicio Siguiente:\n")
+
+with open('practicar/log.txt', 'r+') as file_log:
+    
+    file_log.seek(0, 2) # Mueve el cursor al final del archivo para agregar contenido.
+    file_log.write("\nFin del Programa.") 
+    
+    file_log.seek(0) 
+    
+    read_log = file_log.read() 
+    
+    print(read_log) # Imprime el contenido del archivo log.txt, que ahora incluye "Fin del Programa." al final del archivo.
+    
+    
+
 
 # print(" Ficheros Excel...\n")
 # import pandas as pd 
