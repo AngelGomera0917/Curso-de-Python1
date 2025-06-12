@@ -118,16 +118,36 @@ print("Ejercicio Siguiente:\n")
 with open('practicar/log.txt', 'r+') as file_log:
     
     file_log.seek(0, 2) # Mueve el cursor al final del archivo para agregar contenido.
-    file_log.write("\nFin del Programa.") 
+    # file_log.write("\nFin del Programa.") # Descomentar para agregar "Fin del Programa." al final del archivo log.txt.
     
     file_log.seek(0) 
     
     read_log = file_log.read() 
     
     print(read_log) # Imprime el contenido del archivo log.txt, que ahora incluye "Fin del Programa." al final del archivo.
+
+
+print("\n")
+
+print("Ejercicio Siguiente:\n")
+
+with open('practicar/lista.txt', "w" ) as file_lista:
+    file_lista.write("Primero\n")
+    file_lista.write("Tercero\n")
+    file_lista.write("Cuarto")
     
+    
+    
+with open('practicar/lista.txt', 'r') as file_lista_read:
+    lista_read = file_lista_read.read()
+    convertir = lista_read.split("\n")
+    convertir.insert(1, "Segundo")
+    letras = "\n".join(convertir)
+    print(letras)
+    print(type(letras))
     
 
+print("\n")
 
 # print(" Ficheros Excel...\n")
 # import pandas as pd 
