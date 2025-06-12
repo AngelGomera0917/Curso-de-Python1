@@ -134,20 +134,60 @@ print("Ejercicio Siguiente:\n")
 with open('practicar/lista.txt', "w" ) as file_lista:
     file_lista.write("Primero\n")
     file_lista.write("Tercero\n")
-    file_lista.write("Cuarto")
+    file_lista.write("Cuarto\n")
     
     
     
-with open('practicar/lista.txt', 'r') as file_lista_read:
+with open('practicar/lista.txt', 'r+') as file_lista_read:
     lista_read = file_lista_read.read()
+    
     convertir = lista_read.split("\n")
+    
     convertir.insert(1, "Segundo")
+    
     letras = "\n".join(convertir)
-    print(letras)
+    
     print(type(letras))
+    
+print("\n")
+    
+with open('practicar/lista.txt', "w+" ) as file_lista:
+    file_lista.write(letras)
+    
+    file_lista.seek(0)
+    
+    for i in file_lista.readlines():
+        print(i)
     
 
 print("\n")
+
+print("Mismo ejercicio del anterior, pero de otra forma diferente y mas corta:\n")
+
+with open('practicar/lista.txt', "w" ) as file_lista:
+    file_lista.write("Primero\n")
+    file_lista.write("Tercero\n")
+    file_lista.write("Cuarto\n")
+    
+    
+    
+with open('practicar/lista.txt', 'r+') as file_lista_read:
+    lista_read = file_lista_read.readlines()
+    
+    lista_read.insert(1, "Segundo\n")
+    
+    # Volvemos al inicio del archivo para reescribir
+    file_lista_read.seek(0)
+    
+    # Escribimos todas las líneas (incluyendo la modificada)
+    file_lista_read.writelines(lista_read)
+    
+    # Si quieres truncar el archivo en caso de que el nuevo contenido sea más corto:
+    file_lista_read.truncate()
+    
+with open('practicar/lista.txt', 'r') as file_lista_read:
+    new = file_lista_read.read()
+    print(new)
 
 # print(" Ficheros Excel...\n")
 # import pandas as pd 
