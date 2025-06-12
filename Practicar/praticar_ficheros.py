@@ -139,24 +139,24 @@ with open('practicar/lista.txt', "w" ) as file_lista:
     
     
 with open('practicar/lista.txt', 'r+') as file_lista_read:
-    lista_read = file_lista_read.read()
+    lista_read = file_lista_read.read() # Leemos todo el contenido del archivo como una cadena.
     
-    convertir = lista_read.split("\n")
+    convertir = lista_read.split("\n") # Convertimos la cadena en una lista separada por saltos de línea.
     
-    convertir.insert(1, "Segundo")
+    convertir.insert(1, "Segundo") # Insertamos "Segundo" en la segunda posición de la lista.
     
-    letras = "\n".join(convertir)
+    modified_string = "\n".join(convertir) # Unimos la lista de nuevo en una cadena separada por saltos de línea.    
     
-    print(type(letras))
+    print(type(modified_string)) # Imprime el tipo de la variable letras, que será una cadena (str).
     
 print("\n")
     
 with open('practicar/lista.txt', "w+" ) as file_lista:
-    file_lista.write(letras)
+    file_lista.write(modified_string) # Escribimos la cadena modificada de nuevo en el archivo lista.txt.
     
     file_lista.seek(0)
     
-    for i in file_lista.readlines():
+    for i in file_lista.readlines(): # Leemos el archivo línea por línea.
         print(i)
     
 
