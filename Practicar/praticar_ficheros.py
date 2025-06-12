@@ -186,8 +186,38 @@ with open('practicar/lista.txt', 'r+') as file_lista_read:
     file_lista_read.truncate()
     
 with open('practicar/lista.txt', 'r') as file_lista_read:
-    new = file_lista_read.read()
-    print(new)
+    final_output = file_lista_read.read()
+    print(final_output)
+    
+    
+print("\n")
+
+print("Ejercicio Siguiente:\n")
+
+with open('practicar/mensaje.txt', 'w') as message_file:
+    message_file.write("Hola, Angel Gomera.")
+
+with open('practicar/mensaje.txt', 'r+') as message_reader:
+    mensaje = message_reader.read()
+    
+    rem = mensaje.replace("Angel Gomera","Darli Mariela")
+    
+    # Volvemos al inicio del archivo para reescribir
+    message_reader.seek(0)
+    
+    # Escribimos todas las líneas (incluyendo la modificada)
+    message_reader.writelines(rem)
+    
+    # Si quieres truncar el archivo en caso de que el nuevo contenido sea más corto:
+    message_reader.truncate()
+    
+    message_reader
+
+with open('practicar/mensaje.txt', 'r+') as message_reader:
+    reade_mensaje = message_reader.read()
+    print(reade_mensaje)
+
+print("\n")
 
 # print(" Ficheros Excel...\n")
 # import pandas as pd 
