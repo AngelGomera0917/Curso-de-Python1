@@ -1,0 +1,22 @@
+{
+    "Producto_1": {
+        "Nombre": "Teclado",
+        "Precio": 1200,
+        "Unidad": 3
+    },
+    "Producto_2": {
+        "Nombre": "Mouse",
+        "Precio": 880,
+        "Unidad": 5
+    },
+    "Producto_3": {
+        "Nombre": "Monitor",
+        "Precio": 13690,
+        "Unidad": 1
+    },
+    "Producto_4": {
+        "Nombre": "CPU",
+        "Precio": 25000,
+        "Unidad": 1
+    }
+}
