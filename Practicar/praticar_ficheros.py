@@ -169,8 +169,6 @@ with open('practicar/lista.txt', "w" ) as file_lista:
     file_lista.write("Tercero\n")
     file_lista.write("Cuarto\n")
     
-    
-    
 with open('practicar/lista.txt', 'r+') as file_lista_read:
     lista_read = file_lista_read.readlines()
     
@@ -211,10 +209,8 @@ with open('practicar/mensaje.txt', 'r+') as message_reader:
     # Si quieres truncar el archivo en caso de que el nuevo contenido sea más corto:
     message_reader.truncate()
     
-    message_reader
-
 with open('practicar/mensaje.txt', 'r+') as message_reader:
-    reade_mensaje = message_reader.read()
+    reade_mensaje = message_reader.read() # Leemos el contenido del archivo mensaje.txt después de la modificación.
     print(reade_mensaje)
 
 print("\n")
