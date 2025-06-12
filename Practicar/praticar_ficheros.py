@@ -3,7 +3,7 @@
 import csv
 
 
-with open ("practicar/venta.csv", "w") as file_csv:
+with open ("practicar/venta.csv", "w", newline="" ) as file_csv: # newline="" se usa para evitar líneas en blanco adicionales en el archivo CSV.
     escribir = csv.writer(file_csv)
     escribir.writerow(["Producto", "Precio", "Cantidad"])
     escribir.writerow(["Teclado", 1235, 5])
@@ -24,9 +24,8 @@ with open ("practicar/venta.csv", "r") as file_reader:
         precio_general += total
         print(producto, ":", total)
         
-    print("\nPrecio General de venta: ", precio_general)
-    print("\n")
-    
+    print("Precio General de venta: ", precio_general)
+
 print("\n")
 
 print(" Ficheros Json...\n")
