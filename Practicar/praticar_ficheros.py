@@ -213,7 +213,42 @@ with open('practicar/mensaje.txt', 'r+') as message_reader:
     reade_mensaje = message_reader.read() # Leemos el contenido del archivo mensaje.txt después de la modificación.
     print(reade_mensaje)
 
+    
 print("\n")
+
+print("Ejercicio Siguiente:\n")
+
+with open('practicar/reporte.txt', 'w+') as reporte_datos:
+    reporte_datos.write("Inicio del Reporte\n")
+    reporte_datos.write("Datos del Reporte\n")
+    reporte_datos.write("Fin del reporte\n")
+    
+with open('practicar/reporte.txt', "r+") as reporte_read:
+    initial_data = reporte_read.readline() # Leemos la primera línea del archivo reporte.txt.
+    
+    # Leemos el resto del archivo desde la segunda línea en adelante.
+    rest_of_file = reporte_read.read()
+    
+    # Volvemos al inicio del archivo para reescribir
+    reporte_read.seek(0)
+    
+    # Escribimos la primera línea, un resumen y el resto del archivo.
+    Summary_text = "Resumen: Este es un resumen general.\n"
+    
+    # Escribimos todo junto
+    # Escribimos la primera línea, el resumen y el resto del archivo.
+    reporte_read.writelines(initial_data + Summary_text + rest_of_file)
+    
+    # Si quieres truncar el archivo en caso de que el nuevo contenido sea más corto:    
+    reporte_read.truncate()
+    
+with open('practicar/reporte.txt', "r+") as reporte_read:
+    final_report_data = reporte_read.read() # Leemos el contenido del archivo reporte.txt después de la modificación.
+    
+    print(final_report_data)  
+    
+
+    
 
 # print(" Ficheros Excel...\n")
 # import pandas as pd 
