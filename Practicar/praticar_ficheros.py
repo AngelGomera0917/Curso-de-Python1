@@ -248,7 +248,11 @@ with open('practicar/reporte.txt', "r+") as reporte_read:
     print(final_report_data)  
     
 
-    
+print("\n")
+
+print("Ejercicio Siguiente:\n")
+
+
 
 # print(" Ficheros Excel...\n")
 # import pandas as pd 
