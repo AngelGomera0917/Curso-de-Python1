@@ -74,12 +74,12 @@ with open('datos.json', 'w') as f:
 with open('datos.json', 'r') as f:
     contenido = json.load(f)
 
-print("Contenido del archivo JSON como diccionario:")
+print("Contenido del archivo JSON como diccionario:\n")
 print(contenido)
 
 print("\n")
 
-print("📝 Ejercicio 2: Modificar un valor existente")
+print("✅ Ejercicio 2: Modificar un valor existente 📝\n")
 
 # 1. Abre el archivo datos.json.
 
