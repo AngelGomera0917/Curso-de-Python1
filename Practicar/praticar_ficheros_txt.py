@@ -103,7 +103,27 @@ with open('practicar/mensaje.txt', 'r+') as message_reader:
     
 print("\n")
 
-print("Ejercicio Siguiente:\n")
+print("🏆 Ejercicio Nivel Experto: Insertar una palabra en medio de un archivo sin leer todo el archivo en memoria\n")
+
+# 📝 Enunciado:
+# Tienes un archivo llamado reporte.txt con el siguiente contenido:
+
+# Inicio del reporte
+# Datos del reporte
+# Fin del reporte
+
+# ------ Objetivo: -------
+
+# Abre el archivo en modo r+.
+
+# Ubica la posición justo después de la primera línea ("Inicio del reporte\n").
+
+# Inserta una línea extra:
+
+# ____Resumen: Este es un resumen general.____
+# sin perder el resto del contenido.
+
+# 4. Muestra el contenido final completo.
 
 with open('practicar/reporte.txt', 'w+') as reporte_datos:
     reporte_datos.write("Inicio del Reporte\n")
@@ -133,9 +153,7 @@ with open('practicar/reporte.txt', "r+") as reporte_read:
     final_report_data = reporte_read.read() # Leemos el contenido del archivo reporte.txt después de la modificación.
     
     print(final_report_data)  
-
-
-
+    
 print("\n")
 
 
