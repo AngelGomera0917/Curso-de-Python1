@@ -1,0 +1,3 @@
+Usuario: Juan
+Edad: 30
+Ciudad: Santo Domingo
