@@ -79,3 +79,10 @@ print(contenido)
 
 print("\n")
 
+print("📝 Ejercicio 2: Modificar un valor existente")
+
+# 1. Abre el archivo datos.json.
+
+# 2. Cambia el valor de "ciudad" a "Barcelona".
+
+# 3. Guarda los cambios.
