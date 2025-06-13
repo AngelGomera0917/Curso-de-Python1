@@ -1,0 +1,4 @@
+Inicio del Reporte
+Resumen: Este es un resumen general.
+Datos del Reporte
+Fin del reporte
