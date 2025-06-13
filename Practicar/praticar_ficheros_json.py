@@ -48,3 +48,34 @@ with open ("practicar/venta_productos.json", "r") as reade_file:
             print(clave, ":", valor)
 
 print("\n")
+
+
+print("🔥 Primera práctica básica con JSON: Crear, leer, modificar, agregar datos.\n")
+
+print("✅ Ejercicio 1: Crear un archivo JSON simple\n")
+
+# 🎯 Objetivo:
+# Crea un archivo llamado datos.json que contenga este diccionario en formato JSON:
+# Lee este archivo y muestra su contenido como diccionario en Python.
+
+import json
+
+# 1. Creamos el archivo JSON
+datos = {
+    "Nombre": "Juan",
+    "Edad": 30,
+    "Ciudad": "Santo Domingo"
+}
+
+with open('datos.json', 'w') as f:
+    json.dump(datos, f, indent=4)  # indent para que se vea bonito
+
+# 2. Leemos el archivo JSON
+with open('datos.json', 'r') as f:
+    contenido = json.load(f)
+
+print("Contenido del archivo JSON como diccionario:")
+print(contenido)
+
+print("\n")
+
