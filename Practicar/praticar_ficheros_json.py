@@ -151,3 +151,31 @@ with open('practicar/datos.json', 'r') as file_loader:
     
 
 print("\n")
+
+print("✅ Ejercicio 5 (Nivel intermedio): Leer lista de diccionarios 📝\n")
+
+# Cambia el archivo datos.json para que contenga una lista de usuarios:
+
+# Lee el JSON e imprime todos los nombres de los usuarios.
+
+# 1. Creamos la lista de diccionarios (usuarios)
+usuarios = [
+    {"Nombre": "Dayelin Diaz", "Edad": 21, "Ciudad": "Madrid"},
+    {"Nombre": "Angel Gomera", "Edad": 25, "Ciudad": "Valencia"},
+    {"Nombre": "Darli M.", "Edad": 24, "Ciudad": "Toronto"}
+]
+
+# 2. Guardamos esta lista en un archivo JSON
+with open('practicar/usuarios.json', 'w') as usuarios_file:
+    json.dump(usuarios, usuarios_file, indent=4)  # indent para que se vea bonito
+
+# 3. Leemos el archivo JSON
+with open('practicar/usuarios.json', 'r') as usuarios_file_read:
+    lista_usuarios_read = json.load(usuarios_file_read)
+
+# 4. Imprimimos SOLO los nombres de cada usuario
+print("Nombres de los usuarios:\n")
+for usuario in lista_usuarios_read:
+    print(usuario['Nombre'])
+
+print("\n")
