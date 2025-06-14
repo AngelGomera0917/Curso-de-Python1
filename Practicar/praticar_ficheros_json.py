@@ -108,7 +108,7 @@ print("✅ Ejercicio 3: Agregar una nueva clave-valor 📝 ")
 
 # Abre el archivo datos.json.
 
-# Agrega la clave "profesion" con el valor "Ingeniero".
+# Agrega la clave "profesion" con el valor "Desarrollador de Software".
 
 # Guarda los cambios.
 
