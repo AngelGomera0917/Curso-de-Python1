@@ -1,4 +1,6 @@
-with open('practicar/lista.txt', "w" ) as file_lista:
-#     file_lista.write("Primero\n")
-#     file_lista.write("Tercero\n")
-#     file_lista.write("Cuarto")
+with open('practicar/datos.json', 'w') as file_3:
+    
+#     datos["Profesion"] = "Desarrollador de Software"
+    
+#     json.dump(datos, file)
+
