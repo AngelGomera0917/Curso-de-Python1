@@ -1,5 +1,6 @@
 {
     "Nombre": "Angel",
     "Edad": 30,
-    "Ciudad": "Barcelona"
+    "Ciudad": "Barcelona",
+    "Profesion": "Desarrollador de Software"
 }
