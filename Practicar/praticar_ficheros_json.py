@@ -62,7 +62,7 @@ import json
 
 # 1. Creamos el archivo JSON
 datos = {
-    "Nombre": "Juan",
+    "Nombre": "Angel",
     "Edad": 30,
     "Ciudad": "Santo Domingo"
 }
@@ -75,7 +75,9 @@ with open('datos.json', 'r') as file_handler:
     contenido = json.load(file_handler)
 
 print("Contenido del archivo JSON como diccionario:\n")
-print(contenido)
+
+for llave,valor in contenido.items():
+    print(llave, ":", valor)
 
 print("\n")
 
@@ -86,4 +88,29 @@ print("✅ Ejercicio 2: Modificar un valor existente 📝\n")
 # 2. Cambia el valor de "ciudad" a "Barcelona".
 
 # 3. Guarda los cambios.
+
+with open('datos.json', 'w') as file_read:
+    
+    datos["Ciudad"] = "Barcelona"
+    
+    json.dump(datos,file_read,indent=4)
+    
+
+with open('datos.json', 'r+') as file_read:
+    reader = json.load(file_read)
+    
+    for attribute_key,attribute_value in reader.items():
+        print(attribute_key, ":", attribute_value)
+
+print("\n")
+
+print("✅ Ejercicio 3: Agregar una nueva clave-valor 📝 ")
+
+# Abre el archivo datos.json.
+
+# Agrega la clave "profesion" con el valor "Ingeniero".
+
+# Guarda los cambios.
+
+
 
