@@ -67,12 +67,12 @@ datos = {
     "Ciudad": "Santo Domingo"
 }
 
-with open('datos.json', 'w') as f:
-    json.dump(datos, f, indent=4)  # indent para que se vea bonito
+with open('datos.json', 'w') as file_handler:
+    json.dump(datos, file_handler, indent=4)  # indent para que se vea bonito
 
 # 2. Leemos el archivo JSON
-with open('datos.json', 'r') as f:
-    contenido = json.load(f)
+with open('datos.json', 'r') as file_handler:
+    contenido = json.load(file_handler)
 
 print("Contenido del archivo JSON como diccionario:\n")
 print(contenido)
@@ -86,3 +86,4 @@ print("✅ Ejercicio 2: Modificar un valor existente 📝\n")
 # 2. Cambia el valor de "ciudad" a "Barcelona".
 
 # 3. Guarda los cambios.
+
