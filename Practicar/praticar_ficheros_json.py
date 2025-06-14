@@ -118,4 +118,15 @@ with open('practicar/datos.json', 'w') as file_3:
     datos["Profesion"] = "Desarrollador de Software"
     
     json.dump(datos, file_3, indent = 4)
+    
+with open('practicar/datos.json', 'r') as file_to_read:
+    json_data = json.load(file_to_read)
+    
+    for field_ke,data_value in json_data.items():
+        print(field_ke, ":", data_value)
+        
+
+print("\n")
+
+
 
