@@ -67,11 +67,12 @@ datos = {
     "Ciudad": "Santo Domingo"
 }
 
-with open('datos.json', 'w') as file_handler:
-    json.dump(datos, file_handler, indent=4)  # indent para que se vea bonito
+
+with open('practicar/datos.json', 'w+') as file_1:
+    json.dump(datos, file_1, indent = 4)  # indent para que se vea bonito
 
 # 2. Leemos el archivo JSON
-with open('datos.json', 'r') as file_handler:
+with open('practicar/datos.json', 'r') as file_handler:
     contenido = json.load(file_handler)
 
 print("Contenido del archivo JSON como diccionario:\n")
@@ -89,14 +90,14 @@ print("✅ Ejercicio 2: Modificar un valor existente 📝\n")
 
 # 3. Guarda los cambios.
 
-with open('datos.json', 'w') as file_read:
+with open('practicar/datos.json', 'w') as file_2:
     
     datos["Ciudad"] = "Barcelona"
     
-    json.dump(datos,file_read,indent=4)
+    json.dump(datos,file_2,indent = 4)
     
 
-with open('datos.json', 'r+') as file_read:
+with open('practicar/datos.json', 'r+') as file_read:
     reader = json.load(file_read)
     
     for attribute_key,attribute_value in reader.items():
@@ -104,7 +105,7 @@ with open('datos.json', 'r+') as file_read:
 
 print("\n")
 
-print("✅ Ejercicio 3: Agregar una nueva clave-valor 📝 ")
+print("✅ Ejercicio 3: Agregar una nueva clave-valor 📝\n")
 
 # Abre el archivo datos.json.
 
@@ -112,5 +113,9 @@ print("✅ Ejercicio 3: Agregar una nueva clave-valor 📝 ")
 
 # Guarda los cambios.
 
-
+with open('practicar/datos.json', 'w') as file_3:
+    
+    datos["Profesion"] = "Desarrollador de Software"
+    
+    json.dump(datos, file_3, indent = 4)
 
