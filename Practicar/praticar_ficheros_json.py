@@ -62,15 +62,10 @@ import json
 
 # 1. Creamos el archivo JSON
 datos = {
-{    "Nombre": "Angel",
+    "Nombre": "Angel",
     "Apellido": "Gomera",
     "Edad": 30,
-    "Ciudad": "Santo Domingo"},
-{    "Nombre": "Angel",
-    "Apellido": "Gomera",
-    "Edad": 30,
-    "Ciudad": "Santo Domingo"}
-
+    "Ciudad": "Santo Domingo"
 }
 
 
