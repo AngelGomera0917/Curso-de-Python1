@@ -33,8 +33,8 @@ computer["Producto_4"] = {
 with open ("practicar/venta_productos.json", "w") as file_json:
     json.dump(computer,file_json, indent = 4) # Guarda el diccionario computer en un archivo JSON llamado "venta_productos.json". El parámetro indent = 4 se usa para dar formato al JSON con una sangría de 4 espacios, lo que lo hace más legible.
 
-with open ("practicar/venta_productos.json", "r") as reade_file:
-        leer_json = json.load(reade_file) # Carga el contenido del archivo JSON en un diccionario de Python, load se usa para leer el archivo y convertirlo en un objeto de Python.
+with open ("practicar/venta_productos.json", "r") as file_loader:
+        leer_json = json.load(file_loader) # Carga el contenido del archivo JSON en un diccionario de Python, load se usa para leer el archivo y convertirlo en un objeto de Python.
         
         for clave in leer_json:
             print(clave, ":", leer_json[clave]) # Imprime cada clave y su valor en el diccionario JSON
@@ -62,9 +62,15 @@ import json
 
 # 1. Creamos el archivo JSON
 datos = {
-    "Nombre": "Angel",
+{    "Nombre": "Angel",
+    "Apellido": "Gomera",
     "Edad": 30,
-    "Ciudad": "Santo Domingo"
+    "Ciudad": "Santo Domingo"},
+{    "Nombre": "Angel",
+    "Apellido": "Gomera",
+    "Edad": 30,
+    "Ciudad": "Santo Domingo"}
+
 }
 
 
@@ -128,5 +134,25 @@ with open('practicar/datos.json', 'r') as file_to_read:
 
 print("\n")
 
+print("✅ Ejercicio 4: Eliminar una clave 📝 \n")
 
+# Abre el archivo datos.json.
 
+# Elimina la clave "edad".
+
+# Guarda los cambios.
+
+with open('practicar/datos.json', 'w') as file_4:
+    
+    datos.pop("Apellido")
+    
+    json.dump(datos, file_4, indent = 4)
+    
+with open('practicar/datos.json', 'r') as file_loader:
+    loader = json.load(file_loader)
+    
+    for key_json,value_json in loader.items():
+        print(key_json, ":", value_json)
+    
+
+print("\n")
