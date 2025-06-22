@@ -139,7 +139,7 @@ print("✅ Ejercicio 4: Eliminar una clave 📝 \n")
 
 with open('practicar/datos.json', 'w') as file_4:
     
-    datos.pop("Apellido")
+    datos.pop("Apellido") # Elimina la clave "Apellido" del diccionario datos.
     
     json.dump(datos, file_4, indent = 4)
     
