@@ -26,10 +26,10 @@ my_string = "Mi nombre es Angel Antonio, tengo 22 años y mi lenguaje favorito e
 match_result = re.match("Mi nombre es Angel", my_string) # Verifica si la cadena comienza con "Mi nombre es Angel", si al match le pasamos de la parte final de la cadena, no lo encontrara, ya que no es el inicio de la cadena.
 print(match_result, "\n")
 
-longitud = match_result.span() # Nos devuelve el inicio y el final del match
-print(f"El match se encuentra en la posicion: {longitud}\n")
+start, end = match_result.span() # Nos devuelve el inicio y el final del match
+print(f"El match se encuentra en la posicion: {start, end}\n")
 
-
+print(my_string[start:end]) # Imprime el texto que coincide con el match    
 
 # Si queremos buscar un texto en cualquier parte de la cadena, usamos search
 search_result = re.search("Python", my_string) # Busca "Python" en cualquier parte, no importa si es al inicio o al final de la cadena.
