@@ -1,4 +1,4 @@
-# expresiones regulares
+# expresiones regulares 
 
 """/hola/ texto especifico a encontrar
 \d cualquier digito
@@ -11,17 +11,18 @@
 
 
 """
+print("\n")
 
 import re
 
 numero = "123-456-7890"
-digito = r"\d{3}" # Busca 3 digitos seguidos
+digito = r"\d{4}" # Busca 4 digitos seguidos
 print(re.search(digito, numero))
 
 print("\n")
 
-area = int(input(" Introduce tu codigo de area del circulo a calcular: "))
+# area = int(input(" Introduce tu codigo de area del circulo a calcular: "))
 
-calculo = (area ** 2) * 3.1416
+# calculo = (area ** 2) * 3.1416
 
-print(f" El area del circulo es: {calculo}") 
+# print(f" El area del circulo es: {calculo}") 
