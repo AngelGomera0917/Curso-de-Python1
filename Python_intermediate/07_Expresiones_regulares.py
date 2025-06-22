@@ -35,8 +35,3 @@ print(my_string[start:end]) # Imprime el texto que coincide con el match
 search_result = re.search("Python", my_string) # Busca "Python" en cualquier parte, no importa si es al inicio o al final de la cadena.
 
 print("\n")
-# area = int(input(" Introduce tu codigo de area del circulo a calcular: "))
-
-# calculo = (area ** 2) * 3.1416
-
-# print(f" El area del circulo es: {calculo}") 
