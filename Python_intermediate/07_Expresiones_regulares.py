@@ -27,7 +27,12 @@ match_result = re.match("Mi nombre es Angel", my_string) # Verifica si la cadena
 print(match_result, "\n")
 
 longitud = match_result.span() # Nos devuelve el inicio y el final del match
-print(f"El match se encuentra en la posicion: {longitud}")
+print(f"El match se encuentra en la posicion: {longitud}\n")
+
+
+
+# Si queremos buscar un texto en cualquier parte de la cadena, usamos search
+search_result = re.search("Python", my_string) # Busca "Python" en cualquier parte, no importa si es al inicio o al final de la cadena.
 
 
 
