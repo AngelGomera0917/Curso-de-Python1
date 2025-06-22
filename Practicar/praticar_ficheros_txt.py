@@ -101,7 +101,7 @@ with open('practicar/mensaje.txt', 'r+') as message_reader:
     reade_mensaje = message_reader.read() # Leemos el contenido del archivo mensaje.txt después de la modificación.
     print(reade_mensaje)
     
-print("\n")
+print("\n al inicio del archivo para reescribir")
 
 print("🏆 Ejercicio Nivel Experto: Insertar una palabra en medio de un archivo sin leer todo el archivo en memoria\n")
 
