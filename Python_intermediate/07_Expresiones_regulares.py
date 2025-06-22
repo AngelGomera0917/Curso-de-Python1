@@ -21,6 +21,17 @@ print(re.search(digito, numero))
 
 print("\n")
 
+my_string = "Mi nombre es Angel Antonio, tengo 22 años y mi lenguaje favorito es Python."
+
+match_result = re.match("Mi nombre es Angel", my_string) # Verifica si la cadena comienza con "Mi nombre es Angel", si al match le pasamos de la parte final de la cadena, no lo encontrara, ya que no es el inicio de la cadena.
+print(match_result, "\n")
+
+longitud = match_result.span() # Nos devuelve el inicio y el final del match
+print(f"El match se encuentra en la posicion: {longitud}")
+
+
+
+print("\n")
 # area = int(input(" Introduce tu codigo de area del circulo a calcular: "))
 
 # calculo = (area ** 2) * 3.1416
