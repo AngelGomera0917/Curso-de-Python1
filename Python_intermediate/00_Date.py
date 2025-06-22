@@ -1,6 +1,6 @@
-### Date ###
+### Datetime ###
 
-# date es un módulo de Python que nos permite trabajar con fechas y horas.
+# datetime es un módulo de Python que nos permite trabajar con fechas y horas.
 
 print("\n")
 
