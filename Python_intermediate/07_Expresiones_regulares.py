@@ -45,8 +45,19 @@ if partner_match is not None: # Si el match es encontrado, no sera None
 
 # Search
 
-language_description = "Python es un lenguaje de programacion muy versatil y facil de aprender."
+language_description = "Python es un lenguaje de programacion muy versatil y facil de aprender, me encanta python."
 
 # Si queremos buscar un texto en cualquier parte de la cadena, usamos search
 search_result = re.search("versatil", language_description) # Busca "versatil" en cualquier parte, no importa si es al inicio o al final de la cadena.
 print(search_result, "\n")
+
+
+# Findall
+# Si queremos encontrar todas las coincidencias de un texto en una cadena, usamos findall y me devuelve una lista con todas las coincidencias.
+
+favorite_car = "Mi carro favorito es un Toyota Corolla, me encanta el COROLLA por su eficiencia y durabilidad."
+
+# Aqui le colocamos el modificador re.I para que la busqueda no distinga entre mayusculas y minusculas.
+search_findall = re.findall("Corolla", favorite_car, re.I) # Busca "Corolla" en cualquier parte de la cadena.
+
+print(search_findall, "\n")
