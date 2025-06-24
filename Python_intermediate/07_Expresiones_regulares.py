@@ -83,3 +83,34 @@ replace_result = re.sub("azul", "Blanco", favorite_color) # Reemplaza "azul" por
 
 print(replace_result, "\n")
 
+                                        # Patterns
+
+# Podemos crear patrones mas complejos usando expresiones regulares
+
+favorite_career = "Mi sueño es poder ser un Deasarrollador de Software FullStack, y Poder aprender DepVops en 3 años."
+
+# Le colocamos el [Mm] para que busque tanto "Mi" como "mi". 
+patterns_match = r"[Mm]i sueño es ser un Deasarrollador de Software"
+print(re.match(patterns_match, favorite_career))
+
+print("\n")
+
+patterns_search = r"FullStack"
+print(re.search(patterns_search, favorite_career))
+
+print("\n")
+
+patterns_findall = r"[Pp]oder"
+print(re.findall(patterns_findall, favorite_career)) # Busca "poder" o "Poder" en la cadena.
+
+print("\n")
+
+patterns_split = r","
+print(re.split(patterns_split, favorite_career))
+
+print("\n")
+
+patterns_sub = r"aprender"
+print(re.sub(patterns_sub, "ser un master en", favorite_career))
+
+print("\n")
