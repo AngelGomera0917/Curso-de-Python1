@@ -87,7 +87,7 @@ print(replace_result, "\n")
 
 # Podemos crear patrones mas complejos usando expresiones regulares
 
-favorite_career = "Mi sueño es poder ser un Deasarrollador de Software FullStack, y Poder aprender DepVops en 3 años."
+favorite_career = "Mi sueño es poder ser un Deasarrollador de Software FullStack, y Poder aprender DepVops en 3 o 4 años."
 
 # Le colocamos el [Mm] para que busque tanto "Mi" como "mi". 
 patterns_match = r"[Mm]i sueño es ser un Deasarrollador de Software"
@@ -105,6 +105,16 @@ print(re.findall(patterns_findall, favorite_career)) # Busca "poder" o "Poder" e
 
 print("\n")
 
+patterns_findall = r"\d" # \d cualquier digito, busca cualquier numero dentro de la cadena de texto.
+print(re.findall(patterns_findall, favorite_career)) 
+
+print("\n")
+
+patterns_findall = r"[0-9]" # [0-9] Me busca todos los numeros dentro de la cadena que sean de 0 al 9
+print(re.findall(patterns_findall, favorite_career)) 
+
+print("\n")
+
 patterns_split = r","
 print(re.split(patterns_split, favorite_career))
 
@@ -114,3 +124,4 @@ patterns_sub = r"aprender"
 print(re.sub(patterns_sub, "ser un master en", favorite_career))
 
 print("\n")
+
