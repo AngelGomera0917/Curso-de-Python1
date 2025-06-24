@@ -45,8 +45,8 @@ if partner_match is not None: # Si el match es encontrado, no sera None
 
 # Search
 
-
+language_description = "Python es un lenguaje de programacion muy versatil y facil de aprender."
 
 # Si queremos buscar un texto en cualquier parte de la cadena, usamos search
-search_result = re.search("Python", my_string) # Busca "Python" en cualquier parte, no importa si es al inicio o al final de la cadena.
+search_result = re.search("versatil", language_description) # Busca "versatil" en cualquier parte, no importa si es al inicio o al final de la cadena.
 print(search_result, "\n")
