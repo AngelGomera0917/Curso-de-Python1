@@ -125,3 +125,31 @@ print(re.sub(patterns_sub, "ser un master en", favorite_career))
 
 print("\n")
 
+# valid_email_pattern: Expresión regular para validar correos electrónicos.
+# ^: Inicio de la cadena.
+# [a-zA-Z0-9._%+-]+: Parte local del correo (antes del @), permite letras, números y ciertos caracteres especiales.
+# @: Símbolo obligatorio que separa la parte local del dominio.
+# [a-zA-Z0-9]+: Parte del dominio (después del @), permite letras y números.
+# \.: Punto que separa el nombre del dominio de la extensión.
+# [a-zA-Z0-9]+: Extensión del dominio (por ejemplo, com, org, net), permite letras y números.
+# $: Final de la cadena.
+
+# Validar si un correo electonico es valido
+
+
+email = "antoniogomera09@gmail.c"
+
+# El signo $ indica el final de la cadena, y el signo ^ indica el inicio de la cadena.
+valid_email_pattern = r"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9]+\.[a-zA-Z0-9]+$"
+
+if re.match(valid_email_pattern, email): #
+    print(f"El correo {email} es valido.\n")
+
+if re.search(valid_email_pattern, email): 
+    print(f"El correo {email} es valido.\n")
+
+if re.findall(valid_email_pattern, email):
+    print(f"El correo {email} es valido.\n")
+
+else:
+    print(f"El correo {email} no es valido.\n")
