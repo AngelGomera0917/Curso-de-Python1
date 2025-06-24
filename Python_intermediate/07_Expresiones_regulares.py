@@ -19,7 +19,7 @@ numero = "123-456-7890"
 digito = r"\d{4}" # Busca 4 digitos seguidos
 print(re.search(digito, numero))
 
-# match
+                                            # match
 
 print("\n")
 
@@ -43,7 +43,7 @@ if partner_match is not None: # Si el match es encontrado, no sera None
     longitud = partner_match.span() # Nos devuelve el inicio y el final del match
     print(f"El match se encuentra en la posicion: {longitud}\n")
 
-# Search
+                                    # Search
 
 language_description = "Python es un lenguaje de programacion muy versatil y facil de aprender, me encanta python."
 
@@ -52,7 +52,8 @@ search_result = re.search("versatil", language_description) # Busca "versatil" e
 print(search_result, "\n")
 
 
-# Findall
+                                        # Findall
+
 # Si queremos encontrar todas las coincidencias de un texto en una cadena, usamos findall y me devuelve una lista con todas las coincidencias.
 
 favorite_car = "Mi carro favorito es un Toyota Corolla, me encanta el COROLLA por su eficiencia y durabilidad."
@@ -61,3 +62,24 @@ favorite_car = "Mi carro favorito es un Toyota Corolla, me encanta el COROLLA po
 search_findall = re.findall("Corolla", favorite_car, re.I) # Busca "Corolla" en cualquier parte de la cadena.
 
 print(search_findall, "\n")
+
+                                        # Split
+
+# Si queremos dividir una cadena en partes, usamos split y nos devuelve una lista con las partes
+
+favorite_house = "Mi casa favorita es una casa de campo: me encanta la casa de campo por su tranquilidad y belleza."
+
+split_result = re.split(":", favorite_house) # Divide la cadena en partes usando la coma como separador.
+
+print(split_result, "\n")
+
+                                        # Sub 
+
+# Si queremos reemplazar un texto en una cadena, usamos sub y nos devuelve la cadena con el texto reemplazado
+
+favorite_color = "Mi color favorito es el azul, me encanta el color azul por su frescura y serenidad."
+
+replace_result = re.sub("azul", "Blanco", favorite_color) # Reemplaza "azul" por "Blanco" en la cadena.
+
+print(replace_result, "\n")
+
