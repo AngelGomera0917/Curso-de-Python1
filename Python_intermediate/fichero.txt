@@ -1,0 +1,6 @@
+Hola, este es un fichero de texto de Angel and Gomera...
+Mi Lenguaje preferido es Python
+Mi color favorito es Black.
+Soy un excelente estudiante.
+Amo la programacion
+Mi objetivo es ser un desarrollador Full-Stack.
