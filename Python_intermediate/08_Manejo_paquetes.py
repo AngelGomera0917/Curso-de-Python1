@@ -3,3 +3,5 @@
 
 # Un paquete es un conjunto de módulos que se agrupan para facilitar su uso y organización.
 
+import numpy
+print(numpy.version.version)
