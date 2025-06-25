@@ -1,0 +1,24 @@
+{
+    "Nombre": "Angel ",
+    "Apellido": "Gomera",
+    "Edad": 23,
+    "Casa": {
+        "Piso": 1,
+        "Apartamento": 201,
+        "Direccion": "Calle 123, Numero 456"
+    },
+    "Correo": "antoniogomera12@gmail.com",
+    "Lenguajes_preferidos": [
+        "Python",
+        "JavaScript",
+        "C#",
+        "Kotlin"
+    ],
+    "Colores_favoritos": [
+        "Black",
+        "Blue",
+        "Red",
+        "Pink"
+    ],
+    "Novia": "Darli Diaz"
+}
