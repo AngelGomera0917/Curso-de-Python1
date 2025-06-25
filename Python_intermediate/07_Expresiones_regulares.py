@@ -137,19 +137,19 @@ print("\n")
 # Validar si un correo electonico es valido
 
 
-email = "antoniogomera09@gmail.com"
+user_gmail = "antoniogomera09@gmail.com"
 
 # El signo $ indica el final de la cadena, y el signo ^ indica el inicio de la cadena.
 valid_email_pattern = r"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9]+\.[a-zA-Z0-9]+$"
 
-if re.match(valid_email_pattern, email): #
-    print(f"El correo {email} es valido.\n")
+if re.match(valid_email_pattern, user_gmail): #
+    print(f"El correo {user_gmail} es valido.\n")
 
-if re.search(valid_email_pattern, email): 
-    print(f"El correo {email} es valido.\n")
+if re.search(valid_email_pattern, user_gmail): 
+    print(f"El correo {user_gmail} es valido.\n")
 
-if re.findall(valid_email_pattern, email):
-    print(f"El correo {email} es valido.\n")
+if re.findall(valid_email_pattern, user_gmail):
+    print(f"El correo {user_gmail} es valido.\n")
 
 else:
-    print(f"El correo {email} no es valido.\n")
+    print(f"El correo {user_gmail} no es valido.\n")
