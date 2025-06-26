@@ -148,14 +148,24 @@ class vender_auto():
         
     def vendido(self, propietario):
         self.propietario = propietario
-        print(f"Auto Vendido a {self.propietario} ✅")
+        print(f"Auto {self.vehiculo} {self.modelo} año {self.año}, color {self.color} Vendido a {self.propietario} ✅")
 
 auto_1 = vender_auto("Toyota", "Corolla", "2022", "Blanco", "JF Amador")
+
+auto_2 = vender_auto("Honda", "Civic", "2024", "Negro", "JF Amador")
 
 auto_1.detalles_vehiculo()
 
 print("\n")
 
-auto_1.vendido("Darli")
+auto_1.vendido("Darli M.")
+
+print("\n")
+
+auto_2.detalles_vehiculo()
+
+print("\n")
+
+auto_2.vendido("Angel Antonio")
 
 print("\n")
