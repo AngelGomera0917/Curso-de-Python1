@@ -9,3 +9,4 @@ array_nu = numpy.array([3, 5, 6, 8,1 ,7 ,2 ,9]) # Uso array para crear una lista
 
 print(array_nu + 4)
 
+
