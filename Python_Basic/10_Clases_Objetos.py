@@ -133,8 +133,8 @@ print("\n")
 
 # Crear una clase para vernder un coche y me verifique si esta vendido o no, y si esta vendido, que me imprima un mensaje de que el coche ya fue vendido.
 
-class vender_auto():
-    def __init__(self, vehiculo, modelo, año, color, propietario):
+class car_sales(): # Defino la clase car_sales para las ventas de autos.
+    def __init__(self, vehiculo, modelo, año, color, propietario): # Método constructor que inicializa los atributos del objeto.
         
         self.vehiculo = vehiculo
         self.modelo = modelo
@@ -142,30 +142,30 @@ class vender_auto():
         self.color = color
         self.propietario = propietario
         
-    def detalles_vehiculo(self):
+    def vehicle_description(self): # Método para mostrar la descripción del vehículo.
         
-        print(f" Vehículo disponible en el dealer JF Amador: {self.vehiculo} {self.modelo} año {self.año}, color {self.color}. ¡Propietario actual: {self.propietario}!")
+        print(f" Vehículo disponible en el dealer JF Amador: {self.vehiculo} {self.modelo} año {self.año}, color {self.color}. ¡Propietario actual: {self.propietario}!") # Imprime la descripción del vehículo.
         
-    def vendido(self, propietario):
+    def vendido(self, propietario): # Método para marcar el vehículo como vendido y actualizar el propietario.
         self.propietario = propietario
-        print(f"Auto {self.vehiculo} {self.modelo} año {self.año}, color {self.color} Vendido a {self.propietario} ✅")
+        print(f"Auto {self.vehiculo} {self.modelo} año {self.año}, color {self.color} Vendido a {self.propietario} ✅") # Imprime un mensaje indicando que el vehículo ha sido vendido y muestra el nuevo propietario.
 
-auto_1 = vender_auto("Toyota", "Corolla", "2022", "Blanco", "JF Amador")
+auto_1 = car_sales("Toyota", "Corolla", "2022", "Blanco", "JF Amador") # Crea un objeto de la clase car_sales para el primer auto.
 
-auto_2 = vender_auto("Honda", "Civic", "2024", "Negro", "JF Amador")
+auto_2 = car_sales("Honda", "Civic", "2024", "Negro", "JF Amador") # Crea un objeto de la clase car_sales para el segundo auto.
 
-auto_1.detalles_vehiculo()
-
-print("\n")
-
-auto_1.vendido("Darli M.")
+auto_1.vehicle_description() # Llama al método vehicle_description del primer auto para mostrar su descripción.
 
 print("\n")
 
-auto_2.detalles_vehiculo()
+auto_1.vendido("Darli M.") # Llama al método vendido del primer auto para marcarlo como vendido y mostrar el nuevo propietario.
 
 print("\n")
 
-auto_2.vendido("Angel Antonio")
+auto_2.vehicle_description() # Llama al método vehicle_description del segundo auto para mostrar su descripción.
+
+print("\n")
+
+auto_2.vendido("Angel Antonio") # Llama al método vendido del segundo auto para marcarlo como vendido y mostrar el nuevo propietario.
 
 print("\n")
