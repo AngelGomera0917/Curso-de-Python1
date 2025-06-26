@@ -7,7 +7,7 @@ print("\n")
 
 print("\n")
 
-class cahorros ():
+class cachorro ():
     def __init__(self, nombre, raza, edad, sexo, color):
         
         self.nombre = nombre
@@ -18,7 +18,7 @@ class cahorros ():
     
         
 
-camilo = cahorros("Camilo", "Pastor Aleman", "2 años,", "Macho", "Negro. " )
+camilo = cachorro("Camilo", "Pastor Aleman", "2 años,", "Macho", "Negro. " )
 print(camilo.nombre, "es un", camilo.raza, "de", camilo.edad, "es", camilo.sexo, "y es de color", camilo.color);
 
 print("\n")
@@ -26,7 +26,7 @@ print("\n")
 print("\n")
 
 
-class cahorros ():
+class cachorro ():
     def __init__(self, nombre, raza, edad, sexo, color):
         
         self.nombre = nombre
@@ -41,7 +41,7 @@ class cahorros ():
         de la misma funcion.'''
         print(pedro.nombre, "es un", pedro.raza, "de", pedro.edad, "es", pedro.sexo, "y es de color", pedro.color);
 
-pedro = cahorros("Pedro", "Pitbull", "4 años,", "Macho", "Crema. " )
+pedro = cachorro("Pedro", "Pitbull", "4 años,", "Macho", "Crema. " )
 
 pedro.definicion()
 
