@@ -129,4 +129,33 @@ print(person.Completo)
 
 print("\n")
 
+# Actividad Extra
 
+# Crear una clase para vernder un coche y me verifique si esta vendido o no, y si esta vendido, que me imprima un mensaje de que el coche ya fue vendido.
+
+class vender_auto():
+    def __init__(self, vehiculo, modelo, año, color, propietario):
+        
+        self.vehiculo = vehiculo
+        self.modelo = modelo
+        self.año = año
+        self.color = color
+        self.propietario = propietario
+        
+    def detalles_vehiculo(self):
+        
+        print(f" Vehículo disponible en el dealer JF Amador: {self.vehiculo} {self.modelo} año {self.año}, color {self.color}. ¡Propietario actual: {self.propietario}!")
+        
+    def vendido(self, propietario):
+        self.propietario = propietario
+        print(f"Auto Vendido a {self.propietario} ✅")
+
+auto_1 = vender_auto("Toyota", "Corolla", "2022", "Blanco", "JF Amador")
+
+auto_1.detalles_vehiculo()
+
+print("\n")
+
+auto_1.vendido("Darli")
+
+print("\n")
