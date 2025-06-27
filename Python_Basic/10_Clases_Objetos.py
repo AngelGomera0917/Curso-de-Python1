@@ -230,26 +230,28 @@ print("\n")
 
 class Maestro(Nombre, universidad):
     def __init__(self, nombre, edad, nombre_universidad, materia):
-        super().__init__(nombre, edad, nombre_universidad)
+        Nombre.__init__(self, nombre, edad)  # Llamada explícita al constructor de la clase Nombre
+        universidad.__init__(self, nombre_universidad)  # Llamada explícita al constructor de la clase universidad
         self.materia = materia
         
     def info_maestro(self):
-        print(f" {self.nombre_nombre} | {self.info_universidad} | {self.materia} ")
+        print(f" Nombre: {self.nombre} | Universidad: {self.info_universidad} | Materia: {self.materia} ")
         
 print("\n")
         
 class Estudiante(Nombre, universidad):
     def __init__(self, nombre, edad, nombre_universidad, carrera):
-        super().__init__( nombre, edad, nombre_universidad)
+        Nombre.__init__(self, nombre, edad)  # Llamada explícita al constructor de la clase Nombre
+        universidad.__init__(self, nombre_universidad)  # Llamada explícita al constructor de la clase universidad
         self.carrera = carrera
         
     def info_estudiante(self):
-        print(f" {self.nombre_nombre} | {self.info_universidad} | {self.carrera} ")
+        print(f" Nombre: {self.nombre} | Universidad: {self.nombre_universidad} | Educacion: {self.carrera} ")
 
 
 # Ejemplo de uso
 maestro1 = Maestro("Juan Pérez", 40, "ITLA", "Matemáticas")
-estudiante1 = Estudiante("Ana Gómez", 21, "ITLA", "Software")
+estudiante1 = Estudiante("Ana Gómez", 21, "ITLA", "Desarrollo De Software")
 
 print(maestro1.info_maestro())
 print(estudiante1.info_estudiante())
