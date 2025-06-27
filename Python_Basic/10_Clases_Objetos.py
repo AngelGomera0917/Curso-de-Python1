@@ -204,6 +204,10 @@ print(student_profile_1.describe_profession(), "\n")
 print(student_profile_2.get_person_info(), "\n")
 print(student_profile_2.describe_profession(), "\n")
 
+#                        *========================* Herencia Multiple *========================*
+# La herencia múltiple en Python permite que una clase herede de más de una clase padre. Esto puede ser útil para combinar comportamientos de diferentes clases, pero también puede complicar el diseño del código si no se maneja adecuadamente.
+# En Python, la herencia múltiple se logra especificando múltiples clases en la definición de la clase hija. Sin embargo, es importante tener cuidado con el orden de las clases padre y cómo se resuelven los conflictos de nombres.
+
 class Nombre():
     def __init__(self, nombre, edad):
         self.nombre = nombre
