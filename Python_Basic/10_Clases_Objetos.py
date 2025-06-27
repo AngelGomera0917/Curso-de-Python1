@@ -193,9 +193,14 @@ class educacion(persona):  # La clase educacion hereda de la clase persona.
         return f" Soy {self.nombre} y tengo {self.edad} años de edad, y me encanta la cerrera de {self.carrera_universitaria} en la universidad del {self.universidad}."
 
 
-description_persona = educacion("Angel Antonio", 22, "Desarrollo de Software", "ITLA")
+description_persona_1 = educacion("Angel Antonio", 22, "Desarrollo de Software", "ITLA")
 
-print(description_persona.detalles(), "\n")
+description_persona_2 = educacion("Darli Mariela", 21, "Lenguas Modernas", "UTESA")
 
-print(description_persona.profesion(), "\n")
+print(description_persona_1.detalles(), "\n")
+print(description_persona_1.profesion(), "\n")
+
+
+print(description_persona_2.detalles(), "\n")
+print(description_persona_2.profesion(), "\n")
 
