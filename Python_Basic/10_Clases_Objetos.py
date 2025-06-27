@@ -184,8 +184,9 @@ class persona():
 
     
 class educacion(persona):  # La clase educacion hereda de la clase persona.
-    def __init__(self, nombre, edad, universidad):
+    def __init__(self, nombre, edad, carrera_universitaria, universidad):
         super().__init__(nombre, edad)
+        self.carrera_universitaria = carrera_universitaria
         self.universidad = universidad
         
     def describe_profession(self):
