@@ -174,3 +174,28 @@ print("\n")
 
 # La Herencia en Python permite crear una nueva clase que hereda atributos y métodos de una clase existente. Esto es útil para reutilizar código y crear jerarquías de clases. A esta nueva clase se le llama clase hija o subclase, y a la clase de la que hereda se le llama clase padre o superclase.
 
+class persona():
+    def __init__(self, nombre, edad):
+        self.nombre = nombre
+        self.edad = edad
+        
+    def detalles(self):
+        return f" Mi Nombre es {self.nombre} y tengo {self.edad} años de edad"
+
+    
+class educacion(persona):  # La clase educacion hereda de la clase persona.
+    def __init__(self, nombre, edad, carrera_universitaria, universidad):
+        super().__init__(nombre, edad)
+        self.carrera_universitaria = carrera_universitaria
+        self.universidad = universidad
+        
+    def profesion(self):
+        return f" Mi Nombre es {self.nombre} y tengo {self.edad} años de edad, y me encanta la cerrera de {self.carrera_universitaria} en la universidad de {self.universidad}"
+
+
+description_persona = educacion("Angel Antonio", 22, "Desarrollo de Software", "ITLA")
+
+print(description_persona.detalles(), "\n")
+
+print(description_persona.profesion(), "\n")
+
