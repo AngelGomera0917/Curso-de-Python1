@@ -204,6 +204,16 @@ print(student_profile_1.describe_profession(), "\n")
 print(student_profile_2.get_person_info(), "\n")
 print(student_profile_2.describe_profession(), "\n")
 
+class Nombre():
+    def __init__(self, nombre, edad):
+        self.nombre = nombre
+        self.edad = edad
+        
+    def info(self):
+        print(f" Nombre: {self.nombre} | Edad: {self.edad}. ")
+
+print("\n")
+
 class universidad():
     def __init__(self, nombre_universidad):
         self.nombre_universidad = nombre_universidad
@@ -213,21 +223,10 @@ class universidad():
         
 print("\n")
         
-class Nombre():
-    def __init__(self, nombre, edad):
-        self.nombre = nombre
-        self.edad = edad
-        
-    def info(self):
-        print(f" Nombre: {self.nombre} | Edad: {self.edad}. ")
-        
-        
-
-print("\n")
 
 class Maestro(Nombre, universidad):
-    def __init__(self, nombre, nombre_universidad, materia):
-        super().__init__(nombre, universidad)
+    def __init__(self, nombre, edad, nombre_universidad, materia):
+        super().__init__(nombre, edad, nombre_universidad)
         self.materia = materia
         
     def info_maestro(self):
@@ -236,13 +235,17 @@ class Maestro(Nombre, universidad):
 print("\n")
         
 class Estudiante(Nombre, universidad):
-    def __init__(self, nombre, nombre_universidad, materia, carrera):
-        super().__init__( nombre, universidad)
+    def __init__(self, nombre, edad, nombre_universidad, carrera):
+        super().__init__( nombre, edad, nombre_universidad)
         self.carrera = carrera
         
     def info_estudiante(self):
         print(f" {self.nombre_nombre} | {self.info_universidad} | {self.carrera} ")
-        
-    
-        
 
+
+# Ejemplo de uso
+maestro1 = Maestro("Juan Pérez", 40, "ITLA", "Matemáticas")
+estudiante1 = Estudiante("Ana Gómez", 21, "ITLA", "Software")
+
+print(maestro1.info_maestro())
+print(estudiante1.info_estudiante())
