@@ -170,7 +170,7 @@ auto_2.vendido("Angel Antonio") # Llama al método vendido del segundo auto para
 
 print("\n")
 
-                    # *========================* La Herencaia en Python *========================*
+                    # *========================* La Herencia en Python *========================*
 
 # La Herencia en Python permite crear una nueva clase que hereda atributos y métodos de una clase existente. Esto es útil para reutilizar código y crear jerarquías de clases. A esta nueva clase se le llama clase hija o subclase, y a la clase de la que hereda se le llama clase padre o superclase.
 
@@ -203,4 +203,46 @@ print(student_profile_1.describe_profession(), "\n")
 
 print(student_profile_2.get_person_info(), "\n")
 print(student_profile_2.describe_profession(), "\n")
+
+class universidad():
+    def __init__(self, nombre_universidad):
+        self.nombre_universidad = nombre_universidad
+        
+    def info_universidad(self):
+        print(f" Universidad: {self.nombre_universidad}. ")
+        
+print("\n")
+        
+class Nombre():
+    def __init__(self, nombre, edad):
+        self.nombre = nombre
+        self.edad = edad
+        
+    def info(self):
+        print(f" Nombre: {self.nombre} | Edad: {self.edad}. ")
+        
+        
+
+print("\n")
+
+class Maestro(Nombre, universidad):
+    def __init__(self, nombre, nombre_universidad, materia):
+        super().__init__(nombre, universidad)
+        self.materia = materia
+        
+    def info_maestro(self):
+        print(f" {self.nombre_nombre} | {self.info_universidad} | {self.materia} ")
+        
+print("\n")
+        
+class Estudiante(Nombre, universidad):
+    def __init__(self, nombre, nombre_universidad, materia, carrera):
+        super().__init__( nombre, universidad)
+        self.carrera = carrera
+        
+    def info_estudiante(self):
+        print(f" {self.nombre_nombre} | {self.info_universidad} | {self.carrera} ")
+        
+    
+        
 
