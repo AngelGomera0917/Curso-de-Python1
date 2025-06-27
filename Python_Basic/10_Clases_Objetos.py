@@ -129,7 +129,7 @@ print(person.Completo)
 
 print("\n")
 
-# Actividad Extra
+                # *========================* Actividad Extra *========================*
 
 # Crear una clase para vernder un coche y me verifique si esta vendido o no, y si esta vendido, que me imprima un mensaje de que el coche ya fue vendido.
 
@@ -169,3 +169,8 @@ print("\n")
 auto_2.vendido("Angel Antonio") # Llama al método vendido del segundo auto para marcarlo como vendido y mostrar el nuevo propietario.
 
 print("\n")
+
+                    # *========================* La Herencaia en Python *========================*
+
+# La Herencia en Python permite crear una nueva clase que hereda atributos y métodos de una clase existente. Esto es útil para reutilizar código y crear jerarquías de clases. A esta nueva clase se le llama clase hija o subclase, y a la clase de la que hereda se le llama clase padre o superclase.
+
