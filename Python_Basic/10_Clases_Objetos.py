@@ -180,7 +180,7 @@ class persona():
         self.edad = edad
         
     def detalles(self):
-        return f" Mi Nombre es {self.nombre} y tengo {self.edad} años de edad"
+        return f" Mi Nombre es {self.nombre} y tengo {self.edad} años de edad "
 
     
 class educacion(persona):  # La clase educacion hereda de la clase persona.
@@ -190,7 +190,7 @@ class educacion(persona):  # La clase educacion hereda de la clase persona.
         self.universidad = universidad
         
     def profesion(self):
-        return f" Mi Nombre es {self.nombre} y tengo {self.edad} años de edad, y me encanta la cerrera de {self.carrera_universitaria} en la universidad de {self.universidad}"
+        return f" Soy {self.nombre} y tengo {self.edad} años de edad, y me encanta la cerrera de {self.carrera_universitaria} en la universidad del {self.universidad}."
 
 
 description_persona = educacion("Angel Antonio", 22, "Desarrollo de Software", "ITLA")
