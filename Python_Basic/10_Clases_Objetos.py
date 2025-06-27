@@ -180,17 +180,16 @@ class persona():
         self.edad = edad
         
     def get_person_info(self):
-        return f" Mi Nombre es {self.nombre} y tengo {self.edad} años de edad "
+        return f" Mi Nombre es {self.nombre} y tengo {self.edad} años de edad. "
 
     
 class educacion(persona):  # La clase educacion hereda de la clase persona.
-    def __init__(self, nombre, edad, carrera_universitaria, universidad):
+    def __init__(self, nombre, edad, universidad):
         super().__init__(nombre, edad)
-        self.carrera_universitaria = carrera_universitaria
         self.universidad = universidad
         
     def describe_profession(self):
-        return f" Soy {self.nombre} y tengo {self.edad} años de edad, y me encanta la cerrera de {self.carrera_universitaria} en la universidad del {self.universidad}."
+        return f" Soy {self.nombre} y tengo {self.edad} años de edad, y me encanta la carrera de {self.carrera_universitaria} en la universidad {self.universidad}."
 
 
 student_profile_1 = educacion("Angel Antonio", 22, "Desarrollo de Software", "ITLA")
