@@ -208,50 +208,69 @@ print(student_profile_2.describe_profession(), "\n")
 # La herencia múltiple en Python permite que una clase herede de más de una clase padre. Esto puede ser útil para combinar comportamientos de diferentes clases, pero también puede complicar el diseño del código si no se maneja adecuadamente.
 # En Python, la herencia múltiple se logra especificando múltiples clases en la definición de la clase hija. Sin embargo, es importante tener cuidado con el orden de las clases padre y cómo se resuelven los conflictos de nombres.
 
+# Clase base Nombre
 class Nombre():
     def __init__(self, nombre, edad):
         self.nombre = nombre
         self.edad = edad
         
     def info(self):
-        print(f" Nombre: {self.nombre} | Edad: {self.edad}. ")
+        return f" Nombre: {self.nombre} | Edad: {self.edad}. "
 
 print("\n")
 
+# Clase Universidad
 class universidad():
     def __init__(self, nombre_universidad):
         self.nombre_universidad = nombre_universidad
         
     def info_universidad(self):
-        print(f" Universidad: {self.nombre_universidad}. ")
+        return f" Universidad: {self.nombre_universidad}. "
         
 print("\n")
-        
 
-class Maestro(Nombre, universidad):
-    def __init__(self, nombre, edad, nombre_universidad, materia):
+class Status():
+    def __init__(self, estatus):
+        self.estatus = estatus
+        
+    def puesto(self):
+        return f" Posicion: {self.estatus}"
+
+        
+# Clase Maestro (herencia múltiple)
+class Maestro(Nombre, universidad, Status):
+    def __init__(self, nombre, edad, nombre_universidad, estatus, materia):
         Nombre.__init__(self, nombre, edad)  # Llamada explícita al constructor de la clase Nombre
         universidad.__init__(self, nombre_universidad)  # Llamada explícita al constructor de la clase universidad
+        Status.__init__(self, estatus)
         self.materia = materia
         
+        
     def info_maestro(self):
-        print(f" Nombre: {self.nombre} | Universidad: {self.info_universidad} | Materia: {self.materia} ")
+        print(f" {self.info()} | {self.info_universidad()} | {self.puesto()} | Materia: {self.materia} ")
         
 print("\n")
-        
-class Estudiante(Nombre, universidad):
-    def __init__(self, nombre, edad, nombre_universidad, carrera):
+
+
+class Estudiante(Nombre, universidad, Status):
+    def __init__(self, nombre, edad, nombre_universidad, estatus, carrera):
         Nombre.__init__(self, nombre, edad)  # Llamada explícita al constructor de la clase Nombre
         universidad.__init__(self, nombre_universidad)  # Llamada explícita al constructor de la clase universidad
+        Status.__init__(self, estatus)
         self.carrera = carrera
         
     def info_estudiante(self):
-        print(f" Nombre: {self.nombre} | Universidad: {self.nombre_universidad} | Educacion: {self.carrera} ")
+        print(f" {self.info()} | {self.info_universidad()} | Posicion: {self.puesto()} | Educacion: {self.carrera} ")
 
 
 # Ejemplo de uso
-maestro1 = Maestro("Juan Pérez", 40, "ITLA", "Matemáticas")
-estudiante1 = Estudiante("Ana Gómez", 21, "ITLA", "Desarrollo De Software")
+maestro1 = Maestro("Darli Mariela", 21,"UTESA", "Maestra", "Lenguas Modernas")
+estudiante1 = Estudiante("Angel Antonio", 23, "ITLA", "Estudiante", "Desarrollo De Software")
 
-print(maestro1.info_maestro())
-print(estudiante1.info_estudiante())
+maestro1.info_maestro()
+
+print("\n")
+
+estudiante1.info_estudiante()
+
+print("\n")
