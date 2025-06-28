@@ -229,7 +229,7 @@ class universidad():
         
 print("\n")
 
-class Status():
+class RoleStatus():
     def __init__(self, estatus):
         self.estatus = estatus
         
@@ -238,11 +238,11 @@ class Status():
 
         
 # Clase Maestro (herencia múltiple)
-class Maestro(Nombre, universidad, Status):
+class Maestro(Nombre, universidad, RoleStatus):
     def __init__(self, nombre, edad, nombre_universidad, estatus, materia):
         Nombre.__init__(self, nombre, edad)  # Llamada explícita al constructor de la clase Nombre
         universidad.__init__(self, nombre_universidad)  # Llamada explícita al constructor de la clase universidad
-        Status.__init__(self, estatus)
+        RoleStatus.__init__(self, estatus)
         self.materia = materia
         
         
@@ -252,11 +252,11 @@ class Maestro(Nombre, universidad, Status):
 print("\n")
 
 
-class Estudiante(Nombre, universidad, Status):
+class Estudiante(Nombre, universidad, RoleStatus):
     def __init__(self, nombre, edad, nombre_universidad, estatus, carrera):
         Nombre.__init__(self, nombre, edad)  # Llamada explícita al constructor de la clase Nombre
         universidad.__init__(self, nombre_universidad)  # Llamada explícita al constructor de la clase universidad
-        Status.__init__(self, estatus)
+        RoleStatus.__init__(self, estatus)
         self.carrera = carrera
         
     def info_estudiante(self):
