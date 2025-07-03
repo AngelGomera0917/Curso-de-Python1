@@ -1,6 +1,6 @@
 
 
-# ==== # Lambdas # ==== #
+                                # ==== # Lambdas # ==== #
 
 # Lambdas son funciones anónimas que se pueden definir en una sola línea.
 # Se pueden usar para crear funciones simples sin necesidad de definirlas con def.
