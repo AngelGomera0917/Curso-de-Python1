@@ -137,7 +137,7 @@ print("\n")
 # Validar si un correo electonico es valido
 
 
-user_gmail = "antoniogomera09@gmail.com"
+user_gmail = "antoniogomera09@gmail.com" # Correo de ejemplo para validar
 
 # El signo $ indica el final de la cadena, y el signo ^ indica el inicio de la cadena.
 valid_email_pattern = r"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9]+\.[a-zA-Z0-9]+$"
