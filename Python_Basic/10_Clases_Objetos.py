@@ -129,9 +129,9 @@ print(person.Completo)
 
 print("\n")
 
-                # *========================* Actividad Extra *========================*
+        # *========================* Actividad Extra *========================*
 
-# Crear una clase para vernder un coche y me verifique si esta vendido o no, y si esta vendido, que me imprima un mensaje de que el coche ya fue vendido.
+# Crear una clase para vender un coche y me verifique si esta vendido o no, y si esta vendido, que me imprima un mensaje de que el coche ya fue vendido.
 
 class car_sales(): # Defino la clase car_sales para las ventas de autos.
     def __init__(self, vehiculo, modelo, año, color, propietario): # Método constructor que inicializa los atributos del objeto.
@@ -146,9 +146,9 @@ class car_sales(): # Defino la clase car_sales para las ventas de autos.
         
         print(f" Vehículo disponible en el dealer JF Amador: {self.vehiculo} {self.modelo} año {self.año}, color {self.color}. ¡Propietario actual: {self.propietario}!") # Imprime la descripción del vehículo.
         
-    def vendido(self, propietario): # Método para marcar el vehículo como vendido y actualizar el propietario.
-        self.propietario = propietario
-        print(f"Auto {self.vehiculo} {self.modelo} año {self.año}, color {self.color} Vendido a {self.propietario} ✅") # Imprime un mensaje indicando que el vehículo ha sido vendido y muestra el nuevo propietario.
+    def vendido(self, new_owner): # Método para marcar el vehículo como vendido y actualizar el propietario.
+        self.new_owner = new_owner
+        print(f"Auto {self.vehiculo} {self.modelo} año {self.año}, color {self.color} Vendido a {self.new_owner} ✅") # Imprime un mensaje indicando que el vehículo ha sido vendido y muestra el nuevo propietario.
 
 auto_1 = car_sales("Toyota", "Corolla", "2022", "Blanco", "JF Amador") # Crea un objeto de la clase car_sales para el primer auto.
 
@@ -170,15 +170,15 @@ auto_2.vendido("Angel Antonio") # Llama al método vendido del segundo auto para
 
 print("\n")
 
-                    # *========================* La Herencia en Python *========================*
+# *========================* La Herencia en Python *========================*
 
 # La Herencia en Python permite crear una nueva clase que hereda atributos y métodos de una clase existente. Esto es útil para reutilizar código y crear jerarquías de clases. A esta nueva clase se le llama clase hija o subclase, y a la clase de la que hereda se le llama clase padre o superclase.
-
+                                                                        
 class persona():
-    def __init__(self, nombre, edad):
+    def __init__(self, nombre, edad):                                       
         self.nombre = nombre
-        self.edad = edad
-        
+        self.edad = edad                     
+            
     def get_person_info(self):
         return f" Mi Nombre es {self.nombre} y tengo {self.edad} años de edad. "
 
@@ -204,7 +204,7 @@ print(student_profile_1.describe_profession(), "\n")
 print(student_profile_2.get_person_info(), "\n")
 print(student_profile_2.describe_profession(), "\n")
 
-#                        *========================* Herencia Multiple *========================*
+        #*========================* Herencia Multiple *========================*
 # La herencia múltiple en Python permite que una clase herede de más de una clase padre. Esto puede ser útil para combinar comportamientos de diferentes clases, pero también puede complicar el diseño del código si no se maneja adecuadamente.
 # En Python, la herencia múltiple se logra especificando múltiples clases en la definición de la clase hija. Sin embargo, es importante tener cuidado con el orden de las clases padre y cómo se resuelven los conflictos de nombres.
 
@@ -274,3 +274,58 @@ print("\n")
 estudiante1.info_estudiante()
 
 print("\n")
+
+
+import threading
+
+def tarea():
+    print("Ejecutando tarea en hilo por Angel Gomera:", threading.current_thread().name)
+
+# Crear hilos
+hilo1 = threading.Thread(target=tarea)
+hilo2 = threading.Thread(target=tarea)
+
+# Iniciar hilos
+hilo1.start()
+hilo2.start()
+
+# Esperar que terminen
+hilo1.join()
+hilo2.join()
+
+print("\n")
+
+
+# from PIL import Image, ImageFilter, ImageEnhance
+# import threading
+
+# # Cargar imagen base
+# imagen_base = Image.open("imagen_original.jpg")
+
+# # Función para aplicar efectos
+# def aplicar_efecto(nombre_efecto, funcion_efecto):
+#     imagen_modificada = funcion_efecto(imagen_base.copy())
+#     imagen_modificada.save(f"{nombre_efecto}.jpg")
+#     print(f"{nombre_efecto} generado")
+
+# # Lista de efectos con funciones
+# efectos = [
+#     ("blanco_y_negro", lambda img: img.convert("L")),
+#     ("bordes", lambda img: img.filter(ImageFilter.FIND_EDGES)),
+#     ("brillo_alto", lambda img: ImageEnhance.Brightness(img).enhance(2.0)),
+#     ("contraste_bajo", lambda img: ImageEnhance.Contrast(img).enhance(0.5)),
+#     ("enfocado", lambda img: img.filter(ImageFilter.SHARPEN)),
+# ]
+
+# # Crear y lanzar hilos
+# hilos = []
+# for nombre, funcion in efectos:
+#     hilo = threading.Thread(target=aplicar_efecto, args=(nombre, funcion))
+#     hilos.append(hilo)
+#     hilo.start()
+
+# # Esperar a que todos terminen
+# for hilo in hilos:
+#     hilo.join()
+
+# print("Todas las imágenes han sido procesadas.")
