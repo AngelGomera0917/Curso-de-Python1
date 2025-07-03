@@ -19,7 +19,7 @@ numero = "123-456-7890"
 digito = r"\d{4}" # Busca 4 digitos seguidos
 print(re.search(digito, numero))
 
-                                            # match
+                                # match
 
 print("\n")
 
@@ -142,7 +142,7 @@ user_gmail = "antoniogomera09@gmail.com"
 # El signo $ indica el final de la cadena, y el signo ^ indica el inicio de la cadena.
 valid_email_pattern = r"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9]+\.[a-zA-Z0-9]+$"
 
-if re.match(valid_email_pattern, user_gmail): #
+if re.match(valid_email_pattern, user_gmail): # Verifica si el correo comienza con el patron definido.
     print(f"El correo {user_gmail} es valido.\n")
 
 if re.search(valid_email_pattern, user_gmail): 
