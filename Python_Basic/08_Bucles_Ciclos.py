@@ -209,20 +209,24 @@ for i in range(1, 11):
 
 # Tabla de multiplicar donde pasaremos el numero de multiplicar por teclado
 
-numero = int(input("Ingrese un numero: "))
+input_number = int(input("Ingrese un numero: "))
 
 for i in range(1, 11):
-    resultado = numero * i
-    print(f"{numero} * {i} = {resultado}\n")
+    resultado = input_number * i
+    print(f"{input_number} * {i} = {resultado}\n")
     
 # Otra forma de hacer esta misma tabla seria
 
 def tabla_multiplicar(tabla,limite):
     
-    for i in range(1,limite):
+    for i in range(1,limite + 1): 
         result = tabla * i
         print(f" {tabla} * {i} = {result}")
         
 number = int(input(" Ingrese que tabla desea verificar: "))
 
-tabla_multiplicar(number,11)
+print("\n")
+
+max_multiplier = int(input(" Ingrese hasta que numero desea la multiplicacion: "))
+
+tabla_multiplicar(number,max_multiplier)
