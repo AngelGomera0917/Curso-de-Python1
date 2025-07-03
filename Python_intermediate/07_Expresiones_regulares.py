@@ -69,7 +69,7 @@ print(search_findall, "\n")
 
 favorite_house = "Mi casa favorita es una casa de campo: me encanta la casa de campo por su tranquilidad y belleza."
 
-split_result = re.split(":", favorite_house) # Divide la cadena en partes usando la coma como separador.
+split_result = re.split(":", favorite_house) # Divide la cadena en partes usando los 2 puntos como separador.
 
 print(split_result, "\n")
 
@@ -101,7 +101,7 @@ print(re.search(patterns_search, favorite_career))
 print("\n")
 
 patterns_findall = r"[Pp]oder"
-print(re.findall(patterns_findall, favorite_career)) # Busca "poder" o "Poder" en la cadena.
+print(re.findall(patterns_findall, favorite_career)) # Busca "poder" y "Poder" en la cadena.
 
 print("\n")
 
@@ -152,4 +152,4 @@ if re.findall(valid_email_pattern, user_gmail):
     print(f"El correo {user_gmail} es valido.\n")
 
 else:
-    print(f"El correo {user_gmail} no es valido.\n")
+    print(f" Lo Sentimos: El Gmail proporcionado {user_gmail} no es valido.\n")
