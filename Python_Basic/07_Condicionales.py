@@ -60,7 +60,7 @@ match Colors:
     
     case "Verde":
         print(" Mi color favorito es el Verde")
-
+                                                                                                                                                                                                                                                                                                                                                                                                    
     case "Rojo":
         print(" Mi color favorito es el Rojo")
 
