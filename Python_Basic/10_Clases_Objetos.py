@@ -260,7 +260,7 @@ class Estudiante(Nombre, universidad, RoleStatus):
         self.carrera = carrera
         
     def info_estudiante(self):
-        print(f" {self.info()} | {self.info_universidad()} | Posicion: {self.puesto()} | Educacion: {self.carrera} ")
+        print(f" {self.info()} | {self.info_universidad()} | {self.puesto()} | Educacion: {self.carrera} ")
 
 
 # Ejemplo de uso
