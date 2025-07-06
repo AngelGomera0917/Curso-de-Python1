@@ -19,7 +19,7 @@ numero = "123-456-7890"
 digito = r"\d{4}" # Busca 4 digitos seguidos
 print(re.search(digito, numero))
 
-                                            # match
+                                # match
 
 print("\n")
 
@@ -69,7 +69,7 @@ print(search_findall, "\n")
 
 favorite_house = "Mi casa favorita es una casa de campo: me encanta la casa de campo por su tranquilidad y belleza."
 
-split_result = re.split(":", favorite_house) # Divide la cadena en partes usando la coma como separador.
+split_result = re.split(":", favorite_house) # Divide la cadena en partes usando los 2 puntos como separador.
 
 print(split_result, "\n")
 
@@ -101,7 +101,7 @@ print(re.search(patterns_search, favorite_career))
 print("\n")
 
 patterns_findall = r"[Pp]oder"
-print(re.findall(patterns_findall, favorite_career)) # Busca "poder" o "Poder" en la cadena.
+print(re.findall(patterns_findall, favorite_career)) # Busca "poder" y "Poder" en la cadena.
 
 print("\n")
 
@@ -137,12 +137,12 @@ print("\n")
 # Validar si un correo electonico es valido
 
 
-user_gmail = "antoniogomera09@gmail.com"
+user_gmail = "antoniogomera09@gmail.com" # Correo de ejemplo para validar
 
 # El signo $ indica el final de la cadena, y el signo ^ indica el inicio de la cadena.
 valid_email_pattern = r"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9]+\.[a-zA-Z0-9]+$"
 
-if re.match(valid_email_pattern, user_gmail): #
+if re.match(valid_email_pattern, user_gmail): # Verifica si el correo comienza con el patron definido.
     print(f"El correo {user_gmail} es valido.\n")
 
 if re.search(valid_email_pattern, user_gmail): 
@@ -152,4 +152,4 @@ if re.findall(valid_email_pattern, user_gmail):
     print(f"El correo {user_gmail} es valido.\n")
 
 else:
-    print(f"El correo {user_gmail} no es valido.\n")
+    print(f" Lo Sentimos: El Gmail proporcionado {user_gmail} no es valido.\n")

@@ -1,5 +1,5 @@
 
-                                        ### Excepciones, Manejo de Errores. ###
+                        ### Excepciones, Manejo de Errores. ###
 
 # En Python, las excepciones son eventos que ocurren durante la ejecución de un programa y que indican un problema inesperado. Cuando un error o una circunstancia que no se espera ocurre, se lanza una excepción.
 

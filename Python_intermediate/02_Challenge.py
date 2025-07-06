@@ -2,7 +2,7 @@
 
 print("\n")
 
-                                                    # EL FAMOSO "FIZZ BUZZ"
+                        # EL FAMOSO "FIZZ BUZZ"
 """
 Escribe un programa que muestre por consola (con un print) los
 números de 1 a 100 (ambos incluidos y con un salto de línea entre
@@ -33,7 +33,7 @@ print("\n")
 
 """
 
-                                                        Es un Anagrama?
+                                Es un Anagrama?
 
 Escribe una función que reciba dos palabras (String) y retorne
 verdadero o falso (Bool) según sean o no anagramas.
@@ -62,7 +62,7 @@ print(anagrama("roma", "Amor")) # Llamo a la funcion anagrama y le paso las pala
 print("\n")
 
 
-                                                # LA SUCESIÓN DE FIBONACCI
+                                # LA SUCESIÓN DE FIBONACCI
 
 """
  * Escribe un programa que imprima los 50 primeros números de la sucesión

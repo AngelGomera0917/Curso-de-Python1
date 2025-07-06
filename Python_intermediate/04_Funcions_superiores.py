@@ -33,7 +33,7 @@ print(sumar_dos_valores(10, 20)) # Llama a la función sumar_dos_valores con los
 
 print("\n")
 
-# ======== # Tambien trae algunass que ya vienen con Python, como Map, Filter y Reduce. # ======== #
+# ======== # Tambien trae algunas que ya vienen con Python, como Map, Filter y Reduce. # ======== #
 
 # ========================= # Map # ========================= #
 
@@ -42,7 +42,7 @@ print("\n")
 number_list = 1, 4, 6, 7, 5 # Aqui tenemos una lista de números.
 # Vamos a usar map para sumar 2 a cada elemento de la lista.
 
-using_map = list(map(lambda number_sum: number_sum + 3, number_list)) # Usamos map para aplicar la función lambda que suma 2 a cada elemento iterable de la lista.
+using_map = list(map(lambda number_sum: number_sum + 2, number_list)) # Usamos map para aplicar la función lambda que suma 2 a cada elemento iterable de la lista.
 
 print(using_map) # Imprimimos el resultado de la lista con los elementos sumados.
 
