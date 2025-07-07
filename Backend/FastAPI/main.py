@@ -22,6 +22,6 @@ app = FastAPI()
 async def root(): # Función que maneja la ruta raíz de la aplicación.
     
     # Retorna un mensaje de bienvenida.
-    return {"message": "Bienvenida Mariela Diaz a mi API con FastAPI."}
+    return {"message": "Bienvenido a mi API con FastAPI."}
 
 # print(root())
