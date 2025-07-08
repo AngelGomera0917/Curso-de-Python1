@@ -24,4 +24,20 @@ async def root(): # Función que maneja la ruta raíz de la aplicación.
     # Retorna un mensaje de bienvenida.
     return {"message": "Bienvenido a mi API con FastAPI"}
 
+# url local: http://127.0.0.1:8000
+
+@app.get("/url")
+async def root(): # Función que maneja la ruta raíz de la aplicación.
+    
+    # Retorna un mensaje de bienvenida.
+    return {"url_curso": "https://github.com/AngelGomera0917/Curso-de-Python1"}
+
+# url local: http://127.0.0.1:8000/url
+
+# inicicia el server: uvicorn main:app --reload
+# Detener el server: CTRL + C
+
+# Documentacion con Swagger: http://127.0.0.1:8000/docs
+# Documentacion con Redocly: http://127.0.0.1:8000/redoc
+
 # print(root())
