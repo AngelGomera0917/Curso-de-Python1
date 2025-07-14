@@ -33,6 +33,7 @@ async def root_users1():
     return Usuario(Name = "Angel", Surname = "Gomera", Age = 23, Carrera_universitaria = "Desarrollo de Software", Url = "https://github.com/AngelGomera0917/Curso-de-Python1" )
 
 
+# Esta es otra forma de definir un modelo de datos utilizando la clase BaseModel de pydantic para representar un usuario
 class Usuario(BaseModel): # Definimos un modelo de datos para representar un usuario
     Name: str
     Surname: str 
@@ -51,4 +52,9 @@ Usuario(Name = "Alexander", Surname = "Romero", Age = 23, Carrera_universitaria 
 
 @app.get("/user_class")
 async def root_users2():
+    return user_list
+
+
+@app.get("/user_class2")
+async def root_users3():
     return user_list
