@@ -8,7 +8,7 @@ from pydantic import BaseModel
 # Creando una instancia de la aplicación FastAPI
 app = FastAPI()
 
-@app.get("/userjson")
+@app.get("/user_json")
 
 # Creamos un modelo de datos para representar un usuario
 async def user_json():
@@ -31,7 +31,7 @@ class Usuario(BaseModel):
 @app.get("/user") # Creamos una ruta para retornar un usuario específico
 
 # Llamamos la clase Usuario y retornamos un objeto de tipo Usuario
-async def root_users1():
+async def root_user1():
     return Usuario(Name = "Angel", Surname = "Gomera", Age = 23, Carrera_universitaria = "Desarrollo de Software", Url = "https://github.com/AngelGomera0917/Curso-de-Python1" )
 
 
@@ -53,10 +53,28 @@ Usuario(Name = "Alexander", Surname = "Romero", Age = 23, Carrera_universitaria 
 ]
 
 @app.get("/user_class")
-async def root_users2():
+async def root_user2():
     return user_list
 
 
-@app.get("/user_class2")
-async def root_users3():
-    return user_list
+class user_profile(BaseModel):
+    id_user: int
+    Name: str
+    Surname: str
+    Age: int
+    
+user_database = [user_profile(id_user = 1, Name = "Emma Elena", Surname = "Gomez Diaz", Age = 25),
+                user_profile(id_user = 2, Name = "Marileisy", Surname = "Peralta Sanchez", Age = 42),
+                user_profile(id_user = 3, Name = "Katherin", Surname = "De Los Santos", Age = 29),]
+
+
+@app.get("/class_user/{id_user}")
+async def root_class(id_user: int):
+    find_user = list(filter(lambda root_class: root_class.id_user == id_user, user_database))
+    try:
+        return find_user[0] # [0] Devuelve el primer (y único) objeto que coincide.
+    
+    except:
+        return {"Error": "El usuario no existe"}
+
+
