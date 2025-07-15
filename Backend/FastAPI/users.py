@@ -67,14 +67,24 @@ user_database = [user_profile(id_user = 1, Name = "Emma Elena", Surname = "Gomez
                 user_profile(id_user = 2, Name = "Marileisy", Surname = "Peralta Sanchez", Age = 42),
                 user_profile(id_user = 3, Name = "Katherin", Surname = "De Los Santos", Age = 29),]
 
-
-@app.get("/class_user/{id_user}")
+# Path, se pasa como parte de la URL y es una ruta que permite acceder a un recurso específico en la aplicación web.
+@app.get("/user_path/{id_user}")
 async def root_class(id_user: int):
     find_user = list(filter(lambda root_class: root_class.id_user == id_user, user_database))
     try:
         return find_user[0] # [0] Devuelve el primer (y único) objeto que coincide.
     
     except:
-        return {"Error": "El usuario no existe"}
+        return {"Error": " El usuario no existe "}
 
 
+# Query, se pasa como parte de la URL, pero no es parte de la ruta y es una forma de enviar parámetros a la ruta para filtrar o modificar la respuesta.
+
+@app.get("/user_query/")
+async def root_class(id_user: int):
+    find_user = list(filter(lambda root_class: root_class.id_user == id_user, user_database))
+    try:
+        return find_user[0] # [0] Devuelve el primer (y único) objeto que coincide.
+    
+    except:
+        return {"Error": " Usuario no encontrado "} 
