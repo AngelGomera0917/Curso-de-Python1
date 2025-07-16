@@ -94,6 +94,16 @@ async def root_class(id_user: int):
 # Post, se utiliza para enviar datos al servidor y crear un nuevo recurso. En este caso, se utiliza para crear un nuevo usuario.
 @app.post("/user_post/")
 async def root_post(user: user_profile): # Recibe un objeto de tipo user_profile):
+
+    # Verifica si el usuario ya existe en la base de datos
+    for existing_user in user_database:
+        if existing_user.id_user == user.id_user:
+            return {"Error": " El usuario ya existe "}
+        
+    # Si el usuario no existe, lo agrega a la base de datos
+    if user.id_user <= 0: # Verifica si el id_user es válido
+        return {"Error": " El id_user debe ser mayor que 0 "}
+    
     user_database.append(user) # Agrega el usuario a la base de datos
     return {"Mensaje": "Usuario creado exitosamente", "Nuevo Usuario": user} # Retorna un mensaje de éxito y el usuario creado
 
