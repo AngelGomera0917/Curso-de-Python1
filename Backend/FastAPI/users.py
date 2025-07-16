@@ -116,4 +116,5 @@ async def root_post(user: user_profile): # Recibe un objeto de tipo user_profile
 
 
 # Put, se utiliza para actualizar un recurso existente. En este caso, se utiliza para actualizar un usuario existente.
+
 # Delete, se utiliza para eliminar un recurso existente. En este caso, se utiliza para eliminar un usuario existente.
