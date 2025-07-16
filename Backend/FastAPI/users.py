@@ -100,9 +100,16 @@ async def root_post(user: user_profile): # Recibe un objeto de tipo user_profile
         if existing_user.id_user == user.id_user:
             return {"Error": " El usuario ya existe "}
         
-    # Si el usuario no existe, lo agrega a la base de datos
-    if user.id_user <= 0: # Verifica si el id_user es válido
-        return {"Error": " El id_user debe ser mayor que 0 "}
+        if existing_user.Name == user.Name or existing_user.Surname == user.Surname:
+            return {"Error": " El usuario ya existe con el mismo nombre o apellido "}
+        
+        # Si el usuario ya existe, retorna un mensaje de error
+        if user.Name == "" or user.Surname == "" or user.Age <= 0: # Verifica si el nombre, apellido y edad son válidos
+            return {"Error": " El nombre, apellido y edad deben ser válidos "}
+            
+        # Si el usuario no existe, lo agrega a la base de datos
+        if user.id_user <= 0: # Verifica si el id_user es válido
+            return {"Error": " El id_user debe ser mayor que 0 "}
     
     user_database.append(user) # Agrega el usuario a la base de datos
     return {"Mensaje": "Usuario creado exitosamente", "Nuevo Usuario": user} # Retorna un mensaje de éxito y el usuario creado
