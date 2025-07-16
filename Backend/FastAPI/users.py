@@ -8,6 +8,7 @@ from pydantic import BaseModel
 # Creando una instancia de la aplicación FastAPI
 app = FastAPI()
 
+# Get, se utiliza para obtener datos del servidor. En este caso, se utiliza para obtener una lista de usuarios en formato JSON.
 @app.get("/user_json")
 
 # Creamos un modelo de datos para representar un usuario
@@ -88,3 +89,14 @@ async def root_class(id_user: int):
     
     except:
         return {"Error": " Usuario no encontrado "} 
+
+
+# Post, se utiliza para enviar datos al servidor y crear un nuevo recurso. En este caso, se utiliza para crear un nuevo usuario.
+@app.post("/user_post/")
+async def root_post(user: user_profile): # Recibe un objeto de tipo user_profile):
+    user_database.append(user) # Agrega el usuario a la base de datos
+    return {"Mensaje": "Usuario creado exitosamente", "Nuevo Usuario": user} # Retorna un mensaje de éxito y el usuario creado
+
+
+# Put, se utiliza para actualizar un recurso existente. En este caso, se utiliza para actualizar un usuario existente.
+# Delete, se utiliza para eliminar un recurso existente. En este caso, se utiliza para eliminar un usuario existente.
