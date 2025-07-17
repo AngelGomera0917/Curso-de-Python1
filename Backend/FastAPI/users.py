@@ -124,11 +124,13 @@ async def root_post(user: user_profile): # Recibe un objeto de tipo user_profile
 
 @app.put("/user_put/")
 async def root_put(user: user_profile):
-    
-    
+    for index, saved_user in enumerate(user_database):
+        if saved_user.id_user == user.id_user:
+            user_database[index] = user
+            return {"Mensaje": "Usuario actualizado exitosamente", "Usuario Actualizado": saved_user}
+        
+    return {"Error": " Usuario no encontrado "}
 
-    #         return {"Mensaje": "Usuario actualizado exitosamente", "Usuario Actualizado": existing_user}
-    # return {"Error": " Usuario no encontrado "}
 
 
 # Delete, se utiliza para eliminar un recurso existente. En este caso, se utiliza para eliminar un usuario existente.
