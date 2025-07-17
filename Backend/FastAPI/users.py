@@ -132,3 +132,10 @@ async def root_put(user: user_profile):
 
 
 # Delete, se utiliza para eliminar un recurso existente. En este caso, se utiliza para eliminar un usuario existente.
+
+# {
+# "id_user": 4, 
+# "Name": "Angel Antonio", 
+# "Surname": "Gomez", 
+# "Age": 13
+# }
