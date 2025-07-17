@@ -68,6 +68,11 @@ user_database = [user_profile(id_user = 1, Name = "Emma Elena", Surname = "Gomez
                 user_profile(id_user = 2, Name = "Marileisy", Surname = "Peralta Sanchez", Age = 42),
                 user_profile(id_user = 3, Name = "Katherin", Surname = "De Los Santos", Age = 29),]
 
+# Directorio raiz de la ruta
+@app.get("/")
+async def root():
+    return user_database
+
 # Path, se pasa como parte de la URL y es una ruta que permite acceder a un recurso específico en la aplicación web.
 @app.get("/user_path/{id_user}")
 async def root_class(id_user: int):
@@ -116,5 +121,14 @@ async def root_post(user: user_profile): # Recibe un objeto de tipo user_profile
 
 
 # Put, se utiliza para actualizar un recurso existente. En este caso, se utiliza para actualizar un usuario existente.
+
+@app.put("/user_put/")
+async def root_put(user: user_profile):
+    
+    
+
+    #         return {"Mensaje": "Usuario actualizado exitosamente", "Usuario Actualizado": existing_user}
+    # return {"Error": " Usuario no encontrado "}
+
 
 # Delete, se utiliza para eliminar un recurso existente. En este caso, se utiliza para eliminar un usuario existente.
