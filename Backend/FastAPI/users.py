@@ -136,7 +136,7 @@ async def root_put(user: user_profile):
 
 # Delete, se utiliza para eliminar un recurso existente. En este caso, se utiliza para eliminar un usuario existente.
 
-@app.delete("/user_delete/")
+@app.delete("/user_delete/{id_user}")
 
 async def root_delete(id_user: int): # Recibe un parámetro id_user para identificar el usuario a eliminar
     # Recorre la base de datos de usuarios
@@ -147,3 +147,14 @@ async def root_delete(id_user: int): # Recibe un parámetro id_user para identif
             return {"Mensaje": "Usuario eliminado exitosamente"}
         
     return {"Error": "El usuario no ha podido ser encontrado en la base de datos."}
+
+# Esta es otra forma de definir el método delete, utilizando un objeto de tipo user_profile para identificar el usuario a eliminar.
+
+# @app.delete("/user_delete/")
+# async def root_delete(user: user_profile):
+#     for eliminar in user_datebase:
+#         if eliminar.id == user.id:
+#             user_datebase.remove(eliminar)
+#             return {"Usuario eliminado": eliminar}
+
+#     return {"Error": "Usuario no encontrado para ser eliminado"}
