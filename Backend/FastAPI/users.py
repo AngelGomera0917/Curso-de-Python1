@@ -74,7 +74,7 @@ async def root():
     return user_database
 
 # Path, se pasa como parte de la URL y es una ruta que permite acceder a un recurso específico en la aplicación web.
-@app.get("/user_path/{id_user}")
+@app.get("/user_path/{id_user}") # Se define una ruta que recibe un parámetro id_user
 async def root_class(id_user: int):
     find_user = list(filter(lambda root_class: root_class.id_user == id_user, user_database))
     try:
@@ -124,20 +124,26 @@ async def root_post(user: user_profile): # Recibe un objeto de tipo user_profile
 
 @app.put("/user_put/")
 async def root_put(user: user_profile):
-    for index, saved_user in enumerate(user_database):
+    # index es para encontrar el índice del usuario en la base de datos y Enumerate es para recorrer la lista de usuarios
+    for index, saved_user in enumerate(user_database): # Recorre la base de datos de usuarios
+        # Verifica si el usuario existe
         if saved_user.id_user == user.id_user:
-            user_database[index] = user
+            user_database[index] = user # Actualiza el usuario en la base de datos
             return {"Mensaje": "Usuario actualizado exitosamente", "Usuario Actualizado": saved_user}
         
     return {"Error": " Usuario no encontrado "}
 
 
-
 # Delete, se utiliza para eliminar un recurso existente. En este caso, se utiliza para eliminar un usuario existente.
 
-# {
-# "id_user": 4, 
-# "Name": "Angel Antonio", 
-# "Surname": "Gomez", 
-# "Age": 13
-# }
+@app.delete("/user_delete/")
+
+async def root_delete(id_user: int): # Recibe un parámetro id_user para identificar el usuario a eliminar
+    # Recorre la base de datos de usuarios
+    # Enumerate se utiliza para obtener el índice del usuario en la lista
+    for index, user in enumerate(user_database):
+        if user.id_user == id_user:
+            del user_database[index]
+            return {"Mensaje": "Usuario eliminado exitosamente"}
+        
+    return {"Error": "El usuario no ha podido ser encontrado en la base de datos."}
