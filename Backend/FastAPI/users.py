@@ -81,7 +81,7 @@ async def root_class(id_user: int):
         return find_user[0] # [0] Devuelve el primer (y único) objeto que coincide.
     
     except:
-        return {"Error": " El usuario no existe "}
+        return {"Error ❌": " El usuario no existe "}
 
 
 # Query, se pasa como parte de la URL, pero no es parte de la ruta y es una forma de enviar parámetros a la ruta para filtrar o modificar la respuesta.
@@ -93,7 +93,7 @@ async def root_class(id_user: int):
         return find_user[0] # [0] Devuelve el primer (y único) objeto que coincide.
     
     except:
-        return {"Error": " Usuario no encontrado "} 
+        return {"Error ❌": " Usuario no encontrado "} 
 
 
 # Post, se utiliza para enviar datos al servidor y crear un nuevo recurso. En este caso, se utiliza para crear un nuevo usuario.
@@ -103,21 +103,21 @@ async def root_post(user: user_profile): # Recibe un objeto de tipo user_profile
     # Verifica si el usuario ya existe en la base de datos
     for existing_user in user_database:
         if existing_user.id_user == user.id_user:
-            return {"Error": " El usuario ya existe "}
+            return {"Error ❌": " Ya existe un ususario con este ID"}
         
         if existing_user.Name == user.Name or existing_user.Surname == user.Surname:
-            return {"Error": " El usuario ya existe con el mismo nombre o apellido "}
+            return {"Error ❌": " Ya existe un usuario con el mismo nombre o apellido "}
         
         # Si el usuario ya existe, retorna un mensaje de error
         if user.Name == "" or user.Surname == "" or user.Age <= 0: # Verifica si el nombre, apellido y edad son válidos
-            return {"Error": " El nombre, apellido y edad deben ser válidos "}
+            return {"Error ❌": " El nombre, apellido y edad deben ser válidos "}
             
         # Si el usuario no existe, lo agrega a la base de datos
         if user.id_user <= 0: # Verifica si el id_user es válido
-            return {"Error": " El id_user debe ser mayor que 0 "}
+            return {"Error ❌": " El id_user debe ser mayor que 0 "}
     
     user_database.append(user) # Agrega el usuario a la base de datos
-    return {"Mensaje": "Usuario creado exitosamente", "Nuevo Usuario": user} # Retorna un mensaje de éxito y el usuario creado
+    return {"Mensaje": "Usuario creado exitosamente ✅", "Nuevo Usuario": user} # Retorna un mensaje de éxito y el usuario creado
 
 
 # Put, se utiliza para actualizar un recurso existente. En este caso, se utiliza para actualizar un usuario existente.
@@ -129,9 +129,9 @@ async def root_put(user: user_profile):
         # Verifica si el usuario existe
         if saved_user.id_user == user.id_user:
             user_database[index] = user # Actualiza el usuario en la base de datos
-            return {"Mensaje": "Usuario actualizado exitosamente", "Usuario Actualizado": saved_user}
+            return {"Mensaje": "Usuario actualizado exitosamente ✅", "Usuario Actualizado": user}
         
-    return {"Error": " Usuario no encontrado "}
+    return {"Error ❌": " Usuario no encontrado "}
 
 
 # Delete, se utiliza para eliminar un recurso existente. En este caso, se utiliza para eliminar un usuario existente.
@@ -144,9 +144,9 @@ async def root_delete(id_user: int): # Recibe un parámetro id_user para identif
     for index, user in enumerate(user_database):
         if user.id_user == id_user:
             del user_database[index]
-            return {"Mensaje": "Usuario eliminado exitosamente"}
+            return {"Mensaje": "Usuario eliminado exitosamente ✅"}
         
-    return {"Error": "El usuario no ha podido ser encontrado en la base de datos."}
+    return {"Error ❌": "El usuario no ha podido ser encontrado en la base de datos."}
 
 # Esta es otra forma de definir el método delete, utilizando un objeto de tipo user_profile para identificar el usuario a eliminar.
 
@@ -157,4 +157,4 @@ async def root_delete(id_user: int): # Recibe un parámetro id_user para identif
 #             user_datebase.remove(eliminar)
 #             return {"Usuario eliminado": eliminar}
 
-#     return {"Error": "Usuario no encontrado para ser eliminado"}
+#     return {"Error ❌": "Usuario no encontrado para ser eliminado"}
