@@ -136,25 +136,29 @@ async def root_put(user: user_profile):
 
 # Delete, se utiliza para eliminar un recurso existente. En este caso, se utiliza para eliminar un usuario existente.
 
-@app.delete("/user_delete/{id_user}")
 
-async def root_delete(id_user: int): # Recibe un parámetro id_user para identificar el usuario a eliminar
-    # Recorre la base de datos de usuarios
-    # Enumerate se utiliza para obtener el índice del usuario en la lista
-    for index, user in enumerate(user_database):
-        if user.id_user == id_user:
-            del user_database[index]
-            return {"Mensaje": "Usuario eliminado exitosamente ✅"}
-        
-    return {"Error ❌": "El usuario no ha podido ser encontrado en la base de datos."}
+
+@app.delete("/user_delete/{id_user}")
+async def root_delete(id_user : int):
+    for eliminar in user_database:
+        if eliminar.id_user == id_user: 
+            user_database.remove(eliminar)
+            return {"Usuario eliminado": eliminar}
+
+    return {"Error ❌": "Usuario no encontrado para ser eliminado"}
+
 
 # Esta es otra forma de definir el método delete, utilizando un objeto de tipo user_profile para identificar el usuario a eliminar.
 
-# @app.delete("/user_delete/")
-# async def root_delete(user: user_profile):
-#     for eliminar in user_datebase:
-#         if eliminar.id == user.id:
-#             user_datebase.remove(eliminar)
-#             return {"Usuario eliminado": eliminar}
 
-#     return {"Error ❌": "Usuario no encontrado para ser eliminado"}
+# @app.delete("/user_delete/{id_user}")
+
+# async def root_delete(id_user: int): # Recibe un parámetro id_user para identificar el usuario a eliminar
+#     # Recorre la base de datos de usuarios
+#     # Enumerate se utiliza para obtener el índice del usuario en la lista
+#     for index, user in enumerate(user_database):
+#         if user.id_user == id_user:
+#             del user_database[index]
+#             return {"Mensaje": "Usuario eliminado exitosamente ✅"}
+        
+#     return {"Error ❌": "El usuario no ha podido ser encontrado en la base de datos."}
