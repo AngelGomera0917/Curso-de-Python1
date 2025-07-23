@@ -77,6 +77,7 @@ async def root():
 @app.get("/user_path/{id_user}") # Se define una ruta que recibe un parámetro id_user
 async def root_class(id_user: int):
     find_user = list(filter(lambda root_class: root_class.id_user == id_user, user_database))
+    
     try:
         return find_user[0] # [0] Devuelve el primer (y único) objeto que coincide.
     
@@ -135,8 +136,6 @@ async def root_put(user: user_profile):
 
 
 # Delete, se utiliza para eliminar un recurso existente. En este caso, se utiliza para eliminar un usuario existente.
-
-
 
 @app.delete("/user_delete/{id_user}")
 async def root_delete(id_user : int):
