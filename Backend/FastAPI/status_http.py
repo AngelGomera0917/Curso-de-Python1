@@ -49,7 +49,10 @@ async def root():
 #         return {"Error": "Lo sentimos, No hemos encontrado un Animal con este ID ❌"}
     
 # Manejo del Post, se utiliza para enviar datos al servidor y crear un nuevo recurso.
-@app.post("/veterinary_post/", status_code=201) # status_code=201 indica que la solicitud se ha procesado correctamente y se ha creado un nuevo recurso.
+
+# respuesta_model es un parámetro que se utiliza para especificar el modelo de respuesta que se espera devolver al cliente. En este caso, se espera devolver un objeto de tipo veterinary, esto ayuda mas en la documentacion de Docs y la mejora.
+# status_code es un parámetro que se utiliza para especificar el código de estado HTTP que
+@app.post("/veterinary_post/", response_model=veterinary, status_code=201) # status_code=201 indica que la solicitud se ha procesado correctamente y se ha creado un nuevo recurso.
 
 async def root_post(animal: veterinary):
     
