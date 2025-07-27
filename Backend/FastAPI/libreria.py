@@ -17,6 +17,7 @@ database_library = [library(id = 1, titulo = "El señor de los Anillos", autor =
                     library(id = 2, titulo = "Harry Potter y la piedra Filosofal", autor = "A.D.M Willian ", stock = 6, año_publicacion = 1987),
                     library(id = 3, titulo = "Cien años de soledad", autor = "Gabriel García Márquez", stock = 1, año_publicacion = 1927)
                     ]
+
 # Ruta principal
 @app.get("/")
 
@@ -52,11 +53,11 @@ async def root_book (id : int):
     
 # Manejo del Post
 
-@app.post("/book_post/")
+@app.post("/book_post/", status_code = 201)
 
-async def root_post (book : library):
+async def root_post (book : library): 
     
-    for corregir in database_library:
+    for corregir in database_library: 
         if corregir.id == book.id:
             return {"Error ❌" : "Ya existe un usuario con este ID"}
         
@@ -87,13 +88,15 @@ async def root_put (book : library):
 
 @app.delete("/book_delete/{id}")
 
-async def root_put (id : int):
+async def root_delete (id : int): 
 
 
     for eliminar in database_library:
         if eliminar.id == id:
             database_library.remove(eliminar)
             return {"Mensaje": "Book Eliminado exitosamente ✅",
-                    "Book Delete": eliminar}
+                    "Book Delete": eliminar} 
 
-    return {"Error ❌" : "Libro no encontrado para ser Eliminado"}
+    return {"Error ❌" : "Libro no encontrado para ser Eliminado"} 
+
+
