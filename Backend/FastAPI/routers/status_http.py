@@ -6,11 +6,11 @@
 # Raise HTTP Exception, es una función que se utiliza para lanzar una excepción HTTP personalizada en FastAPI. Esta función se utiliza para devolver un código de estado HTTP específico y un mensaje de error personalizado al cliente.
 
 # Importando las librerías necesarias y http_exception para manejar las excepciones HTTP.
-from fastapi import FastAPI, HTTPException
+from fastapi import APIRouter, HTTPException
 
 from pydantic import BaseModel
 
-app = FastAPI()
+router = APIRouter(prefix="/status_http", tags=["Status HTTP"])
 
 class veterinary(BaseModel):
     id: int
@@ -23,7 +23,7 @@ database_veterinary = [veterinary(id = 1, raza = "Leon", stock = 5, dueño = "Ju
                         veterinary(id = 3, raza = "Elefante", stock = 2, dueño = "Pedro Sanchez")
                         ]
 
-@app.get("/")
+@router.get("/")
 async def root():
     return database_veterinary 
 
@@ -32,7 +32,7 @@ async def root():
 
 # response_model es un parámetro que se utiliza para especificar el modelo de respuesta que se espera devolver al cliente. En este caso, se espera devolver un objeto de tipo veterinary, esto ayuda mas en la documentacion de Docs y la mejora.
 # status_code es un parámetro que se utiliza para especificar el código de estado HTTP que
-@app.post("/veterinary_post/", status_code=201, response_model=veterinary) # status_code=201 indica que la solicitud se ha procesado correctamente y se ha creado un nuevo recurso.
+@router.post("/veterinary_post/", status_code=201, response_model=veterinary) # status_code=201 indica que la solicitud se ha procesado correctamente y se ha creado un nuevo recurso.
 
 async def root_post(animal: veterinary): 
     

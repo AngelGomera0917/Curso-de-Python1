@@ -1,15 +1,16 @@
 
 # Import FastAPI y pydantic para crear una aplicación web y manejar datos
-from fastapi import FastAPI
+# Luego cambie fastapi por apirouter para manejar las rutas de la aplicación
+from fastapi import APIRouter
 
 # Importando BaseModel de pydantic para definir modelos de datos
 from pydantic import BaseModel
 
 # Creando una instancia de la aplicación FastAPI
-app = FastAPI()
+router = APIRouter(prefix="/users", tags=["Users"])
 
 # Get, se utiliza para obtener datos del servidor. En este caso, se utiliza para obtener una lista de usuarios en formato JSON.
-@app.get("/user_json")
+@router.get("/user_json")
 
 # Creamos un modelo de datos para representar un usuario
 async def user_json():
@@ -29,7 +30,7 @@ class Usuario(BaseModel):
     Carrera_universitaria: str
     Url: str
 
-@app.get("/user") # Creamos una ruta para retornar un usuario específico
+@router.get("/user") # Creamos una ruta para retornar un usuario específico
 
 # Llamamos la clase Usuario y retornamos un objeto de tipo Usuario
 async def root_user1():
@@ -53,7 +54,7 @@ Usuario(Name = "Alexander", Surname = "Romero", Age = 23, Carrera_universitaria 
 
 ]
 
-@app.get("/user_class")
+@router.get("/user_class")
 async def root_user2():
     return user_list
 
@@ -69,12 +70,12 @@ user_database = [user_profile(id_user = 1, Name = "Emma Elena", Surname = "Gomez
                 user_profile(id_user = 3, Name = "Katherin", Surname = "De Los Santos", Age = 29),]
 
 # Directorio raiz de la ruta
-@app.get("/")
+@router.get("/")
 async def root():
     return user_database
 
 # Path, se pasa como parte de la URL y es una ruta que permite acceder a un recurso específico en la aplicación web.
-@app.get("/user_path/{id_user}") # Se define una ruta que recibe un parámetro id_user
+@router.get("/user_path/{id_user}") # Se define una ruta que recibe un parámetro id_user
 async def root_class(id_user: int):
     find_user = list(filter(lambda root_class: root_class.id_user == id_user, user_database))
     
@@ -87,7 +88,7 @@ async def root_class(id_user: int):
 
 # Query, se pasa como parte de la URL, pero no es parte de la ruta y es una forma de enviar parámetros a la ruta para filtrar o modificar la respuesta.
 
-@app.get("/user_query/")
+@router.get("/user_query/")
 async def root_class(id_user: int):
     find_user = list(filter(lambda root_class: root_class.id_user == id_user, user_database))
     try:
@@ -98,7 +99,7 @@ async def root_class(id_user: int):
 
 
 # Post, se utiliza para enviar datos al servidor y crear un nuevo recurso. En este caso, se utiliza para crear un nuevo usuario.
-@app.post("/user_post/")
+@router.post("/user_post/")
 async def root_post(user: user_profile): # Recibe un objeto de tipo user_profile):
 
     # Verifica si el usuario ya existe en la base de datos
@@ -123,7 +124,7 @@ async def root_post(user: user_profile): # Recibe un objeto de tipo user_profile
 
 # Put, se utiliza para actualizar un recurso existente. En este caso, se utiliza para actualizar un usuario existente.
 
-@app.put("/user_put/")
+@router.put("/user_put/")
 async def root_put(user: user_profile):
     # index es para encontrar el índice del usuario en la base de datos y Enumerate es para recorrer la lista de usuarios
     for index, saved_user in enumerate(user_database): # Recorre la base de datos de usuarios
@@ -137,7 +138,7 @@ async def root_put(user: user_profile):
 
 # Delete, se utiliza para eliminar un recurso existente. En este caso, se utiliza para eliminar un usuario existente.
 
-@app.delete("/user_delete/{id_user}")
+@router.delete("/user_delete/{id_user}")
 async def root_delete(id_user : int):
     for eliminar in user_database:
         if eliminar.id_user == id_user: 
@@ -150,7 +151,7 @@ async def root_delete(id_user : int):
 # Esta es otra forma de definir el método delete, utilizando un objeto de tipo user_profile para identificar el usuario a eliminar.
 
 
-# @app.delete("/user_delete/{id_user}")
+# @router.delete("/user_delete/{id_user}")
 
 # async def root_delete(id_user: int): # Recibe un parámetro id_user para identificar el usuario a eliminar
 #     # Recorre la base de datos de usuarios

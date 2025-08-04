@@ -1,10 +1,12 @@
 # Vamos a crear una API para una libreria que me permita Leer, agregar, actualizar y eliminar datos usando las cuatros operaciones basicas de una Base de Datos que es el CRUD 
 
-from fastapi import FastAPI
+# voy a vilver esto a una apirouter para que sea mas facil de manejar y entender, y poder correrla en el main.py que es el principal de la aplicacion
+
+from fastapi import APIRouter
 
 from pydantic import BaseModel
 
-app = FastAPI()
+router = APIRouter(prefix="/libreria", tags=["Libreria"])
 
 class library(BaseModel): 
     id : int
@@ -19,14 +21,14 @@ database_library = [library(id = 1, titulo = "El señor de los Anillos", autor =
                     ]
 
 # Ruta principal
-@app.get("/")
+@router.get("/")
 
 async def root():
     return database_library
 
 # Ruta del path
 
-@app.get("/book_path/{id}")
+@router.get("/book_path/{id}")
 
 async def root_book (id : int):
     
@@ -39,7 +41,7 @@ async def root_book (id : int):
     
 # Ruta de la Query
 
-@app.get("/book_query/")
+@router.get("/book_query/")
 
 async def root_book (id : int):
     
@@ -53,7 +55,7 @@ async def root_book (id : int):
     
 # Manejo del Post
 
-@app.post("/book_post/", status_code = 201)
+@router.post("/book_post/", status_code = 201)
 
 async def root_post (book : library): 
     
@@ -71,7 +73,7 @@ async def root_post (book : library):
 
 # Manejo del Put
 
-@app.put("/book_put/")
+@router.put("/book_put/")
 
 async def root_put (book : library):
 
@@ -86,7 +88,7 @@ async def root_put (book : library):
 
 # Manejo del Delete
 
-@app.delete("/book_delete/{id}")
+@router.delete("/book_delete/{id}")
 
 async def root_delete (id : int): 
 

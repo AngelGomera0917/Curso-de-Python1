@@ -11,12 +11,18 @@
 
 # Importando FastAPI para crear una aplicación web
 from fastapi import FastAPI
+from routers import libreria, users, status_http
 
 # Creando una instancia de la aplicación FastAPI
 app = FastAPI()
 
+# Incluyendo el router de la librería
+app.include_router(libreria.router)
+app.include_router(users.router)
+app.include_router(status_http.router)
+
 # Decorador que define la ruta raíz de la API
-@app.get("/")
+@app.get("/url")
 
 # async es una palabra clave en Python que se utiliza para definir funciones asíncronas. Las funciones asíncronas permiten realizar operaciones de entrada/salida (I/O) sin bloquear el hilo principal, lo que mejora la eficiencia y la capacidad de respuesta de la aplicación.
 async def root(): # Función que maneja la ruta raíz de la aplicación.
@@ -26,13 +32,6 @@ async def root(): # Función que maneja la ruta raíz de la aplicación.
 
 # url local: http://127.0.0.1:8000
 
-@app.get("/url")
-async def root(): # Función que maneja la ruta raíz de la aplicación.
-    
-    # Retorna un mensaje de bienvenida.
-    return {"url_curso": "https://github.com/AngelGomera0917/Curso-de-Python1"}
-
-# url local: http://127.0.0.1:8000/url
 
 # inicicia el server: uvicorn main:app --reload
 # Detener el server: CTRL + C
