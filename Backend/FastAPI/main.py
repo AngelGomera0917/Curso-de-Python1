@@ -13,13 +13,28 @@
 from fastapi import FastAPI
 from routers import libreria, users, status_http
 
+# Vamos a imporrtar staticfiles para servir archivos estáticos como imágenes, CSS y JavaScript.
+from fastapi.staticfiles import StaticFiles
+
 # Creando una instancia de la aplicación FastAPI
 app = FastAPI()
 
 # Incluyendo el router de la librería
-app.include_router(libreria.router)
-app.include_router(users.router)
-app.include_router(status_http.router)
+app.include_router(libreria.router) # Incluyendo el router de usuarios
+app.include_router(users.router) # Incluyendo el router de status_http
+app.include_router(status_http.router) # incluyendo el router de status_http
+
+app.mount("/static", StaticFiles(directory="static"), name="static") # Montando la carpeta 'static' para servir archivos estáticos
+
+# name="static" : Le da un nombre a la ruta montada, útil para url_for()
+
+# StaticFiles(directory="static")
+# Aquí se le está diciendo a FastAPI que los archivos que se van a servir están en una carpeta local llamada static.
+
+"/static"
+# Es la ruta pública en la URL. 
+
+# para incresar a la ruta de los archivos estáticos, puedes usar la URL: http://127.0.0.1:8000/static/images/Python.jpg
 
 # Decorador que define la ruta raíz de la API
 @app.get("/url")
