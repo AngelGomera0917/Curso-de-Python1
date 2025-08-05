@@ -1,8 +1,9 @@
 # Vamos a crear una API para una libreria que me permita Leer, agregar, actualizar y eliminar datos usando las cuatros operaciones basicas de una Base de Datos que es el CRUD 
 
-# voy a vilver esto a una apirouter para que sea mas facil de manejar y entender, y poder correrla en el main.py que es el principal de la aplicacion
+# voy a volver esto a una apirouter para que sea mas facil de manejar y entender, y poder correrla en el main.py que es el principal de la aplicacion
 
-from fastapi import APIRouter
+# Importando las librerías necesarias y http_exception para manejar las excepciones HTTP.
+from fastapi import APIRouter, HTTPException 
 
 from pydantic import BaseModel
 
@@ -37,7 +38,8 @@ async def root_book (id : int):
         return {"Mensaje": "Libro encontrado exitosamente ✅",
                 "Book" : buscar[0]}
     except:
-        return {"Error" : "Lo sentimos, No hemos encontrado un libro con este ID ❌"}
+        raise HTTPException(status_code = 404, detail = {"Error" : "Lo sentimos, No hemos encontrado un libro con este ID ❌"})
+        
     
 # Ruta de la Query
 
@@ -50,7 +52,8 @@ async def root_book (id : int):
         return {"Mensaje": "Libro encontrado exitosamente ✅",
                 "Book" : buscar[0]}
     except:
-        return {"Error" : "Lo sentimos, No hemos encontrado un libro con este ID ❌"}
+        raise HTTPException(status_code = 404, detail = {"Error" : "Lo sentimos, No hemos encontrado un libro con este ID ❌"})
+        
     
     
 # Manejo del Post
@@ -61,10 +64,12 @@ async def root_post (book : library):
     
     for corregir in database_library: 
         if corregir.id == book.id:
-            return {"Error ❌" : "Ya existe un usuario con este ID"}
+            raise HTTPException(status_code = 404, detail = {"Error ❌" : "Ya existe un usuario con este ID"})
+            
         
         if corregir.titulo == book.titulo:
-            return {"Error ❌" : "Ya existe un usuario con este titulo"}
+            raise HTTPException(status_code = 404, detail = {"Error ❌" : "Ya existe un usuario con este titulo"})
+            
 
     database_library.append(book)
     return {"Mensaje": "Book agregado exitosamente ✅",
@@ -82,7 +87,8 @@ async def root_put (book : library):
             database_library[index] = book
             return {"Mensaje": "Book Actualizado exitosamente ✅", "New Book update": book} 
 
-    return {"Error ❌" : "Libro no encontrado para ser actualizado"}
+    raise HTTPException(status_code = 404, detail =  {"Error ❌" : "Libro no encontrado para ser actualizado"})
+    
 
 
 
@@ -99,6 +105,7 @@ async def root_delete (id : int):
             return {"Mensaje": "Book Eliminado exitosamente ✅",
                     "Book Delete": eliminar} 
 
-    return {"Error ❌" : "Libro no encontrado para ser Eliminado"} 
+    raise HTTPException(status_code = 404, detail = {"Error ❌" : "Libro no encontrado para ser Eliminado"} )
+    
 
 
