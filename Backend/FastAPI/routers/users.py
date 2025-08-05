@@ -1,7 +1,10 @@
 
 # Import FastAPI y pydantic para crear una aplicación web y manejar datos
 # Luego cambie fastapi por apirouter para manejar las rutas de la aplicación
-from fastapi import APIRouter
+
+# Importando las librerías necesarias y http_exception para manejar las excepciones HTTP.
+
+from fastapi import APIRouter, HTTPException
 
 # Importando BaseModel de pydantic para definir modelos de datos
 from pydantic import BaseModel
@@ -63,7 +66,7 @@ class user_profile(BaseModel):
     id_user: int
     Name: str
     Surname: str
-    Age: int
+    Age: int 
     
 user_database = [user_profile(id_user = 1, Name = "Emma Elena", Surname = "Gomez Diaz", Age = 25),
                 user_profile(id_user = 2, Name = "Marileisy", Surname = "Peralta Sanchez", Age = 42),
@@ -83,7 +86,8 @@ async def root_class(id_user: int):
         return find_user[0] # [0] Devuelve el primer (y único) objeto que coincide.
     
     except:
-        return {"Error ❌": " El usuario no existe "}
+        raise HTTPException(status_code = 400, detail = {"Error ❌": " El usuario no existe "})
+        
 
 
 # Query, se pasa como parte de la URL, pero no es parte de la ruta y es una forma de enviar parámetros a la ruta para filtrar o modificar la respuesta.
@@ -95,28 +99,32 @@ async def root_class(id_user: int):
         return find_user[0] # [0] Devuelve el primer (y único) objeto que coincide.
     
     except:
-        return {"Error ❌": " Usuario no encontrado "} 
+        raise HTTPException(status_code = 404, detail = {"Error ❌": " El usuario no encontrado "})
 
 
 # Post, se utiliza para enviar datos al servidor y crear un nuevo recurso. En este caso, se utiliza para crear un nuevo usuario.
-@router.post("/user_post/")
+@router.post("/user_post/", status_code = 201)
 async def root_post(user: user_profile): # Recibe un objeto de tipo user_profile):
 
     # Verifica si el usuario ya existe en la base de datos
     for existing_user in user_database:
         if existing_user.id_user == user.id_user:
-            return {"Error ❌": " Ya existe un ususario con este ID"}
+            raise HTTPException(status_code = 404, detail = {"Error ❌": " Ya existe un ususario con este ID"})
+            
         
         if existing_user.Name == user.Name or existing_user.Surname == user.Surname:
-            return {"Error ❌": " Ya existe un usuario con el mismo nombre o apellido "}
+            raise HTTPException(status_code = 400, detail = {"Error ❌": " Ya existe un usuario con el mismo nombre o apellido "})
+            
         
         # Si el usuario ya existe, retorna un mensaje de error
         if user.Name == "" or user.Surname == "" or user.Age <= 0: # Verifica si el nombre, apellido y edad son válidos
-            return {"Error ❌": " El nombre, apellido y edad deben ser válidos "}
+            raise HTTPException(status_code = 404, detail = {"Error ❌": " El nombre, apellido y edad deben ser válidos "})
+            
             
         # Si el usuario no existe, lo agrega a la base de datos
         if user.id_user <= 0: # Verifica si el id_user es válido
-            return {"Error ❌": " El id_user debe ser mayor que 0 "}
+            raise HTTPException(status_code = 400, detail = {"Error ❌": " El id_user debe ser mayor que 0 "})
+            
     
     user_database.append(user) # Agrega el usuario a la base de datos
     return {"Mensaje": "Usuario creado exitosamente ✅", "Nuevo Usuario": user} # Retorna un mensaje de éxito y el usuario creado
@@ -133,19 +141,21 @@ async def root_put(user: user_profile):
             user_database[index] = user # Actualiza el usuario en la base de datos
             return {"Mensaje": "Usuario actualizado exitosamente ✅", "Usuario Actualizado": user}
         
-    return {"Error ❌": " Usuario no encontrado "}
+    raise HTTPException(status_code = 404, detail = {"Error ❌": " Usuario no encontrado "})
+    
 
 
 # Delete, se utiliza para eliminar un recurso existente. En este caso, se utiliza para eliminar un usuario existente.
 
-@router.delete("/user_delete/{id_user}")
+@router.delete("/user_delete/{id_user}", response_model=Usuario)
 async def root_delete(id_user : int):
     for eliminar in user_database:
         if eliminar.id_user == id_user: 
             user_database.remove(eliminar)
             return {"Usuario eliminado": eliminar}
 
-    return {"Error ❌": "Usuario no encontrado para ser eliminado"}
+    raise HTTPException(status_code = 404, detail = {"Error ❌": "Usuario no encontrado para ser eliminado"})
+    
 
 
 # Esta es otra forma de definir el método delete, utilizando un objeto de tipo user_profile para identificar el usuario a eliminar.
@@ -161,4 +171,4 @@ async def root_delete(id_user : int):
 #             del user_database[index]
 #             return {"Mensaje": "Usuario eliminado exitosamente ✅"}
         
-#     return {"Error ❌": "El usuario no ha podido ser encontrado en la base de datos."}
+    # raise HTTPException(status_code = 404, detail = {"Error ❌": "El usuario no ha podido ser encontrado en la base de datos."})
