@@ -31,7 +31,7 @@ app.mount("/static", StaticFiles(directory="static"), name="static") # Montando 
 # StaticFiles(directory="static")
 # Aquí se le está diciendo a FastAPI que los archivos que se van a servir están en una carpeta local llamada static.
 
-"/static"
+# "/static"
 # Es la ruta pública en la URL. 
 
 # para incresar a la ruta de los archivos estáticos, puedes usar la URL: http://127.0.0.1:8000/static/images/Python.jpg
