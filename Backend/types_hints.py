@@ -1,6 +1,6 @@
 # Types Hints for the Backend
 
-# es importante para mejorar la legibilidad y mantenibilidad del código, especialmente en proyectos grandes o colaborativos. Aquí hay algunos tipos de datos comunes que puedes usar en Python:
+# Es importante para mejorar la legibilidad y mantenibilidad del código, especialmente en proyectos grandes o colaborativos. Aquí hay algunos tipos de datos comunes que puedes usar en Python:
 from typing import Dict, List, Tuple, Union, Optional
 # Definición de tipos de datos comunes
 String = str
