@@ -77,7 +77,7 @@ print("\n")
 
 from datetime import time
 
-tiempo = time(22,12,44) # Time es diferente a datetime, solo se trabaja con la hora y hay que rellenatr los campos de hora, minutos y segundos.
+tiempo = time(22,12,44) # Time es diferente a datetime, solo se trabaja con la hora y hay que rellenar los campos de hora, minutos y segundos.
 
 print("Hora Propuesta: ", tiempo,"PM") # Muestro la  propuesta.
 

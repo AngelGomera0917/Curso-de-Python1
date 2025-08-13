@@ -1,5 +1,7 @@
 ### List_Comprehension ###
 
+# La List Comprehension es una forma concisa de crear listas en Python.
+
 print("\n")
 
 # Lista de números del 1 al 10
