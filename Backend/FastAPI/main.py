@@ -13,7 +13,7 @@
 from fastapi import FastAPI
 from routers import libreria, users, status_http
 
-# Vamos a imporrtar staticfiles para servir archivos estáticos como imágenes, CSS y JavaScript.
+# Vamos a importar staticfiles para servir archivos estáticos como imágenes, CSS y JavaScript.
 from fastapi.staticfiles import StaticFiles
 
 # Creando una instancia de la aplicación FastAPI
