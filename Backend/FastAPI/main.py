@@ -12,6 +12,7 @@
 # Importando FastAPI para crear una aplicación web
 from fastapi import FastAPI
 from routers import libreria, users, status_http
+from routers import basic_auth_users
 
 # Vamos a importar staticfiles para servir archivos estáticos como imágenes, CSS y JavaScript.
 from fastapi.staticfiles import StaticFiles
@@ -23,6 +24,7 @@ app = FastAPI()
 app.include_router(libreria.router) # Incluyendo el router de usuarios
 app.include_router(users.router) # Incluyendo el router de status_http
 app.include_router(status_http.router) # incluyendo el router de status_http
+app.include_router(basic_auth_users.router) 
 
 app.mount("/static", StaticFiles(directory="static"), name="static") # Montando la carpeta 'static' para servir archivos estáticos
 
