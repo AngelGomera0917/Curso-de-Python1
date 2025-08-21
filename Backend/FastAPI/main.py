@@ -24,7 +24,7 @@ app = FastAPI()
 app.include_router(libreria.router) # Incluyendo el router de usuarios
 app.include_router(users.router) # Incluyendo el router de status_http
 app.include_router(status_http.router) # Incluyendo el router de status_http
-app.include_router(basic_auth_users.router) # Incluyendo el basic_auth_users
+app.include_router(basic_auth_users.router) # Incluyendo el router de basic_auth_users
 
 app.mount("/static", StaticFiles(directory="static"), name="static") # Montando la carpeta 'static' para servir archivos estáticos
 
