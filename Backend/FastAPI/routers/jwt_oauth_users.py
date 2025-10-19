@@ -109,6 +109,29 @@ def search_user_db(Username: str):
         # ** -> operador "unpacking", convierte el diccionario en parámetros nombrados.
         # Ejemplo: {"username":"x"} -> User(username="x")
 
+# -------------------- DEPENDENCIA PARA VALIDAR TOKEN --------------------
+
+async def current_user(token: str = Depends(OAuth2)):
+    # token -> será automáticamente extraído del header Authorization.
+    # Depends(OAuth2) -> inyecta la función OAuth2PasswordBearer para validar el token.
+    
+    user_token = search_user_db(token)  # Se busca el usuario con el "token" recibido.
+    
+    if not user_token:
+        # Si no se encuentra, se devuelve un error 401 (no autorizado).
+        raise HTTPException(
+            status.HTTP_401_UNAUTHORIZED, 
+            detail = "Token no válido ❌"
+        )
+    
+    if user_token.disabled:
+        # Si el usuario está marcado como deshabilitado, se devuelve un error 400.
+        raise HTTPException(
+            status.HTTP_400_BAD_REQUEST, 
+            detail = "El usuario está deshabilitado ❌"
+        )
+    
+    return user_token  # Devuelve el usuario autenticado.
 
 # -------------------- ENDPOINT DE LOGIN --------------------
 
@@ -152,3 +175,10 @@ async def login(form : OAuth2PasswordRequestForm = Depends() ):
     }
 
 # -------------------- ENDPOINT DE USUARIO AUTENTICADO --------------------
+
+@router.get("/users/me")
+async def me(user: User = Depends(current_user)):
+    # user -> se obtiene automáticamente gracias a Depends(current_user)
+    # Es decir, antes de entrar aquí, FastAPI validará el token.
+    
+    return user  # Devuelve los datos del usuario autenticado.
