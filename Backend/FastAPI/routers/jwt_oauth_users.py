@@ -16,16 +16,15 @@ from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
 # OAuth2PasswordBearer -> define el esquema de seguridad que espera un "token" en la cabecera Authorization.
 # OAuth2PasswordRequestForm -> recibe datos de login en formato formulario (username + password).
 
-from jose import jwt # Librería para trabajar con JSON Web Tokens (JWT).
+from jose import jwt, JWTError # Librería para crear y verificar JSON Web Tokens (JWT).
 
-from jose import JWTError # Manejo de errores relacionados con JWT.
+
+from jose.exceptions import ExpiredSignatureError # Excepción específica para tokens expirados.
 
 from passlib.context import CryptContext # Librería para hashing de contraseñas.
 
 # utc para manejar las fechas en formato universal
 from datetime import datetime, timedelta, UTC # Manejo de fechas y tiempos (para expiración de tokens).
-
-
 
 
 # -------------------- Algoritmo de Firma para el TOKEN --------------------
@@ -34,8 +33,8 @@ ALGORITHM = "HS256" # Algoritmo de firma del token (HMAC con SHA-256).
 
 # -------------------- CLAVE SECRETA PARA FIRMAR EL TOKEN --------------------
 
-SECRET_KEY = "d8f3e5c6b7a9c0d1e2f3a4b5c6d7e8f9g0h1i2j3k4l5m6n7o8p9q0r1s2t3u4v5"
 # Clave secreta usada para firmar y verificar el token (debe ser segura y secreta).
+SECRET_KEY = "d8f3e5c6b7a9c0d1e2f3a4b5c6d7e8f9g0h1i2j3k4l5m6n7o8p9q0r1s2t3u4v5"
 
 # -------------------- DURACION DEL TOKEN --------------------
 
@@ -43,7 +42,7 @@ ACCESS_TOKEN_DURATION = 1 # Duración del token en minutos (1 minuto)
 
 # -------------------- CONFIGURACIÓN DEL hashing de contraseñas --------------------
 
-crypt = CryptContext(schemes = ["bcrypt"], deprecated = "auto") 
+crypt = CryptContext(schemes = ["bcrypt"], deprecated = "auto") # Configura PassLib para usar bcrypt como algoritmo de hashing.
 
 
 # -------------------- CONFIGURACIÓN DEL ROUTER --------------------
@@ -89,7 +88,7 @@ database_users = {
         "username": "angel0917",
         "full_name": "Angel Antonio Peralta",
         "age": 27,
-        "password": "$2a$12$SuQXFMjzj0zbPQDsltZdmeJQC1wJXpSssM3NjySyGO4TFfba1x4Ua", # 
+        "password": "$2a$12$SuQXFMjzj0zbPQDsltZdmeJQC1wJXpSssM3NjySyGO4TFfba1x4Ua",  
         "disabled": True
     }
     
@@ -102,6 +101,13 @@ database_users = {
 
 # -------------------- FUNCIONES DE BÚSQUEDA DE USUARIO --------------------
 
+def search_user(Username: str):
+    # Devuelve un objeto User (sin contraseña) si existe en la base de datos.
+    if Username in database_users:
+        return User(**database_users[Username])  
+        # ** -> operador "unpacking", convierte el diccionario en parámetros nombrados.
+        # Ejemplo: {"username":"x"} -> User(username="x")
+
 def search_user_db(Username: str):
     # Devuelve un objeto User (sin contraseña) si existe en la base de datos.
     if Username in database_users:
@@ -111,27 +117,50 @@ def search_user_db(Username: str):
 
 # -------------------- DEPENDENCIA PARA VALIDAR TOKEN --------------------
 
-async def current_user(token: str = Depends(OAuth2)):
+async def oauth_user(token : str = Depends(OAuth2)):
     # token -> será automáticamente extraído del header Authorization.
     # Depends(OAuth2) -> inyecta la función OAuth2PasswordBearer para validar el token.
     
-    user_token = search_user_db(token)  # Se busca el usuario con el "token" recibido.
-    
-    if not user_token:
-        # Si no se encuentra, se devuelve un error 401 (no autorizado).
-        raise HTTPException(
+    try:
+        payload = jwt.decode(token, SECRET_KEY, algorithms = [ALGORITHM]) # Decodifica y verifica el token JWT.
+        
+        username = payload.get("sub") # Extrae el campo "sub" del payload (username).
+        
+        if username is None: # Si no existe el campo "sub", se devuelve un error 401 (no autorizado).
+            raise HTTPException(
             status.HTTP_401_UNAUTHORIZED, 
-            detail = "Token no válido ❌"
+            detail = " El campo Sub esta vacio ❌ "
         )
     
-    if user_token.disabled:
+    # except JWTError:
+    except ExpiredSignatureError: # Captura el error específico de token expirado.
+        # I el token ya expiro, se devuelve un error 401 (no autorizado)
+        raise HTTPException(
+            status_code=status.HTTP_401_UNAUTHORIZED,
+            detail = " El Token ha expirado ❌ "
+    )
+
+    except JWTError: # Captura cualquier otro error relacionado con JWT.
+        # Si no se encuentra, se devuelve un error 400 (Bad Resquest).
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail = " Las credenciales del token son inválidas ❌ "
+        )
+    
+    return search_user(username) # Devuelve el usuario encontrado o None si no existe.
+
+
+async def current_user(user : User = Depends(oauth_user)): # 
+    # user -> se obtiene automáticamente gracias a Depends(oauth_user)
+
+    if user.disabled:
         # Si el usuario está marcado como deshabilitado, se devuelve un error 400.
         raise HTTPException(
             status.HTTP_400_BAD_REQUEST, 
-            detail = "El usuario está deshabilitado ❌"
+            detail = " El usuario está deshabilitado ❌ "
         )
     
-    return user_token  # Devuelve el usuario autenticado.
+    return user  # Devuelve el usuario autenticado.
 
 # -------------------- ENDPOINT DE LOGIN --------------------
 
@@ -151,7 +180,7 @@ async def login(form : OAuth2PasswordRequestForm = Depends() ):
     
     user = search_user_db(form.username) # Obtiene el usuario como objeto UserDB
     
-    if not crypt.verify(form.password, user.password):
+    if not crypt.verify(form.password, user.password): # Esto verifica la contraseña hasheada
         # Si la contraseña no coincide -> error 404
         raise HTTPException(
             status.HTTP_404_NOT_FOUND, 
