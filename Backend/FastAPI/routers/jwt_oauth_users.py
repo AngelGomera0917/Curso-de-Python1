@@ -32,8 +32,10 @@ from datetime import datetime, timedelta, UTC # Manejo de fechas y tiempos (para
 
 ALGORITHM = "HS256" # Algoritmo de firma del token (HMAC con SHA-256).
 
-# SECRET_KEY = "d8f3e5c6b7a9c0d1e2f3a4b5c6d7e8f9g0h1i2j3k4l5m6n7o8p9q0r1s2t3u4v5"
-# # Clave secreta usada para firmar y verificar el token (debe ser segura y secreta).
+# -------------------- CLAVE SECRETA PARA FIRMAR EL TOKEN --------------------
+
+SECRET_KEY = "d8f3e5c6b7a9c0d1e2f3a4b5c6d7e8f9g0h1i2j3k4l5m6n7o8p9q0r1s2t3u4v5"
+# Clave secreta usada para firmar y verificar el token (debe ser segura y secreta).
 
 # -------------------- DURACION DEL TOKEN --------------------
 
@@ -138,14 +140,14 @@ async def login(form : OAuth2PasswordRequestForm = Depends() ):
     # UTC -> Tiempo Universal Coordinado (zona horaria estándar)
     expire = datetime.now(UTC) + access_token_expiration # Tiempo de expiración del token
 
-    access_token = {
+    payload = {
         "sub" : user.username,
         "exp" : expire
     } # Payload del token (datos que contiene) 
     
     # Si pasa las validaciones -> se devuelve un "access token".
     return {
-        "Access_Token" : access_token,     # Aquí el "token" es simplemente el username.
+        "Access_Token" : jwt.encode(payload, SECRET_KEY,  algorithm = ALGORITHM), # Genera el token JWT  
         "Token_type" : "bearer"             # Tipo de token usado en OAuth2
     }
 
