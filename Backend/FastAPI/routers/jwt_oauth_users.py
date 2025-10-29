@@ -139,6 +139,7 @@ async def oauth_user(token : str = Depends(OAuth2)):
             detail = " El Token ha expirado ❌ "
     )
 
+    # except JWTError:
     except JWTError: # Captura cualquier otro error relacionado con JWT.
         # Si no se encuentra, se devuelve un error 400 (Bad Resquest).
         raise HTTPException(
