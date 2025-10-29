@@ -14,6 +14,7 @@ from fastapi import FastAPI
 from routers import libreria, users, status_http
 from routers import basic_auth_users
 from routers import jwt_oauth_users
+from routers import users_database
 
 
 # Vamos a importar staticfiles para servir archivos estáticos como imágenes, CSS y JavaScript.
@@ -28,6 +29,7 @@ app.include_router(users.router) # Incluyendo el router de status_http
 app.include_router(status_http.router) # Incluyendo el router de status_http
 app.include_router(basic_auth_users.router) # Incluyendo el router de basic_auth_users
 app.include_router(jwt_oauth_users.router) # Incluyendo el router de jwt_oauth_users
+app.include_router(users_database.router) # Incluyendo el router de users_database
 
 app.mount("/static", StaticFiles(directory = "static"), name = "static") # Montando la carpeta 'static' para servir archivos estáticos
 

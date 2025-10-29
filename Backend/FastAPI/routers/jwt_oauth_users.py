@@ -132,7 +132,6 @@ async def oauth_user(token : str = Depends(OAuth2)):
             detail = " El campo Sub esta vacio ❌ "
         )
     
-    # except JWTError:
     except ExpiredSignatureError: # Captura el error específico de token expirado.
         # I el token ya expiro, se devuelve un error 401 (no autorizado)
         raise HTTPException(

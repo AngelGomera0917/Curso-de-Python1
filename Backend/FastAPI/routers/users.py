@@ -147,7 +147,7 @@ async def root_put(user: user_profile):
 
 # Delete, se utiliza para eliminar un recurso existente. En este caso, se utiliza para eliminar un usuario existente.
 
-@router.delete("/user_delete/{id_user}", response_model=Usuario)
+@router.delete("/user_delete/{id_user}", response_model=user_profile)
 async def root_delete(id_user : int):
     for eliminar in user_database:
         if eliminar.id_user == id_user: 

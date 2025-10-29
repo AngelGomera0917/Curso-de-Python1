@@ -82,7 +82,7 @@ database_users = {
 # Se simula una "base de datos" con dos usuarios:
 # - darlin8777 (activo)
 # - angel0917 (deshabilitado)
-
+ 
 
 # -------------------- FUNCIONES DE BÚSQUEDA DE USUARIO --------------------
 
