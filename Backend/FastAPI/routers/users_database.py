@@ -7,7 +7,7 @@ from fastapi import APIRouter, HTTPException
 
 from Database.client_db import db_client
 
-from models.models_user import user_profile
+from Database.models.models_user import user_profile
 
 # Creando una instancia de la aplicación FastAPI
 router = APIRouter(prefix="/users_db", tags=["Users wih Database MongoDB"])
@@ -73,8 +73,8 @@ async def root_post(user: user_profile): # Recibe un objeto de tipo user_profile
     #     if user.id_user <= 0: # Verifica si el id_user es válido
     #         raise HTTPException(status_code = 400, detail = {"Error ❌": " El id_user debe ser mayor que 0 "})
     # user_dict = user.dict()
-    nuevo = db_client.local.users.insert_one(user.dict())
-    return {"id" : str(nuevo.inserted_id), **user.dict()}
+    nuevo = db_client.local.users.insert_one(dict(user))
+    return {"id" : str(nuevo.inserted_id), **dict(user)}
     
     # user_database.append(user) # Agrega el usuario a la base de datos
     # return {"Mensaje": "Usuario creado exitosamente ✅", "Nuevo Usuario": user} # Retorna un mensaje de éxito y el usuario creado
