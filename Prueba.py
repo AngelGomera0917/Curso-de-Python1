@@ -1,8 +1,8 @@
-edades = [14,12,4,6,7,9,5,3,17,8,11,10,15]
+age = [14,12,4,6,7,9,5,3,17,8,11,10,15,16]
 
 guardar = []
 
-for i in edades:
+for i in age:
     if i % 2 == 0:
         guardar.append(i)
         print("Son pares: ")
