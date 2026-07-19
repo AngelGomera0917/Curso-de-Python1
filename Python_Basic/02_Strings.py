@@ -48,7 +48,7 @@ print("\n")
 contrario = angel[::-1] # Con este invertimos todo.
 print(contrario)
 
-#Desempaqueado de carateres
+#Desempaquetado de carateres
 
 #FUNCIONES
 print("\n")
