@@ -144,4 +144,12 @@ print("\n")
 nombres = ["Beto", "Ana", "Diana", "carlos"]
 print(sorted(nombres, key=str.lower))
 
+print("\n")
+
+personas = [("Ana", 25), ("Luis", 19), ("Marta", 30)]
+
+# Ordenar por edad
+print(sorted(personas, key=lambda p: p[1]))
+# [('Luis', 19), ('Ana', 25), ('Marta', 30)]
+
 
