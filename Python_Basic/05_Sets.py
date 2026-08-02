@@ -85,7 +85,7 @@ print("\n")
 
 sorted_programming_languages = {"Python", "Java", "C++", "C#", "JavaScript", "PHP", "Ruby", "Swift", "Go", "Kotlin"}
 
-print(sorted(sorted_programming_languages)) # Aqui creamos una lista ordenada del set, pero no cambiamos su naturaleza de ser desordenados... 
+print(sorted(sorted_programming_languages, key=len)) # Aqui creamos una lista ordenada del set, pero no cambiamos su naturaleza de ser desordenados y los ordena por cantidad de longitud en caracteres... 
 
 print(sorted_programming_languages) # En este caso no se modifica el set, porque no lo guardamos en una variable, solo lo ordenamos para mostrarlo.
 
