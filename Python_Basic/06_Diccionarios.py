@@ -124,3 +124,13 @@ my_new_dict["Zize"] = " Medium" # Le agrego el valor a la clave Zize.
 print(my_new_dict) # Imprimo el diccionario my_new_dict Actualizada.
 
 print("\n")
+
+estudiantes = [
+    {"nombre": "Carlos", "nota": 8},
+    {"nombre": "Ana", "nota": 9.5},
+    {"nombre": "Luis", "nota": 7},
+]
+
+# Con sorted() - crea una nueva lista
+mejores = sorted(estudiantes, key=lambda e: e["nota"], reverse=True)
+print(mejores[0]["nombre"])  # Ana
