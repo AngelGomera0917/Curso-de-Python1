@@ -70,5 +70,57 @@ estudiantes = [
 mejores = sorted(estudiantes, key=lambda e: e["nota"], reverse=True)
 print(mejores[0]["nombre"])  # Ana
 
+print("\n")
 
+# Ahora vamos hacer ejercicios de Set y luego de diccionarios...
+
+my_set = {"Black", "White", "Blue", "Red", "Yellow", "Orange"}
+
+my_set2 = {3,6,9,5,1,4,1,8}
+
+my_sorted = sorted(my_set, reverse=True)
+
+print(my_set)
+
+print("\n")
+
+my_dict1 = {
+    "Name": "Angel Antonio Gomera Romero",
+    "Edad": 24,
+    "Universidad": "ITLA",
+    "Vivienda": {
+            "Tipo": "Apartamento",
+            "Piso": 3,
+            "Condicion": "Excelente"
+        },
+    "Habitaciones": 3,
+    "Lugar": "La Jacobo Macluta"
+}
+
+print(my_dict1.items())
+print("\n")
+print(my_dict1.keys())
+print("\n")
+print(my_dict1.values())
+
+print("\n")
+
+print(my_dict1)
+
+print(my_dict1["Name"])
+
+print("\n")
+
+my_dict1["Name"] = "Michael Jakson"
+
+print(my_dict1["Name"])
+print(my_dict1)
+
+print("\n")
+
+nueva = dict.fromkeys({"Vehiculo", "Calzado"})
+
+print(nueva)
+
+print("\n")
 
