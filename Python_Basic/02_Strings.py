@@ -108,3 +108,14 @@ new_join = ", ".join(my_join) # Con esto genero una cadena a partir de la lista 
 print(new_join) # Imprimo la cadena generada a partir de la lista de cadenas.
 
 print("\n")
+
+                                            # Metodo Sep y End
+
+# sep → Define el separador entre los elementos.
+
+print("Darli", "Angel", "Mariela", "Gomera", sep="-")
+
+# End → Define qué se imprime al final de la línea (por defecto es un salto de línea \n).
+
+print("Hola", end=" ")
+print("Darli M.")
