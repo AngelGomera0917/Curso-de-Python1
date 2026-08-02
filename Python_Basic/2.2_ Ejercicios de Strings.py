@@ -91,8 +91,8 @@ Después el programa debe mostrar el precio habitual de una barra de pan, el des
 por no ser fresca y el coste final total. """
 
 '''pan = int(input("Cuantas barras de pan que no son del dia fueron vendidas? "))
-
 precio = 3.49
+
 
 descuento = round(pan * 3.49 * 0.6, 2)
 
