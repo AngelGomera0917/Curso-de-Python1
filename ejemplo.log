@@ -1,0 +1,21 @@
+mplo · LOG
+2024-01-15 10:23:01 INFO Servidor iniciado correctamente
+2024-01-15 10:23:05 WARNING Uso de memoria alto: 85%
+2024-01-15 10:24:10 ERROR No se pudo conectar a la base de datos
+2024-01-15 10:25:33 ERROR Timeout al procesar la solicitud
+2024-01-15 10:26:00 INFO Usuario "juan" inicio sesion
+2024-01-15 10:27:15 CRITICAL El servidor se quedo sin espacio en disco
+2024-01-15 10:28:02 WARNING Certificado SSL proximo a expirar
+2024-01-15 10:29:47 ERROR Fallo al leer el archivo de configuracion
+2024-01-15 10:30:10 INFO Peticion GET /api/usuarios procesada
+2024-01-15 10:31:22 ERROR No se pudo conectar a la base de datos
+2024-01-15 10:32:05 DEBUG Variable "x" tiene valor 42
+2024-01-15 10:33:19 WARNING Uso de CPU alto: 92%
+2024-01-15 10:34:40 CRITICAL Perdida de conexion con el servidor principal
+2024-01-15 10:35:12 ERROR Timeout al procesar la solicitud
+2024-01-15 10:36:00 INFO Usuario "maria" cerro sesion
+2024-01-15 10:37:33 ERROR Permiso denegado al escribir archivo
+2024-01-15 10:38:15 WARNING Uso de memoria alto: 88%
+2024-01-15 10:39:50 INFO Backup completado correctamente
+2024-01-15 10:40:21 ERROR No se pudo conectar a la base de datos
+2024-01-15 10:41:05 CRITICAL El servidor se quedo sin espacio en disco
