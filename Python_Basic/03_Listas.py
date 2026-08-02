@@ -90,7 +90,7 @@ print(diaz)
 print(romero)
 
 romero.append(10)
-print(romero.count("My computer"))
+print(romero.count("My computer")) # El count 
 print(romero)
 
 romero.reverse() # Invierte el orden de la lista.
@@ -130,5 +130,18 @@ Matrix = [
 ]
 
 print(Matrix[0][0]) # Accede a la posicion 0,0
+
+print("\n")
+
+palabras = ["banana", "kiwi", "manzana", "uva"]
+
+# Ordenar por longitud
+print(sorted(palabras, key=len))
+
+print("\n")
+
+# Ordenar ignorando mayúsculas/minúsculas
+nombres = ["Beto", "Ana", "Diana", "carlos"]
+print(sorted(nombres, key=str.lower))
 
 
