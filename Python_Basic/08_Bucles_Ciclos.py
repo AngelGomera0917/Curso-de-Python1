@@ -117,7 +117,7 @@ print("\n")
 
 my_tupla = (1,7, "Gomera" ,5, "Angel", 9, 6)
 
-for i in my_tupla: # Itero sobre la lista my_tupla.
+for i in my_tupla: # Itero sobre la lista myP_tupla.
     
     print(i,"\n") # Imprimo el valor de i.
 
