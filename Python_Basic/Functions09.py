@@ -5,7 +5,7 @@ print("\n")
 def my_funtion(): # con la palabra reservada def defino una funcion
     print(" Hola, Esto es una funcion funcion\n")
 
-my_funtion() # Llamo a la funcion
+my_funtion() # Llamo a la funcion   
 
 print("\n")
 
