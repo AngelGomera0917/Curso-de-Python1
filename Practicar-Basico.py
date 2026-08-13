@@ -124,3 +124,32 @@ print(nueva)
 
 print("\n")
 
+print("\n")
+
+print( """
+    ========================== * =============================
+        Vamos a realizar varios ejercicios sobre funciones
+    ========================== * =============================
+    """)
+
+print("\n")
+
+def promedio(*numeros):
+    
+    suma = sum(numeros)
+    
+    contar = len(numeros)
+    
+    
+    if contar == 0:
+        return (" === No es posible la division entre 0 === ")
+    
+    else:
+        calcular_promedio = suma / contar
+        return calcular_promedio
+
+answer = promedio(10, 20, 30, 40)
+
+print(answer)
+
+print("\n")
