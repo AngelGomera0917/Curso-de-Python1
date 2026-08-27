@@ -153,3 +153,15 @@ answer = promedio(10, 20, 30, 40)
 print(answer)
 
 print("\n")
+
+estudiantes = [
+    {"nombre": "Carlos", "nota": 8},
+    {"nombre": "Ana", "nota": 9.5},
+    {"nombre": "Luis", "nota": 7},
+]
+
+# Con sorted() - crea una nueva lista
+mejores = sorted(estudiantes, key=lambda e: e["nota"], reverse=True)
+print(mejores[1]["nombre"])  # Ana
+
+print("\n")
