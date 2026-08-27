@@ -165,3 +165,36 @@ mejores = sorted(estudiantes, key=lambda e: e["nota"], reverse=True)
 print(mejores[1]["nombre"])  # Ana
 
 print("\n")
+
+Feature = {
+    "Metros" : "133.75 m2",
+    "Piso" : 5,
+    "Habitaciones" : 3,
+    "Baños" : 2,
+    
+}
+
+class apartment():
+    def __init__(self, residencial, costo, caracteristicas_apt):
+        self.residencial = residencial
+        self.costo = costo
+        self.caracteristicas_apt = caracteristicas_apt
+        
+    def Welcome():
+        print(""" 
+            
+                                                        * =============== * Buenas Tardes!! * =============== * 
+            
+                                        * =============== * Bienvenidos a la pagina D' Gomera Apartamentos * =============== * 
+            
+            En D' Gomera Apartamentos, nos dedicamos a conectar personas con el hogar perfecto. Contamos con una amplia variedad de apartamentos en las mejores ubicaciones, ofreciendo confianza, calidad y un servicio personalizado en cada paso del proceso, ya sea alquiler o compra. 
+            
+            """)
+    
+    def Details(self):
+        print(f""" Este apartamento esta ubicado en el residencial * {self.residencial} * con un costo de * {self.costo} *  
+            
+            Ahora le voy a presentar las caracteristicas del apartamentos. * {self.caracteristicas_apt} * """)
+
+detalle1 = apartment("Teacher Darli", "10,000 US", )
+    
