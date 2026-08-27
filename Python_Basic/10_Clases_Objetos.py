@@ -37,7 +37,7 @@ class cachorro ():
         
     def definicion (self):
         
-        ''' Lo recomendable seria poner self.(las variables) self.nombre, porque asi podriamos instanciar otros objetos
+        ''' Lo recomendable seria poner     self.(las variables) self.nombre, porque asi podriamos instanciar otros objetos
         de la misma funcion.'''
         print(pedro.nombre, "es un", pedro.raza, "de", pedro.edad, "es", pedro.sexo, "y es de color", pedro.color);
 
