@@ -207,7 +207,7 @@ class apartment():
     
     Costo del Apartamento : {self.costo}
     
-    Propietari@ : {self.propietario}
+    Propietario : {self.propietario}
 """)
         for clave, valor in self.caracteristicas_apt.items() :
             print(f"""    {clave} : {valor}
@@ -217,34 +217,47 @@ class apartment():
 Si deseas continuar, llenar el formulario de actualizacion de datos para dicha documentacion del apartamento""")
         print("\n")
 
-detalle1 = apartment("Bella Vista", "75,000 US", "D' Contrutora Gomera", Feature)
+    def new_owner(self):
+        print(f""" Actualizacion del apartamento segun sus datos:
+        
+    Residencial : {self.residencial}
+    
+    Costo del Apartamento : {self.costo}
+    
+    Nuevo Propietario : {self.propietario}
+""")
+        for clave, valor in self.caracteristicas_apt.items() :
+            print(f"""    {clave} : {valor}
+                """)
+
+detalle1 = apartment("Bello, Barato, No Fiao", "75,000 US 🤑", "D' Contrutora Gomera", Feature)
 
 apartment.Welcome()
 
 detalle1.Details()
 
 continuar = str(input("Deseas proceder con el proceso (si / no)? "))
+print("\n")
 
 if continuar == "Si" or continuar == "si":
-    nombre = str(input(" Favor colocar su nombre Completo: "))
+    print("""Muchas Gracias. Ahora favor facilitarme los siguientes datos para actualizar los papele a su nombre: 
+        """)
+    name = str(input(" Colocar su nombre Completo: "))
+    print("\n")
     name_residencia = str(input(" Que nombre te gustaria colocarle al Residencial? "))
+    print("\n")
+
+    detalle2 = apartment(name_residencia, "75,000 US 🤑", name, Feature)
+    
+    detalle2.new_owner()
+
+elif continuar == "No" or continuar == "no":
+    print(" Gracias por su visita, le esperamos pronto!! ")
+
 
 else:
-    print("Na")
-    def new_owner(self):
-        print(f""" Detalles del apartamento:
-        
-    Residencial : {self.residencial}
-    
-    Costo del Apartamento : {self.costo}
-    
-    Propietari@ : {self.propietario}
-""")
-        for clave, valor in self.caracteristicas_apt.items() :
-            print(f"""    {clave} : {valor}
-                """)
+    print(" Los datos colocados son invalidos, favor de intentar nuevamente. ")
 
-detalle2 = apartment(nombre, "75,000 US", "", Feature)
 
 print("\n")
 
