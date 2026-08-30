@@ -1,1 +1,1 @@
-[0]["nombre"]
+{self.caracteristicas_apt} 
