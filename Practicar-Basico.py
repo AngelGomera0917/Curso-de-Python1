@@ -200,7 +200,6 @@ class apartment():
     En D' Gomera Apartamentos, nos dedicamos a conectar personas con el hogar perfecto. Contamos con una amplia variedad de apartamentos en las mejores ubicaciones, ofreciendo confianza, calidad y un servicio personalizado en cada paso del proceso, ya sea alquiler o compra. 
             
             """)
-    
     def Details(self):
         print(f""" Detalles del apartamento:
         
@@ -208,18 +207,45 @@ class apartment():
     
     Costo del Apartamento : {self.costo}
     
-    Propietario : {self.propietario}
+    Propietari@ : {self.propietario}
 """)
         for clave, valor in self.caracteristicas_apt.items() :
-            print(f"""    {clave} : {valor} 
+            print(f"""    {clave} : {valor}
                 """)
 
-detalle1 = apartment("Teacher Darli", "75,000 US", "D' Contrutora Gomera", Feature)
+        print("""Aqui podemos ver los detalles del apartamento que esta disponible
+Si deseas continuar, llenar el formulario de actualizacion de datos para dicha documentacion del apartamento""")
+        print("\n")
 
+detalle1 = apartment("Bella Vista", "75,000 US", "D' Contrutora Gomera", Feature)
 
 apartment.Welcome()
 
 detalle1.Details()
-#print(clave,valor)
+
+continuar = str(input("Deseas proceder con el proceso (si / no)? "))
+
+if continuar == "Si" or continuar == "si":
+    nombre = str(input(" Favor colocar su nombre Completo: "))
+    name_residencia = str(input(" Que nombre te gustaria colocarle al Residencial? "))
+
+else:
+    print("Na")
+    def new_owner(self):
+        print(f""" Detalles del apartamento:
+        
+    Residencial : {self.residencial}
+    
+    Costo del Apartamento : {self.costo}
+    
+    Propietari@ : {self.propietario}
+""")
+        for clave, valor in self.caracteristicas_apt.items() :
+            print(f"""    {clave} : {valor}
+                """)
+
+detalle2 = apartment(nombre, "75,000 US", "", Feature)
+
+print("\n")
 
 
