@@ -171,13 +171,23 @@ Feature = {
     "Piso" : 5,
     "Habitaciones" : 3,
     "Baños" : 2,
-    
+    "Cocina" : 1,
+    "Estado" : "Nuevos",
+    "Confortable" : "Si",
+    "Desayunador" : "Si",
+    "Area de Lavado" : "Si",
+    "Cisterna" : "Si",
+    "Ascensor" : "Si",
+    "Porton Electrico" : "Si",
+    "Camara de Vigilancia" : "Si",
+    "Año Construido" : "2020"
 }
 
 class apartment():
-    def __init__(self, residencial, costo, caracteristicas_apt):
+    def __init__(self, residencial, costo, propietario, caracteristicas_apt):
         self.residencial = residencial
         self.costo = costo
+        self.propietario = propietario
         self.caracteristicas_apt = caracteristicas_apt
         
     def Welcome():
@@ -187,14 +197,29 @@ class apartment():
             
                                         * =============== * Bienvenidos a la pagina D' Gomera Apartamentos * =============== * 
             
-            En D' Gomera Apartamentos, nos dedicamos a conectar personas con el hogar perfecto. Contamos con una amplia variedad de apartamentos en las mejores ubicaciones, ofreciendo confianza, calidad y un servicio personalizado en cada paso del proceso, ya sea alquiler o compra. 
+    En D' Gomera Apartamentos, nos dedicamos a conectar personas con el hogar perfecto. Contamos con una amplia variedad de apartamentos en las mejores ubicaciones, ofreciendo confianza, calidad y un servicio personalizado en cada paso del proceso, ya sea alquiler o compra. 
             
             """)
     
     def Details(self):
-        print(f""" Este apartamento esta ubicado en el residencial * {self.residencial} * con un costo de * {self.costo} *  
-            
-            Ahora le voy a presentar las caracteristicas del apartamentos. * {self.caracteristicas_apt} * """)
-
-detalle1 = apartment("Teacher Darli", "10,000 US", )
+        print(f""" Detalles del apartamento:
+        
+    Residencial : {self.residencial}
     
+    Costo del Apartamento : {self.costo}
+    
+    Propietario : {self.propietario}
+""")
+        for clave, valor in self.caracteristicas_apt.items() :
+            print(f"""    {clave} : {valor} 
+                """)
+
+detalle1 = apartment("Teacher Darli", "75,000 US", "D' Contrutora Gomera", Feature)
+
+
+apartment.Welcome()
+
+detalle1.Details()
+#print(clave,valor)
+
+
