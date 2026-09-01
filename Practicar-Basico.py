@@ -180,6 +180,7 @@ Feature = {
     "Ascensor" : "Si",
     "Porton Electrico" : "Si",
     "Camara de Vigilancia" : "Si",
+    "Mantenimiento Mensual" : 1200,
     "Año Construido" : "2020"
 }
 
