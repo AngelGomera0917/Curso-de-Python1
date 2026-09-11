@@ -262,4 +262,25 @@ else:
 
 print("\n")
 
+print(" Este es el ejemplo de las Exception ")
+
+print("\n")
+
+def dividir_seguro(a, b):
+    try:
+        print(" Este es el resultado de la division: ", a/b)
+    except ValueError:
+        print(" Este es un ValueError ")
+    except TypeError:
+        print(" Este es un TypeError ")
+    
+    except ZeroDivisionError:
+        print(" La division entre 0 no es aceptable. ")
+    
+    except Exception as Error:
+        print(Error, " Este es un tipo e error fuera de los agregados. ")
+        
+
+dividir_seguro(62,0)
+
 
