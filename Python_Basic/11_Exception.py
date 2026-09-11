@@ -80,4 +80,7 @@ try:
 except ValueError: # Aqui no se ejecutara la exception, porque le especificamos un tipo de error diferente al del problema.
     print("\nHubo un error en la resta. Los valores deben ser numéricos todos.")
     
+except TypeError as camion:
+    print(camion,"\nEste es un error de tipado")
+    
 print("\n")
