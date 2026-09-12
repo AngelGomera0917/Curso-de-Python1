@@ -6,7 +6,7 @@
 # Un módulo en Python es un archivo que contiene definiciones de funciones, variables y clases, que puedes importar y usar en otros programas. Los módulos permiten organizar y reutilizar el código de manera más eficiente.
 
 
-print("\n")
+print("\n") 
 
                         # Aqui importe mi modulo externo, para poder usar todas sus funciones y variables definidas en el modulo
 
@@ -52,9 +52,9 @@ print("Mi potencia es de: ",matematica.pow(3, 2)) # Este me busca la potencia
 
                                 # Este modulo random proporciona funciones para generar números aleatorios.
 
-import random
+from random import randint
 
-print("\nUn número aleatorio es: ", random.randint(1, 100), "\n")
+print("\nUn número aleatorio es: ", randint(1, 100), "\n")
 
 
 
