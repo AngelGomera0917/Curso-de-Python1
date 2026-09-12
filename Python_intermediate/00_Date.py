@@ -109,7 +109,7 @@ print("\n")
 
 fecha_actualizada = date(fecha.year + 2, fecha.month + 3, fecha.day + 1) # Creo una fecha actualizada.
 
-print("Nueva Actualizada: ", fecha_actualizada) # Muestro la fecha actualizada.
+print("Nueva fecha Actualizada: ", fecha_actualizada) # Muestro la fecha actualizada.
 
 print("\n")
 
