@@ -78,7 +78,7 @@ def fibonacci():
     contador = 0 # Inicializo el contador en 0.
     first = 0 # Inicializo la variable a en 0.
     next = 1 # Inicializo la variable b en 1.
-    
+
     while contador < n: # Hago un bucle while que se repite 50 veces.
         print(first, end=", ") # Imprimo el valor de a y le pongo una coma al final.
 
@@ -187,7 +187,7 @@ def reverse(texto):
     
     return texto[::-1]# Retorno el texto al reves.
     
-print(reverse("Hola mundo")) # Llamo a la funcion word y le paso el texto deseado.
+print(reverse("Hola mundo")) # Llamo a la funcion reverse y le paso el texto deseado.
 
 
 print("\n")
