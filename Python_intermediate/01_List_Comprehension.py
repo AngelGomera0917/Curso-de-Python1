@@ -31,7 +31,6 @@ print("\n")
 my_range = range(18) # Creo un rango de 17 numeros. 
 print(list(my_range))
 
-print("\n")
 
 new_list = [i for i in range(6)] # Creo una lista con los numeros del 0 al 5.
 print(new_list)
