@@ -1,1 +1,1 @@
-o
+{self.info_uni()} | {self.info_rol()} | 
