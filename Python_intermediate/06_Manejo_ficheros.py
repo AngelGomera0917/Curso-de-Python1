@@ -38,14 +38,14 @@ file_writer_handle.seek(0) # Mueve el cursor al inicio del fichero
 for contenido_lineas in output_buffer.readlines():  # La lista que me pasa el readlines(), la vuelvo iterable con el bucle for
     print(contenido_lineas)  # Imprime cada línea del fichero
 
-file_writer_handle.close() # Cierra el buffer
+file_writer_handle.close() # Cierra el buffer 
 
 print("\n")  # Imprime una línea en blanco para separar la salida
 
 # readlines() # Devuelve una lista con todas las líneas del fichero.
 # readline() # Devuelve una línea del fichero.
 
-# os.remove("fichero.txt")  # Elimina el fichero creado.
+# os.remove("Python_intermediate/fichero.txt")  # Elimina el fichero creado.
 
 
 # file .json
@@ -68,10 +68,10 @@ my_json = {
 
 my_json["Edad"] = 23 # Con esto actualizo el valor de la clave edad
 my_json["Colores_favoritos"].append("Pink") # Aqui agrego un dato mas a la lista de colores_favoritos
-my_json["Novia"] = "Darli Diaz" # Agrego una nueva clave y valor al diccionario
+my_json["Novia"] = "Darli Diaz Diaz" # Agrego una nueva clave y valor al diccionario
 
 
-with open("Python_intermediate/fichero.json", "w+") as json_file:  # Abre el fichero JSON en modo escritura
+with open("Python_intermediate/fichero.json", "w") as json_file:  # Abre el fichero JSON en modo escritura
     # El uso de 'with' asegura que el fichero se cierre automáticamente al finalizar el bloque.
     # Esto es una buena práctica para evitar fugas de recursos, y no usamos close().
     
@@ -80,7 +80,7 @@ with open("Python_intermediate/fichero.json", "w+") as json_file:  # Abre el fic
     json.dump(my_json, json_file, indent = 4) # Dump es para escribir el diccionario en el fichero JSON
     # indent = 4 es para que el JSON se vea más bonito, con una sangría de 4 espacios.
     
-# json_file.close() Aqui omito el close() porque ya lo hace el with automaticamente
+# json_file.close() Aqui omito el close() porque ya lo hace el "with" automaticamente
 
 # Leer el fichero JSON  
 with open("Python_intermediate/fichero.json", "r") as json_file_loader:
@@ -106,7 +106,8 @@ import csv  # Importa el módulo csv para trabajar con archivos CSV
 
 # Crear una lista de diccionarios como ejemplo
 
-with open("Python_intermediate/fichero.csv", "w") as csv_file: # Abre el fichero CSV en modo escritura
+with open("Python_intermediate/fichero.csv", "w", newline="") as csv_file: # Abre el fichero CSV en modo escritura
+    #newline="" es para evitar que se agreguen líneas en blanco entre cada fila del CSV, lo cual puede ocurrir en algunos sistemas operativos como windows.
     csv_writer = csv.writer(csv_file)  # Crea un objeto writer para escribir en el fichero CSV
     
     csv_writer.writerow(["Nombre", "Apellido","Edad", "Pareja", "Matricula"])  # Escribe la cabecera del CSV
