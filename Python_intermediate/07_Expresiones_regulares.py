@@ -23,6 +23,11 @@ print(re.search(digito, numero))
 
 print("\n")
 
+print("* =============== * Match * =============== * \n")
+print("Match: Verifica si el texto inicia con el patron definido, si no coincide, devuelve None. ")
+
+print("\n")
+
 my_string = "Mi nombre es Angel Antonio, tengo 22 años y mi lenguaje favorito es Python."
 
 match_result = re.match("Mi nombre es Angel", my_string) # Verifica si la cadena comienza con "Mi nombre es Angel", si al match le pasamos de la parte final de la cadena, no lo encontrara, ya que no es el inicio de la cadena.
