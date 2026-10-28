@@ -46,7 +46,7 @@ partner_match = re.match("Mi pareja es Darli Mariela", partner_description)
 if partner_match is not None: # Si el match es encontrado, no sera None
     print(partner_match) # Imprime el objeto match
     longitud = partner_match.span() # Nos devuelve el inicio y el final del match
-    print(f"El match se encuentra en la posicion: {longitud}\n")
+    print(f"El match se encuentra en la posicion de longitud: {longitud}\n")
 
                                     # Search
 
