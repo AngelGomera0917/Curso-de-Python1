@@ -7,15 +7,16 @@ app2 = FastAPI()
 
 # Entidad users_json que devuelve una lista de diccionarios con información de usuarios.
 class User(BaseModel):
+    id: int
     name: str
     surname: str
     age: int
     country: str
 
-users_data = [User(name="Darli Mariela", surname="Gomera", age=30, country="EEUU"),
-            User(name="Juan", surname="Perez", age=25, country="RD"),
-            User(name="Maria", surname="Lopez", age=28, country="Chile")
-        ]
+users_data = [User(id = 1, name = "Darli Mariela", surname = "Gomera", age = 30, country = "EEUU"),
+            User(id = 2, name = "Juan", surname = "Perez", age = 25, country = "RD"),
+            User(id = 3, name = "Maria", surname = "Lopez", age = 28, country = "Chile")
+        ]  
 
 @app2.get("/users_json")
 async def users_json():
@@ -26,3 +27,24 @@ async def users_json():
 @app2.get("/users")
 async def users():
     return users_data
+
+@app2.get("/user/{id}")
+async def user_one(id: int):
+    # Filtramos la lista de usuarios para encontrar el usuario con el id especificado.
+    user_list = filter(lambda user: user.id == id , users_data) 
+    # Retornamos la lista de usuarios filtrada, que debería contener solo el usuario con el id especificado.
+    try:
+        return list(user_list)[0]
+    except:
+        return {"Error" : "Usuario no encontrado"}
+    
+    
+@app2.get("/userQuery/")
+async def user_one(id: int):
+    # Filtramos la lista de usuarios para encontrar el usuario con el id especificado.
+    user_list = filter(lambda user: user.id == id , users_data) 
+    # Retornamos la lista de usuarios filtrada, que debería contener solo el usuario con el id especificado.
+    try:
+        return list(user_list)[0]
+    except:
+        return {"Error" : "Usuario no encontrado"}
